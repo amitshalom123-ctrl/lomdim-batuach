@@ -1,0 +1,1614 @@
+
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <!-- Consent Management - Default Settings -->
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+
+    // ברירת מחדל עד שהמשתמש מאשר (אפשר לשנות, אבל זה תקני לאתרים בישראל/איחוד)
+    gtag('consent','default',{
+      ad_storage: 'denied',
+      analytics_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      functionality_storage: 'granted',
+      security_storage: 'granted',
+      wait_for_update: 500
+    });
+
+    // טריגר פנימי ש-GTM מצפה לו (כמו בצילום המסך)
+    dataLayer.push({event:'gtm.init_consent'});
+    </script>
+    <!-- End Consent Management -->
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-N5C984RD');</script>
+    <!-- End Google Tag Manager -->
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>לומדים בטוח - עמית שלום | שיעורים פרטיים מותאמים לילדים עם קשיי למידה</title>
+    <meta name="description" content="שיעורים פרטיים מותאמים לילדים עם קשיי למידה. עמית שלום - 20 שנות ניסיון בחינוך מיוחד, NLP ואימון ילדים. מחזקים ביטחון ובונים עתיד.">
+    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://www.youtube.com">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Heebo', 'system-ui', 'sans-serif'],
+                    },
+                    colors: {
+                        'brand-ink': '#1e293b',
+                        'brand-card': '#ffffff',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        html, body {
+            font-family: 'Heebo', system-ui, 'Segoe UI', Arial, sans-serif;
+            direction: rtl;
+        }
+        
+        .glass {
+            backdrop-filter: saturate(1.2) blur(10px);
+        }
+        
+        .hero-lead span {
+            display: block;
+        }
+        
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 36px rgba(0,0,0,0.08);
+        }
+        
+        .btn-soft { 
+            padding: 0.5rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            border: 1px solid;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+        }
+        
+        .btn-soft:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        }
+        
+        .btn-primary { 
+            background-color: white;
+            color: rgb(7 89 133);
+            border-color: rgb(186 230 253);
+        }
+        
+        .btn-primary:hover {
+            background-color: rgb(240 249 255);
+        }
+        
+        .btn-accent { 
+            background-color: white;
+            color: rgb(146 64 14);
+            border-color: rgb(254 215 170);
+        }
+        
+        .btn-accent:hover {
+            background-color: rgb(255 251 235);
+        }
+        
+        .btn-ghost { 
+            background-color: transparent;
+            color: rgb(51 65 85);
+            border-color: rgb(226 232 240);
+        }
+        
+        .btn-ghost:hover {
+            background-color: rgb(248 250 252);
+        }
+        
+        @media (max-width: 640px) {
+            .hero-title {
+                font-size: 1.9rem !important;
+                margin-left: 0.5rem;
+                line-height: 1.4;
+            }
+            .hero-sub {
+                font-size: 1.3rem !important;
+                margin-left: 0.5rem;
+                line-height: 1.6;
+            }
+            .testimonials-grid {
+                grid-template-columns: 1fr !important;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .testimonials-grid {
+                grid-template-columns: 1fr !important;
+            }
+        }
+        
+        .loading {
+            opacity: 0;
+            animation: fadeIn 0.6s ease-out 0.1s forwards;
+        }
+        
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .faq-item summary {
+            cursor: pointer;
+        }
+        
+        .faq-icon {
+            transition: transform 0.2s ease;
+        }
+        
+        .package-card {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+            cursor: pointer;
+        }
+        
+        .package-card:hover {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Cookie Consent Banner Styles */
+        .cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(30, 41, 59, 0.95);
+            backdrop-filter: blur(10px);
+            color: white;
+            padding: 1rem;
+            z-index: 9999;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .cookie-banner.show {
+            transform: translateY(0);
+        }
+        
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="text-brand-ink loading min-h-screen" style="background: linear-gradient(135deg, #f7fbff 0%, #fff8ef 50%, #f7fbff 100%);">
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N5C984RD"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- Cookie Consent Banner (Temporary) -->
+    <div id="cookieBanner" class="cookie-banner">
+        <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="text-sm">
+                <p class="font-semibold mb-1">🍪 אנחנו משתמשים בקוקיז</p>
+                <p class="text-gray-300">כדי לשפר את החוויה שלכם ולמדוד ביצועים. האם אתם מסכימים?</p>
+            </div>
+            <div class="flex gap-2">
+                <button onclick="acceptCookies()" class="px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg font-semibold transition-colors">
+                    מאשר
+                </button>
+                <button onclick="declineCookies()" class="px-4 py-2 bg-gray-600 hover:bg-gray-700 text-white rounded-lg font-semibold transition-colors">
+                    לא תודה
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="sticky top-0 z-50 border-b border-black/5 bg-brand-card/80 glass">
+        <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <a href="#home" class="flex items-center gap-2 no-underline" aria-label="לומדים בטוח - עמית שלום">
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-r from-sky-400 to-amber-400 flex items-center justify-center text-white font-extrabold text-base shadow">
+                        ע
+                    </div>
+                    <div class="leading-tight hidden sm:block">
+                        <div class="font-extrabold text-slate-900 text-lg">עמית שלום</div>
+                        <div class="font-extrabold text-slate-900 text-base">לומדים בטוח</div>
+                    </div>
+                    <div class="leading-tight sm:hidden">
+                        <div class="font-extrabold text-slate-900 text-sm">עמית שלום - לומדים בטוח</div>
+                    </div>
+                </a>
+                <div class="md:hidden flex items-center gap-2">
+                    <a href="https://wa.me/972546508835" target="_blank" rel="noopener" class="px-4 py-2 rounded-full bg-blue-600 text-white font-extrabold shadow text-sm" aria-label="פנייה בוואטסאפ">וואטסאפ</a>
+                    <a href="#packages" class="px-4 py-2 rounded-full border bg-amber-600 hover:bg-amber-700 text-white shadow font-semibold text-sm">מסלולים</a>
+                </div>
+            </div>
+            
+            <nav class="hidden md:flex items-center gap-2" role="navigation" aria-label="תפריט ראשי">
+                <a href="#home" class="px-4 py-2 rounded-full border bg-white shadow font-semibold hover:bg-gray-50 transition-colors text-sm">בית</a>
+                <a href="#services" class="px-4 py-2 rounded-full border bg-white shadow font-semibold hover:bg-gray-50 transition-colors text-sm">מה מקבלים</a>
+                <a href="#method" class="px-4 py-2 rounded-full border bg-white shadow font-semibold hover:bg-gray-50 transition-colors text-sm">איך זה עובד</a>
+                <a href="#research" class="px-4 py-2 rounded-full border bg-white shadow font-semibold hover:bg-gray-50 transition-colors text-sm">מחקרים</a>
+                <a href="#packages" class="px-4 py-2 rounded-full border bg-white shadow font-semibold hover:bg-gray-50 transition-colors text-sm"><span class="text-orange-600 font-bold">מסלולים</span></a>
+                <a href="#parents-testimonials" class="px-4 py-2 rounded-full border bg-white shadow font-semibold hover:bg-gray-50 transition-colors text-sm">המלצות</a>
+                <a href="#faq" class="px-4 py-2 rounded-full border bg-white shadow font-semibold hover:bg-gray-50 transition-colors text-sm">שאלות</a>
+            </nav>
+            
+            <div class="hidden md:flex items-center gap-2">
+                <a href="https://wa.me/972546508835" target="_blank" rel="noopener" class="px-4 py-2 rounded-full bg-blue-600 text-white font-extrabold shadow hover:bg-blue-700 transition-colors text-sm" aria-label="פנייה בוואטסאפ">וואטסאפ</a>
+                <a href="tel:0546508835" class="px-4 py-2 rounded-full bg-white border font-extrabold shadow text-blue-600 hover:bg-gray-50 transition-colors text-sm">שיחת התאמה</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section id="home" class="relative animate-on-scroll">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-2 items-start px-4 py-1">
+            <div>
+                <!-- Mobile layout - image above title with reduced spacing -->
+                <div class="md:hidden flex flex-col items-start mb-1">
+                    <img 
+                        src="https://ellprnxjjzatijdxcogk.supabase.co/storage/v1/object/public/superdev-project-images/8836dee2-b5be-4634-9523-9db496afa481/gvn8jv2hjfcrwolmxehtv/1759135504275-1.png" 
+                        alt="עמית שלום - לומדים בטוח" 
+                        class="h-40 sm:h-44 object-contain mb-0.5"
+                    />
+                    <div class="w-full">
+                        <h1 class="hero-lead text-xl sm:text-2xl font-black leading-tight mb-0.5">
+                            <span class="hero-title">אם הילד שלך מתקשה במתמטיקה או בעברית...</span>
+                        </h1>
+                        <p class="text-lg sm:text-xl font-black text-right mt-0.5" style="margin-right: 1cm;">
+                            <span class="hero-sub">זה לא כי הוא "לא מסוגל".</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Desktop layout - image above title, aligned left with spacing adjustments -->
+                <div class="hidden md:flex flex-col items-start mb-2" style="margin-top: -3cm;">
+                    <img 
+                        src="https://ellprnxjjzatijdxcogk.supabase.co/storage/v1/object/public/superdev-project-images/8836dee2-b5be-4634-9523-9db496afa481/gvn8jv2hjfcrwolmxehtv/1759135504275-1.png" 
+                        alt="עמית שלום - לומדים בטוח" 
+                        class="h-44 lg:h-56 xl:h-72 object-contain mb-2"
+                        style="margin-top: 1cm;"
+                    />
+                    <div class="w-full text-right">
+                        <h1 class="hero-lead text-xl sm:text-2xl md:text-4xl lg:text-5xl font-black leading-tight mb-0.5">
+                            <span class="hero-title">אם הילד שלך מתקשה במתמטיקה או בעברית...</span>
+                        </h1>
+                        <p class="text-lg sm:text-xl md:text-2xl font-black text-right" style="margin-top: 1cm; margin-right: 1cm;">
+                            <span class="hero-sub">זה לא כי הוא "לא מסוגל".</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mt-1"></div>
+                <p class="mt-0.5 text-lg sm:text-xl">הקושי בלימודים הוא רק <span class="text-blue-600 font-extrabold">הסימן החיצוני</span> — לא <span class="text-amber-600 font-extrabold">הסיבה האמיתית</span>.</p>
+                <ul class="mt-1 space-y-1 text-slate-800 list-disc pr-5">
+                    <li class="flex items-start gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-green-600 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span>מזהים את שורש הקושי בתוך הלמידה עצמה — בזמן אמת.</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-green-600 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span>כלים רגשיים (NLP, אימון, חינוך מיוחד) משולבים בהוראה מקצועית.</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-green-600 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span>חוויית למידה מתקנת ומיומנויות של לומד עצמאי.</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Video section with 1cm lower positioning for desktop -->
+            <div class="bg-white/80 glass rounded-2xl shadow-lg p-2" style="margin-top: 1cm;">
+                <div class="rounded-xl overflow-hidden aspect-video mt-[-40px]">
+                    <div class="relative aspect-video">
+                        <iframe 
+                            id="ytplayer"
+                            class="absolute top-0 left-0 w-full h-full"
+                            src="https://www.youtube.com/embed/RbgKTwxn72I?enablejsapi=1&autoplay=1&mute=1&playsinline=1&rel=0&modestbranding=1&controls=1&loop=1&playlist=RbgKTwxn72I"
+                            frameborder="0"
+                            allow="autoplay; encrypted-media; picture-in-picture"
+                            allowfullscreen
+                            title="סרטון הסבר על השיטה של לומדים בטוח"
+                            loading="lazy">
+                        </iframe>
+                        
+                        <button 
+                            onclick="handleUnmute()"
+                            class="absolute bottom-4 right-4 px-4 py-2 bg-black text-white font-bold rounded-lg shadow-lg opacity-80 hover:opacity-100 transition-opacity"
+                            aria-label="הפעלת קול">
+                            🎵 קול
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bg-white shadow rounded-lg p-6 mt-8">
+                    <h2 class="text-2xl md:text-2xl font-bold mb-4 text-center flex items-center justify-center gap-2">🎯 כשהילדים מצליחים בלימודים</h2>
+                    <p class="mb-4">זה קורה בזכות:</p>
+                    <ul class="list-disc pr-6 space-y-1">
+                        <li class="flex items-start gap-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-green-600 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span>ביטחון עצמי, חברתי ורגשי</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-green-600 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span>מוטיבציה פנימית</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-green-600 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span><strong>והכי חשוב – שקט בבית!</strong></span>
+                        </li>
+                    </ul>
+                    <p class="mt-4">אפשר להגיע לזה... מהר ממה שחשבת</p>
+                    <p class="mt-2 font-bold">פיתוח מיומנויות למידה – היכולת ללמוד איך ללמוד</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STICKER / SOCIAL PROOF -->
+    <section class="py-12 bg-gradient-to-r from-sky-100 via-green-50 to-amber-100 text-center animate-on-scroll">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-2xl md:text-2xl font-bold text-slate-800 mb-2">כבר אלפי הורים וילדים בחרו ב<span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-amber-600 font-extrabold text-2xl">לומדים בטוח</span></h2>
+            <p class="text-slate-600">מעל 97% שביעות רצון • שקט בבית • ביטחון בלמידה</p>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="py-4 animate-on-scroll">
+        <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-[2fr,1fr] gap-6 items-center">
+            <div class="rounded-2xl border bg-white/90 glass p-6 shadow-lg">
+                <h2 class="text-2xl font-black mb-2">נעים מאוד, עמית שלום</h2>
+                <p class="text-slate-600">20 שנים מורה לחינוך מיוחד מאסטר NLP, מאמן ילדים ונוער. משלב הוראה מקצועית עם כלים רגשיים כדי לגעת בשורש הקושי — ולהחזיר לילד את הביטחון, הסקרנות והשמחה בלמידה.</p>
+                <div class="mt-4 text-sm grid gap-1 text-slate-600">
+                    <div>📍 משרדים: היצירה 3, רעננה</div>
+                    <div> · <a class="font-bold hover:text-blue-600 transition-colors" href="https://wa.me/972546508835" target="_blank" rel="noopener" aria-label="פנייה בוואטסאפ">וואטסאפ</a></div>
+                    <div>✉️ <a class="font-bold hover:text-blue-600 transition-colors" href="mailto:amitshalom123@gmail.com" aria-label="שליחת אימייל">amitshalom123@gmail.com</a></div>
+                </div>
+            </div>
+            <div class="rounded-2xl overflow-hidden border bg-white/70 glass shadow-lg">
+                <img src="https://ellprnxjjzatijdxcogk.supabase.co/storage/v1/object/public/superdev-project-images/8836dee2-b5be-4634-9523-9db496afa481/exx4yrqzhkdptkxysdkl/1758830004074-WhatsApp-Image-2025-09-22-at-12.57.56.jpeg" alt="עמית שלום – פורטרט מקצועי בחולצה שחורה" class="object-cover w-full h-full" loading="lazy"/>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why School Doesn't Always Work -->
+    <section class="py-16 bg-gradient-to-b from-white to-gray-50 animate-on-scroll">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <div class="bg-white rounded-2xl shadow-xl p-8 mb-12 hover:shadow-2xl transition text-right">
+                <h2 class="text-2xl md:text-2xl font-bold text-gray-900 mb-6 text-center">למה בית הספר לא תמיד מצליח?</h2>
+                <ol class="list-decimal list-inside space-y-1 text-gray-700 text-lg mb-6">
+                    <li>אין מספיק כוח אדם לטפל בשורש הבעיה</li>
+                    <li>אין את הזמן הנדרש להשקיע בכל ילד</li>
+                    <li>למורים אין את הכלים הדרושים לזהות ולטפל בשורש הבעיה</li>
+                </ol>
+                <p class="text-lg text-gray-800 font-medium">
+                    אנו פוגשים את הבעיה <span class="text-pink-600 font-bold"><span style="color:#8B4513; font-weight:bold;">בדיוק בזמן ובמקום שהיא צצה — בשיעור עצמו!</span></span>
+                </p>
+                <p class="text-lg text-gray-800 font-medium mt-2">
+                    אנו מתמחים בזיהוי הקושי ושילוב כלים רגשיים בתוך ההוראה.
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-xl p-8 mb-12 hover:shadow-2xl transition">
+                <h3 class="text-2xl font-bold mb-4">
+                    <span class="text-blue-800">הקושי בלימודים הוא רק הסימן החיצוני</span> — 
+                    <span class="text-orange-600">לא הסיבה האמיתית</span>
+                </h3>
+                <p class="text-gray-700 mb-6 text-lg">
+                    אנחנו עובדים על מה שמתחת לפני השטח: חיזוק הביטחון, העלאת המוטיבציה, הקניית מיומנויות למידה.<br/>
+                    ואז מתמטיקה, שפה ואנגלית משתפרים פלאות.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="p-6 bg-sky-50 rounded-xl shadow-md hover:shadow-lg transition">
+                    <h4 class="text-xl font-semibold text-gray-900 mb-2">חיזוק הביטחון</h4>
+                    <p class="text-gray-600">הילד מרגיש מסוגל</p>
+                </div>
+                <div class="p-6 bg-amber-50 rounded-xl shadow-md hover:shadow-lg transition">
+                    <h4 class="text-xl font-semibold text-gray-900 mb-2">העלאת המוטיבציה</h4>
+                    <p class="text-gray-600">רוצה להצליח מבפנים</p>
+                </div>
+                <div class="p-6 bg-green-50 rounded-xl shadow-md hover:shadow-lg transition">
+                    <h4 class="text-xl font-semibold text-gray-900 mb-2">עצמאות בלמידה</h4>
+                    <p class="text-gray-600">לומד ללמוד בעצמו</p>
+                </div>
+                <div class="p-6 bg-pink-50 rounded-xl shadow-md hover:shadow-lg transition">
+                    <h4 class="text-xl font-semibold text-gray-900 mb-2">שקט בבית</h4>
+                    <p class="text-gray-600">פחות מריבות, יותר שותפות</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA BUTTONS SECTION -->
+    <section class="py-12 bg-gradient-to-r from-sky-100 to-amber-100 animate-on-scroll">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-2xl font-bold text-slate-800 mb-3">מוכנים להתחיל? 🚀</h2>
+            <p class="text-lg text-slate-700 mb-6">אפשר לבחור מסלול – או להתחיל בשיחת התאמה קצרה וחינמית</p>
+            <div class="flex flex-col sm:flex-row gap-3 justify-center">
+                <a href="tel:0546508835" class="btn-soft btn-primary text-lg px-6 py-3 rounded-full bg-white text-blue-600 border border-blue-200 font-semibold hover:bg-blue-50 transition-colors inline-flex items-center justify-center gap-2">📞 שיחת התאמה</a>
+                <a href="#packages" class="btn-soft btn-ghost text-lg px-6 py-3 rounded-full bg-transparent text-slate-700 border border-slate-300 font-semibold hover:bg-slate-50 transition-colors inline-flex items-center justify-center gap-2">🛒 צפו במסלולים</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="py-20 animate-on-scroll">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">השירותים שלנו 🎯</h2>
+                <p class="text-base text-gray-600 max-w-3xl mx-auto">שיעורים פרטיים טיפוליים + קורסים המלווים בליווי רגשי וכלים ללמידה עצמאית</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover-lift">
+                    <div class="flex flex-col items-center text-center">
+                        <div class="mb-6 p-3 bg-gradient-to-br from-white to-gray-50 rounded-full shadow-md">
+                            <div class="w-12 h-12 text-2xl flex items-center justify-center" aria-hidden="true">📚</div>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">שיעורים פרטיים מותאמים</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">מתמטיקה / שפה / אנגלית בקצב של הילד, עם פירוק חסמים רגשיים תוך כדי למידה</p>
+                        <div class="space-y-1 w-full">
+                            <div class="flex items-center justify-center bg-sky-50 rounded-lg py-2 px-4"><span class="ml-2 text-green-600" aria-hidden="true">✔</span><span class="text-gray-700 font-medium">התאמה אישית מלאה</span></div>
+                            <div class="flex items-center justify-center bg-amber-50 rounded-lg py-2 px-4"><span class="ml-2 text-green-600" aria-hidden="true">✔</span><span class="text-gray-700 font-medium">מעקב ושיחות הורה</span></div>
+                            <div class="flex items-center justify-center bg-sky-50 rounded-lg py-2 px-4"><span class="ml-2 text-green-600" aria-hidden="true">✔</span><span class="text-gray-700 font-medium">בניית שגרות למידה</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover-lift">
+                    <div class="flex flex-col items-center text-center">
+                        <div class="mb-6 p-3 bg-gradient-to-br from-white to-gray-50 rounded-full shadow-md">
+                            <div class="w-12 h-12 text-2xl flex items-center justify-center" aria-hidden="true">👥</div>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">למידה בקבוצות קטנות</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">2–4 ילדים – תרגול חברתי, משחק ותהליכים של ביטחון ושותפות</p>
+                        <div class="space-y-1 w-full">
+                            <div class="flex items-center justify-center bg-amber-50 rounded-lg py-2 px-4"><span class="ml-2 text-green-600" aria-hidden="true">✔</span><span class="text-gray-700 font-medium">אינטראקציה מחזקת</span></div>
+                            <div class="flex items-center justify-center bg-sky-50 rounded-lg py-2 px-4"><span class="ml-2 text-green-600" aria-hidden="true">✔</span><span class="text-gray-700 font-medium">למידה חווייתית</span></div>
+                            <div class="flex items-center justify-center bg-amber-50 rounded-lg py-2 px-4"><span class="ml-2 text-green-600" aria-hidden="true">✔</span><span class="text-gray-700 font-medium">עלות נוחה</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover-lift">
+                    <div class="flex flex-col items-center text-center">
+                        <div class="mb-6 p-3 bg-gradient-to-br from-white to-gray-50 rounded-full shadow-md">
+                            <div class="w-12 h-12 text-2xl flex items-center justify-center" aria-hidden="true">❤️</div>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">תמיכה רגשית בתוך השיעור</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">NLP, קואוצ'ינג וחינוך מיוחד – כחלק טבעי מהלמידה</p>
+                        <div class="space-y-1 w-full">
+                            <div class="flex items-center justify-center bg-sky-50 rounded-lg py-2 px-4"><span class="ml-2 text-green-600" aria-hidden="true">✔</span><span class="text-gray-700 font-medium">בניית ביטחון</span></div>
+                            <div class="flex items-center justify-center bg-amber-50 rounded-lg py-2 px-4"><span class="ml-2 text-green-600" aria-hidden="true">✔</span><span class="text-gray-700 font-medium">ניהול פחד מטעויות</span></div>
+                            <div class="flex items-center justify-center bg-sky-50 rounded-lg py-2 px-4"><span class="ml-2 text-green-600" aria-hidden="true">✔</span><span class="text-gray-700 font-medium">כלים לוויסות עצמי</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover-lift">
+                    <div class="flex flex-col items-center text-center">
+                        <div class="mb-6 p-3 bg-gradient-to-br from-white to-gray-50 rounded-full shadow-md">
+                            <div class="w-12 h-12 text-2xl flex items-center justify-center" aria-hidden="true">🧩</div>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">מומחיות בקשיי למידה</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">דיסלקציה, ADHD, קשיי קשב וריכוז – שיטות מותאמות וכלים מעשיים לבית</p>
+                        <div class="space-y-1 w-full">
+                            <div class="flex items-center justify-center bg-amber-50 rounded-lg py-2 px-4"><span class="ml-2 text-green-600" aria-hidden="true">✔</span><span class="text-gray-700 font-medium">כלים פרקטיים</span></div>
+                            <div class="flex items-center justify-center bg-sky-50 rounded-lg py-2 px-4"><span class="ml-2 text-green-600" aria-hidden="true">✔</span><span class="text-gray-700 font-medium">שיטות מותאמות</span></div>
+                            <div class="flex items-center justify-center bg-amber-50 rounded-lg py-2 px-4"><span class="ml-2 text-green-600" aria-hidden="true">✔</span><span class="text-gray-700 font-medium">דוחות התקדמות</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover-lift">
+                    <div class="flex flex-col items-center text-center">
+                        <div class="mb-6 p-3 bg-gradient-to-br from-white to-gray-50 rounded-full shadow-md">
+                            <div class="w-12 h-12 text-2xl flex items-center justify-center" aria-hidden="true">🕒</div>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">גמישות מלאה</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">לילדים מכיתה ו׳ עד כיתה י׳. אפשר גם בזום – אונליין מהבית או במרכז – מה שנוח לכם</p>
+                        <div class="space-y-1 w-full">
+                            <div class="flex items-center justify-center bg-sky-50 rounded-lg py-2 px-4"><span class="ml-2 text-green-600" aria-hidden="true">✔</span><span class="text-gray-700 font-medium">שיעורים מקוונים</span></div>
+                            <div class="flex items-center justify-center bg-amber-50 rounded-lg py-2 px-4"><span class="ml-2 text-green-600" aria-hidden="true">✔</span><span class="text-gray-700 font-medium">בית הלקוח / מרכז</span></div>
+                            <div class="flex items-center justify-center bg-sky-50 rounded-lg py-2 px-4"><span class="ml-2 text-green-600" aria-hidden="true">✔</span><span class="text-gray-700 font-medium">שיעורי בית מונחים</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover-lift">
+                    <div class="flex flex-col items-center text-center">
+                        <div class="mb-6 p-3 bg-gradient-to-br from-white to-gray-50 rounded-full shadow-md">
+                            <div class="w-12 h-12 text-2xl flex items-center justify-center" aria-hidden="true">🏡</div>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">ימי שליפה & הום-סקולינג</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">מענה להורים שבוחרים ימים מותאמים או הוצאה חלקית מביה״ס</p>
+                        <div class="space-y-1 w-full">
+                            <div class="flex items-center justify-center bg-amber-50 rounded-lg py-2 px-4"><span class="ml-2 text-green-600" aria-hidden="true">✔</span><span class="text-gray-700 font-medium">מיומנויות ללמידה עצמאית</span></div>
+                            <div class="flex items-center justify-center bg-sky-50 rounded-lg py-2 px-4"><span class="ml-2 text-green-600" aria-hidden="true">✔</span><span class="text-gray-700 font-medium">סילבוס מותאם</span></div>
+                            <div class="flex items-center justify-center bg-amber-50 rounded-lg py-2 px-4"><span class="ml-2 text-green-600" aria-hidden="true">✔</span><span class="text-gray-700 font-medium">הדרכת הורים שוטפת</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What We Give -->
+    <section class="py-16 bg-white animate-on-scroll">
+        <div class="max-w-6xl mx-auto px-6 xl:px-10 text-center">
+            <h2 class="text-2xl md:text-2xl font-bold text-slate-900 mb-2 flex justify-center items-center gap-2">
+                🎁 מה אנחנו נותנים?
+            </h2>
+
+            <div class="grid md:grid-cols-3 gap-6 text-right">
+                <div class="glass rounded-2xl p-6 border border-slate-200 shadow-sm transition transform hover:-translate-y-2 hover:shadow-xl">
+                    <h3 class="text-lg font-bold mb-4">להורים</h3>
+                    <ul class="space-y-1">
+                        <li>✅ שקט בבית – פחות מריבות על שיעורים</li>
+                        <li>✅ ילד עצמאי שלא צריך "לדחוף" כל הזמן</li>
+                        <li>✅ התאמות ממורה מנוסה</li>
+                        <li>✅ שיקוף התקדמות וכלים לבית</li>
+                    </ul>
+                </div>
+
+                <div class="glass rounded-2xl p-6 border border-slate-200 shadow-sm transition transform hover:-translate-y-2 hover:shadow-xl">
+                    <h3 class="text-lg font-bold mb-4">לילדים</h3>
+                    <ul class="space-y-1">
+                        <li>✅ לומד עצמאי – לומד איך ללמוד</li>
+                        <li>✅ שקט נפשי וביטחון עצמי</li>
+                        <li>✅ שמחה בלמידה וחיבור לבית הספר</li>
+                        <li>✅ מיומנויות חברתיות ועבודת צוות</li>
+                    </ul>
+                </div>
+
+                <div class="glass rounded-2xl p-6 border border-slate-200 shadow-sm transition transform hover:-translate-y-2 hover:shadow-xl">
+                    <h3 class="text-lg font-bold mb-4">למה זה עובד</h3>
+                    <ul class="space-y-1">
+                        <li>✅ מטפלים בשורש הקושי תוך כדי הלמידה</li>
+                        <li>✅ משלבים כלים רגשיים בתוך ההוראה</li>
+                        <li>✅ מדדים ומעקב התקדמות להורה</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-12 bg-gradient-to-r from-sky-50 to-amber-50 animate-on-scroll">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">מעוניינים לשמוע עוד? 📞</h2>
+            <p class="text-base text-gray-600 mb-6">שיחת היכרות והתאמה – חינם וללא התחייבות</p>
+            <div class="flex flex-col sm:flex-row gap-3 justify-center">
+                <a href="tel:0546508835" class="btn-soft btn-primary text-lg px-10 py-3 rounded-full bg-white text-blue-600 border border-blue-200 font-semibold hover:bg-blue-50 transition-colors inline-flex items-center justify-center gap-2" aria-label="התקשרות לשיחת התאמה">📱 שיחת התאמה</a>
+                <a href="https://wa.me/972546508835" target="_blank" rel="noopener" class="btn-soft btn-accent text-lg px-10 py-3 rounded-full bg-white text-amber-600 border border-amber-200 font-semibold hover:bg-amber-50 transition-colors inline-flex items-center justify-center gap-2" aria-label="פנייה בוואטסאפ">💬 וואטסאפ מיידי</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- What Happens in Lesson -->
+    <section id="lesson" class="py-16 bg-white animate-on-scroll">
+        <div class="max-w-6xl mx-auto px-6 xl:px-10 grid md:grid-cols-2 gap-10 items-center">
+            <div>
+                <h2 class="text-2xl md:text-2xl font-bold text-slate-900 mb-6">מה באמת קורה בשיעור?</h2>
+                <p class="text-slate-600 mb-8">
+                    מזהים את שורש הקושי בזמן אמת, עובדים בקצב שמתאים לילד, ומשלבים כלים רגשיים בתוך ההוראה בפועל.
+                </p>
+                <div class="grid gap-6">
+                    <div class="glass rounded-2xl p-6 border border-slate-200 shadow-sm transition transform hover:-translate-y-2 hover:shadow-xl">
+                        <h3 class="font-bold mb-2">1. למידה חווייתית</h3>
+                        <p class="text-slate-700">התלמיד חווה הצלחה בלמידה דרך משחק, שיח ותרגול.</p>
+                    </div>
+                    <div class="glass rounded-2xl p-6 border border-slate-200 shadow-sm transition transform hover:-translate-y-2 hover:shadow-xl">
+                        <h3 class="font-bold mb-2">2. שילוב רגשי ופדגוגי</h3>
+                        <p class="text-slate-700">כלי NLP ואימון אישי מוטמעים בתוך ההוראה.</p>
+                    </div>
+                    <div class="glass rounded-2xl p-6 border border-slate-200 shadow-sm transition transform hover:-translate-y-2 hover:shadow-xl">
+                        <h3 class="font-bold mb-2">3. מעקב ושיקוף</h3>
+                        <p class="text-slate-700">הורה מקבל משוב וכלי המשך לבית.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="rounded-2xl overflow-hidden border bg-white/70 glass shadow-lg">
+                <img src="https://ellprnxjjzatijdxcogk.supabase.co/storage/v1/object/public/superdev-project-images/8836dee2-b5be-4634-9523-9db496afa481/exx4yrqzhkdptkxysdkl/1758830004074-WhatsApp-Image-2025-09-22-at-12.57.56-1.jpeg" alt="עמית שלום מעביר שיעור מול קהל ילדים" class="object-cover w-full h-full" loading="lazy"/>
+            </div>
+        </div>
+    </section>
+
+    <!-- METHOD -->
+    <section id="method" class="py-16 bg-gradient-to-b from-slate-50 to-white animate-on-scroll">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-2xl md:text-2xl font-extrabold text-slate-900">איך זה עובד — צעד אחרי צעד</h2>
+                <p class="text-slate-600 mt-2">תהליך קצר, ברור ומדויק — מפגישת היכרות ועד ללומד עצמאי.</p>
+            </div>
+            <ol class="relative border-s-2 border-sky-200 ps-6 space-y-8">
+                <li>
+                    <div class="absolute -right-3 w-6 h-6 rounded-full bg-white border-2 border-sky-400"></div>
+                    <h3 class="font-bold text-slate-900">שיחת היכרות</h3>
+                    <p class="text-slate-700">מבינים יחד את התמונה, קובעים מטרות מדידות.</p>
+                </li>
+                <li>
+                    <div class="absolute -right-3 w-6 h-6 rounded-full bg-white border-2 border-sky-400"></div>
+                    <h3 class="font-bold text-slate-900">מיפוי ודיוק שורש הקושי</h3>
+                    <p class="text-slate-700">זיהוי בזמן אמת — בשיעור עצמו.</p>
+                </li>
+                <li>
+                    <div class="absolute -right-3 w-6 h-6 rounded-full bg-white border-2 border-sky-400"></div>
+                    <h3 class="font-bold text-slate-900">תכנית למידה מותאמת</h3>
+                    <p class="text-slate-700">חיבור בין למידה רגשית וקוגניטיבית.</p>
+                </li>
+                <li>
+                    <div class="absolute -right-3 w-6 h-6 rounded-full bg-white border-2 border-sky-400"></div>
+                    <h3 class="font-bold text-slate-900">מפגשים + תרגול קצר לבית</h3>
+                    <p class="text-slate-700">מקדם מצוינות בלי להעמיס על הבית.</p>
+                </li>
+                <li>
+                    <div class="absolute -right-3 w-6 h-6 rounded-full bg-white border-2 border-sky-400"></div>
+                    <h3 class="font-bold text-slate-900">בדיקות התקדמות ושקיפות</h3>
+                    <p class="text-slate-700">שיקוף להורים וכלים ליישום בבית.</p>
+                </li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- AUDIENCE -->
+    <section id="audience" class="py-20 bg-gradient-to-b from-amber-50 to-white animate-on-scroll">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-2xl font-bold text-slate-900 mb-4">למי מתאימים השיעורים? 🎯</h2>
+                <p class="text-lg text-slate-700 max-w-3xl mx-auto">
+                    ✨ השיטה טבעית וללא ריטלין – מחזקת מוטיבציה פנימית, תחושת מסוגלות וביטחון עצמי, 
+                    ומסייעת בהתמודדות עם חוסר ביטחון וקשיי קשב וריכוז.
+                </p>
+            </div>
+
+            <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+                <div class="bg-white/90 backdrop-blur-sm rounded-2xl shadow-lg p-8 text-center hover:shadow-xl transition">
+                    <div class="text-5xl mb-4" aria-hidden="true">🧠</div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">לקויות למידה וקשיי קשב</h3>
+                    <p class="text-slate-600">
+                        מתאים לילדים עם דיסלקציה, ADHD או חוסר ביטחון – שילוב של כלים רגשיים ולימודיים.
+                    </p>
+                </div>
+
+                <div class="bg-white/90 backdrop-blur-sm rounded-2xl shadow-lg p-8 text-center hover:shadow-xl transition">
+                    <div class="text-5xl mb-4" aria-hidden="true">🚀</div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">שיפור במתמטיקה, שפה ואנגלית</h3>
+                    <p class="text-slate-600">
+                        עבור ילדים שזקוקים לחיזוק במקצועות הליבה, וגם עבור מתקדמים שרוצים להעמיק ולהישאר צעד קדימה.
+                    </p>
+                </div>
+
+                <div class="bg-white/90 backdrop-blur-sm rounded-2xl shadow-lg p-8 text-center hover:shadow-xl transition">
+                    <div class="text-5xl mb-4" aria-hidden="true">🏡</div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">חינוך ביתי וימי שליפה</h3>
+                    <p class="text-slate-600">
+                        מענה למשפחות שבוחרות הום־סקולינג או שילוב חלקי – עם מסגרת מותאמת אישית וחיזוק חברתי.
+                    </p>
+                </div>
+
+                <div class="bg-white/90 backdrop-blur-sm rounded-2xl shadow-lg p-8 text-center hover:shadow-xl transition">
+                    <div class="text-5xl mb-4" aria-hidden="true">💪</div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">בניית ביטחון עצמי ומוטיבציה</h3>
+                    <p class="text-slate-600">
+                        הילד לומד בשמחה, מפתח מוטיבציה פנימית והופך בהדרגה للומד עצמאי שמאמין בעצמו.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RESEARCH -->
+    <section id="research" class="py-10 animate-on-scroll">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-8">
+                <h2 class="text-2xl md:text-2xl font-bold text-slate-900 flex items-center justify-center gap-2">
+                    📑 מחקרים המוכיחים את השיטה
+                </h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="glass rounded-2xl p-6 border border-slate-200 shadow-sm transition transform hover:-translate-y-2 hover:shadow-xl">
+                    <p class="text-slate-700 mb-2">
+                        "ניתוח־על של 213 תכניות SEL מצא שיפור חברתי־רגשי ועלייה בהישגים."
+                    </p>
+                    <div class="font-bold text-slate-900 mb-2">
+                        Durlak et al., 2011
+                    </div>
+                    <a href="https://srcd.onlinelibrary.wiley.com/doi/10.1111/j.1467-8624.2010.01564.x"
+                       class="text-sky-700 underline hover:text-sky-900 transition-colors" target="_blank" rel="noopener">לקישור למחקר</a>
+                </div>
+
+                <div class="glass rounded-2xl p-6 border border-slate-200 shadow-sm transition transform hover:-translate-y-2 hover:shadow-xl">
+                    <p class="text-slate-700 mb-2">
+                        "מעקבי המשך הראו שהשפעות SEL נשמרות וניכרות לאורך זמן."
+                    </p>
+                    <div class="font-bold text-slate-900 mb-2">
+                        Taylor, Oberle, Durlak & Weissberg, 2017
+                    </div>
+                    <a href="https://srcd.onlinelibrary.wiley.com/doi/abs/10.1111/cdev.12864"
+                       class="text-sky-700 underline hover:text-sky-900 transition-colors" target="_blank" rel="noopener">לקישור למחקר</a>
+                </div>
+
+                <div class="glass rounded-2xl p-6 border border-slate-200 shadow-sm transition transform hover:-translate-y-2 hover:shadow-xl">
+                    <p class="text-slate-700 mb-2">
+                        "סקירת־על: מיומנויות ניהול למידה קשורות להישגים גבוהים יותר."
+                    </p>
+                    <div class="font-bold text-slate-900 mb-2">
+                        Dent & Koenka, 2016
+                    </div>
+                    <a href="https://link.springer.com/article/10.1007/s10648-015-9320-8"
+                       class="text-sky-700 underline hover:text-sky-900 transition-colors" target="_blank" rel="noopener">לקישור למחקר</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="parents-testimonials" class="py-20 bg-gradient-to-b from-white to-amber-50 animate-on-scroll">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-2xl font-bold text-slate-900 mb-4">הורים ממליצים ⭐⭐⭐⭐⭐</h2>
+                <p class="text-lg text-slate-700 max-w-3xl mx-auto">
+                    מעל 97% שביעות רצון — ההורים ממליצים על השינוי שחוו הילדים בבית ובלימודים.
+                </p>
+            </div>
+
+            <div class="testimonials-container max-w-7xl mx-auto px-4">
+                <div class="testimonials-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    
+                    <!-- 1: מירי שחיר -->
+                    <section class="testimonial-card relative rounded-2xl shadow-lg p-6 pb-16 min-h-[220px] bg-green-50">
+                        <div class="absolute top-4 right-4 w-12 h-12 rounded-full bg-green-200 flex items-center justify-center text-gray-800 font-bold shadow">
+                            מ.ש
+                        </div>
+                        <h3 class="font-black text-xl text-right mb-1 mr-16 text-gray-800">מירי שחיר</h3>
+                        <div class="text-gray-600 text-sm text-right mb-3 mr-16">אמא לתום, כיתה ו׳</div>
+                        <div class="text-lg leading-relaxed text-right text-gray-700">
+                            "הבית שלנו השתנה לגמרי. אין יותר בכי על שיעורי בית, ותום אפילו מבקש ללמוד יותר!"
+                        </div>
+                        <div class="absolute bottom-4 left-4 flex gap-1" aria-label="5 מתוך 5">
+                            <span class="w-5 h-5" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="#ffc107" class="w-full h-full">
+                                    <path d="M12 .6l3.7 7.4 8.2 1.2-6 5.8 1.4 8.2L12 18.9 4.7 23.2l1.4-8.2L.1 9.2l8.2-1.2L12 .6z"/>
+                                </svg>
+                            </span>
+                            <span class="w-5 h-5" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="#ffc107" class="w-full h-full">
+                                    <path d="M12 .6l3.7 7.4 8.2 1.2-6 5.8 1.4 8.2L12 18.9 4.7 23.2l1.4-8.2L.1 9.2l8.2-1.2L12 .6z"/>
+                                </svg>
+                            </span>
+                            <span class="w-5 h-5" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="#ffc107" class="w-full h-full">
+                                    <path d="M12 .6l3.7 7.4 8.2 1.2-6 5.8 1.4 8.2L12 18.9 4.7 23.2l1.4-8.2L.1 9.2l8.2-1.2L12 .6z"/>
+                                </svg>
+                            </span>
+                            <span class="w-5 h-5" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="#ffc107" class="w-full h-full">
+                                    <path d="M12 .6l3.7 7.4 8.2 1.2-6 5.8 1.4 8.2L12 18.9 4.7 23.2l1.4-8.2L.1 9.2l8.2-1.2L12 .6z"/>
+                                </svg>
+                            </span>
+                            <span class="w-5 h-5" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="#ffc107" class="w-full h-full">
+                                    <path d="M12 .6l3.7 7.4 8.2 1.2-6 5.8 1.4 8.2L12 18.9 4.7 23.2l1.4-8.2L.1 9.2l8.2-1.2L12 .6z"/>
+                                </svg>
+                            </span>
+                        </div>
+                    </section>
+
+                    <!-- 2: דני לוי -->
+                    <section class="testimonial-card relative rounded-2xl shadow-lg p-6 pb-16 min-h-[220px] bg-yellow-50">
+                        <div class="absolute top-4 right-4 w-12 h-12 rounded-full bg-purple-200 flex items-center justify-center text-gray-800 font-bold shadow">
+                            ד.ל
+                        </div>
+                        <h3 class="font-black text-xl text-right mb-1 mr-16 text-gray-800">דני לוי</h3>
+                        <div class="text-gray-600 text-sm text-right mb-3 mr-16">אבא לאיתן, כיתה ה׳</div>
+                        <div class="text-lg leading-relaxed text-right text-gray-700">
+                            "עמית הצליח להגיע לאיתן בדרך שאף מורה לא הצליח. הביטחון העצמי שלו עלה בצורה מדהימה."
+                        </div>
+                        <div class="absolute bottom-4 left-4 flex gap-1" aria-label="5 מתוך 5">
+                            <span class="w-5 h-5" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="#ffc107" class="w-full h-full">
+                                    <path d="M12 .6l3.7 7.4 8.2 1.2-6 5.8 1.4 8.2L12 18.9 4.7 23.2l1.4-8.2L.1 9.2l8.2-1.2L12 .6z"/>
+                                </svg>
+                            </span>
+                            <span class="w-5 h-5" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="#ffc107" class="w-full h-full">
+                                    <path d="M12 .6l3.7 7.4 8.2 1.2-6 5.8 1.4 8.2L12 18.9 4.7 23.2l1.4-8.2L.1 9.2l8.2-1.2L12 .6z"/>
+                                </svg>
+                            </span>
+                            <span class="w-5 h-5" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="#ffc107" class="w-full h-full">
+                                    <path d="M12 .6l3.7 7.4 8.2 1.2-6 5.8 1.4 8.2L12 18.9 4.7 23.2l1.4-8.2L.1 9.2l8.2-1.2L12 .6z"/>
+                                </svg>
+                            </span>
+                            <span class="w-5 h-5" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="#ffc107" class="w-full h-full">
+                                    <path d="M12 .6l3.7 7.4 8.2 1.2-6 5.8 1.4 8.2L12 18.9 4.7 23.2l1.4-8.2L.1 9.2l8.2-1.2L12 .6z"/>
+                                </svg>
+                            </span>
+                            <span class="w-5 h-5" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="#ffc107" class="w-full h-full">
+                                    <path d="M12 .6l3.7 7.4 8.2 1.2-6 5.8 1.4 8.2L12 18.9 4.7 23.2l1.4-8.2L.1 9.2l8.2-1.2L12 .6z"/>
+                                </svg>
+                            </span>
+                        </div>
+                    </section>
+
+                    <!-- 3: רחל כהן -->
+                    <section class="testimonial-card relative rounded-2xl shadow-lg p-6 pb-16 min-h-[220px] bg-blue-50">
+                        <div class="absolute top-4 right-4 w-12 h-12 rounded-full bg-blue-200 flex items-center justify-center text-gray-800 font-bold shadow">
+                            ר.כ
+                        </div>
+                        <h3 class="font-black text-xl text-right mb-1 mr-16 text-gray-800">רחל כהן</h3>
+                        <div class="text-gray-600 text-sm text-right mb-3 mr-16">אמא לנועה, כיתה ד׳</div>
+                        <div class="text-lg leading-relaxed text-right text-gray-700">
+                            "תוך חודש אחד נועה כבר הראתה שיפור משמעותי במתמטיקה. הכי חשוב - היא שוב אוהבת ללמוד!"
+                        </div>
+                        <div class="absolute bottom-4 left-4 flex gap-1" aria-label="5 מתוך 5">
+                            <span class="w-5 h-5" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="#ffc107" class="w-full h-full">
+                                    <path d="M12 .6l3.7 7.4 8.2 1.2-6 5.8 1.4 8.2L12 18.9 4.7 23.2l1.4-8.2L.1 9.2l8.2-1.2L12 .6z"/>
+                                </svg>
+                            </span>
+                            <span class="w-5 h-5" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="#ffc107" class="w-full h-full">
+                                    <path d="M12 .6l3.7 7.4 8.2 1.2-6 5.8 1.4 8.2L12 18.9 4.7 23.2l1.4-8.2L.1 9.2l8.2-1.2L12 .6z"/>
+                                </svg>
+                            </span>
+                            <span class="w-5 h-5" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="#ffc107" class="w-full h-full">
+                                    <path d="M12 .6l3.7 7.4 8.2 1.2-6 5.8 1.4 8.2L12 18.9 4.7 23.2l1.4-8.2L.1 9.2l8.2-1.2L12 .6z"/>
+                                </svg>
+                            </span>
+                            <span class="w-5 h-5" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="#ffc107" class="w-full h-full">
+                                    <path d="M12 .6l3.7 7.4 8.2 1.2-6 5.8 1.4 8.2L12 18.9 4.7 23.2l1.4-8.2L.1 9.2l8.2-1.2L12 .6z"/>
+                                </svg>
+                            </span>
+                            <span class="w-5 h-5" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="#ffc107" class="w-full h-full">
+                                    <path d="M12 .6l3.7 7.4 8.2 1.2-6 5.8 1.4 8.2L12 18.9 4.7 23.2l1.4-8.2L.1 9.2l8.2-1.2L12 .6z"/>
+                                </svg>
+                            </span>
+                        </div>
+                    </section>
+
+                    <!-- 4: לינה ברק -->
+                    <section class="testimonial-card relative rounded-2xl shadow-lg p-6 pb-16 min-h-[220px] bg-indigo-50">
+                        <div class="absolute top-4 right-4 w-12 h-12 rounded-full bg-indigo-200 flex items-center justify-center text-gray-800 font-bold shadow">
+                            ל.ב
+                        </div>
+                        <h3 class="font-black text-xl text-right mb-1 mr-16 text-gray-800">לינה ברק</h3>
+                        <div class="text-gray-600 text-sm text-right mb-3 mr-16">אמא לרון, כיתה ח׳</div>
+                        <div class="text-lg leading-relaxed text-right text-gray-700">
+                            "רון היה עם ADHD ובעיות קשב. עמית הצליח להפוך את הלמידה לחוויה מהנה עבורו."
+                        </div>
+                        <div class="absolute bottom-4 left-4 flex gap-1" aria-label="5 מתוך 5">
+                            <span class="w-5 h-5" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="#ffc107" class="w-full h-full">
+                                    <path d="M12 .6l3.7 7.4 8.2 1.2-6 5.8 1.4 8.2L12 18.9 4.7 23.2l1.4-8.2L.1 9.2l8.2-1.2L12 .6z"/>
+                                </svg>
+                            </span>
+                            <span class="w-5 h-5" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="#ffc107" class="w-full h-full">
+                                    <path d="M12 .6l3.7 7.4 8.2 1.2-6 5.8 1.4 8.2L12 18.9 4.7 23.2l1.4-8.2L.1 9.2l8.2-1.2L12 .6z"/>
+                                </svg>
+                            </span>
+                            <span class="w-5 h-5" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="#ffc107" class="w-full h-full">
+                                    <path d="M12 .6l3.7 7.4 8.2 1.2-6 5.8 1.4 8.2L12 18.9 4.7 23.2l1.4-8.2L.1 9.2l8.2-1.2L12 .6z"/>
+                                </svg>
+                            </span>
+                            <span class="w-5 h-5" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="#ffc107" class="w-full h-full">
+                                    <path d="M12 .6l3.7 7.4 8.2 1.2-6 5.8 1.4 8.2L12 18.9 4.7 23.2l1.4-8.2L.1 9.2l8.2-1.2L12 .6z"/>
+                                </svg>
+                            </span>
+                            <span class="w-5 h-5" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="#ffc107" class="w-full h-full">
+                                    <path d="M12 .6l3.7 7.4 8.2 1.2-6 5.8 1.4 8.2L12 18.9 4.7 23.2l1.4-8.2L.1 9.2l8.2-1.2L12 .6z"/>
+                                </svg>
+                            </span>
+                        </div>
+                    </section>
+
+                    <!-- 5: אבי מזרחי -->
+                    <section class="testimonial-card relative rounded-2xl shadow-lg p-6 pb-16 min-h-[220px] bg-orange-50">
+                        <div class="absolute top-4 right-4 w-12 h-12 rounded-full bg-red-200 flex items-center justify-center text-gray-800 font-bold shadow">
+                            א.מ
+                        </div>
+                        <h3 class="font-black text-xl text-right mb-1 mr-16 text-gray-800">אבי מזרחי</h3>
+                        <div class="text-gray-600 text-sm text-right mb-3 mr-16">אבא לעומר, כיתה ז׳</div>
+                        <div class="text-lg leading-relaxed text-right text-gray-700">
+                            "עומר עבר מציונים נמוכים לציונים גבוהים תוך 3 חודשים. השיטה של עמית פשוט עובדת!"
+                        </div>
+                        <div class="absolute bottom-4 left-4 flex gap-1" aria-label="5 מתוך 5">
+                            <span class="w-5 h-5" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="#ffc107" class="w-full h-full">
+                                    <path d="M12 .6l3.7 7.4 8.2 1.2-6 5.8 1.4 8.2L12 18.9 4.7 23.2l1.4-8.2L.1 9.2l8.2-1.2L12 .6z"/>
+                                </svg>
+                            </span>
+                            <span class="w-5 h-5" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="#ffc107" class="w-full h-full">
+                                    <path d="M12 .6l3.7 7.4 8.2 1.2-6 5.8 1.4 8.2L12 18.9 4.7 23.2l1.4-8.2L.1 9.2l8.2-1.2L12 .6z"/>
+                                </svg>
+                            </span>
+                            <span class="w-5 h-5" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="#ffc107" class="w-full h-full">
+                                    <path d="M12 .6l3.7 7.4 8.2 1.2-6 5.8 1.4 8.2L12 18.9 4.7 23.2l1.4-8.2L.1 9.2l8.2-1.2L12 .6z"/>
+                                </svg>
+                            </span>
+                            <span class="w-5 h-5" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="#ffc107" class="w-full h-full">
+                                    <path d="M12 .6l3.7 7.4 8.2 1.2-6 5.8 1.4 8.2L12 18.9 4.7 23.2l1.4-8.2L.1 9.2l8.2-1.2L12 .6z"/>
+                                </svg>
+                            </span>
+                            <span class="w-5 h-5" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="#ffc107" class="w-full h-full">
+                                    <path d="M12 .6l3.7 7.4 8.2 1.2-6 5.8 1.4 8.2L12 18.9 4.7 23.2l1.4-8.2L.1 9.2l8.2-1.2L12 .6z"/>
+                                </svg>
+                            </span>
+                        </div>
+                    </section>
+
+                    <!-- 6: שרה רוזן -->
+                    <section class="testimonial-card relative rounded-2xl shadow-lg p-6 pb-16 min-h-[220px] bg-purple-50">
+                        <div class="absolute top-4 right-4 w-12 h-12 rounded-full bg-yellow-200 flex items-center justify-center text-gray-800 font-bold shadow">
+                            ש.ר
+                        </div>
+                        <h3 class="font-black text-xl text-right mb-1 mr-16 text-gray-800">שרה רוזן</h3>
+                        <div class="text-gray-600 text-sm text-right mb-3 mr-16">אמא לליה, כיתה ג׳</div>
+                        <div class="text-lg leading-relaxed text-right text-gray-700">
+                            "ליה הייתה עם דיסלקציה קשה. עמית הצליח לעזור לה לא רק בקריאה אלא גם בביטחון העצמי."
+                        </div>
+                        <div class="absolute bottom-4 left-4 flex gap-1" aria-label="5 מתוך 5">
+                            <span class="w-5 h-5" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="#ffc107" class="w-full h-full">
+                                    <path d="M12 .6l3.7 7.4 8.2 1.2-6 5.8 1.4 8.2L12 18.9 4.7 23.2l1.4-8.2L.1 9.2l8.2-1.2L12 .6z"/>
+                                </svg>
+                            </span>
+                            <span class="w-5 h-5" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="#ffc107" class="w-full h-full">
+                                    <path d="M12 .6l3.7 7.4 8.2 1.2-6 5.8 1.4 8.2L12 18.9 4.7 23.2l1.4-8.2L.1 9.2l8.2-1.2L12 .6z"/>
+                                </svg>
+                            </span>
+                            <span class="w-5 h-5" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="#ffc107" class="w-full h-full">
+                                    <path d="M12 .6l3.7 7.4 8.2 1.2-6 5.8 1.4 8.2L12 18.9 4.7 23.2l1.4-8.2L.1 9.2l8.2-1.2L12 .6z"/>
+                                </svg>
+                            </span>
+                            <span class="w-5 h-5" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="#ffc107" class="w-full h-full">
+                                    <path d="M12 .6l3.7 7.4 8.2 1.2-6 5.8 1.4 8.2L12 18.9 4.7 23.2l1.4-8.2L.1 9.2l8.2-1.2L12 .6z"/>
+                                </svg>
+                            </span>
+                            <span class="w-5 h-5" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="#ffc107" class="w-full h-full">
+                                    <path d="M12 .6l3.7 7.4 8.2 1.2-6 5.8 1.4 8.2L12 18.9 4.7 23.2l1.4-8.2L.1 9.2l8.2-1.2L12 .6z"/>
+                                </svg>
+                            </span>
+                        </div>
+                    </section>
+
+                </div>
+            </div>
+
+            <div class="text-center mt-12 space-y-4">
+                <a href="https://www.amitshalom.co.il/%D7%94%D7%9E%D7%9C%D7%A6%D7%95%D7%AA" target="_blank" rel="noopener" class="inline-block bg-gradient-to-r from-blue-600 to-blue-400 text-white px-8 py-4 rounded-xl text-lg font-bold shadow-lg hover:shadow-xl transition">
+                    👀 רוצים לראות עוד המלצות? הצטרפו לקהילה של הורים שמספרים על שינוי אמיתי
+                </a>
+            </div>
+        </div>
+
+        <!-- TEAM -->
+        <section id="team" class="py-12 bg-gradient-to-b from-white to-sky-50 animate-on-scroll">
+            <div class="max-w-6xl mx-auto px-6">
+                <div class="glass rounded-2xl p-8 shadow-lg">
+                    <div class="grid md:grid-cols-[1fr,2fr] gap-8 items-center">
+                        
+                        <div class="text-center">
+                            <img src="https://ellprnxjjzatijdxcogk.supabase.co/storage/v1/object/public/superdev-project-images/8836dee2-b5be-4634-9523-9db496afa481/exx4yrqzhkdptkxysdkl/1758830004072-WhatsApp-Image-2025-09-22-at-12.57.56-2.jpeg" alt="צוות לומדים בטוח - תמונה מצויירת" class="rounded-xl border object-cover w-full mx-auto" loading="lazy"/>
+                            <div class="mt-3 font-bold text-slate-800">צוות לומדים בטוח</div>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-2xl font-black mb-4">צוות עם ניסיון רב – גם פדגוגי וגם רגשי</h3>
+                            <p class="text-slate-700 mb-4">צוות קטן ומנוסה שמשלב חינוך מיוחד, הוראה מתקנת ו-NLP. אנחנו פוגשים את הקושי בזמן אמת, מחזקים ביטחון ומלמדים מיומנויות לחיים.</p>
+                            <ul class="space-y-2 text-slate-700">
+                                <li class="flex items-start gap-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-green-600 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                                    </svg>
+                                    <span>התאמה אישית מלאה + שקיפות להורה</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-green-600 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                                    </svg>
+                                    <span>שילוב בין מפגשים אישיים ללמידת עמיתים</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-green-600 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                                    </svg>
+                                    <span>דגש על עצמאות הילד ושקט בבית</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-20 bg-white animate-on-scroll">
+        <div class="max-w-7xl mx-auto px-6 xl:px-10">
+            <div class="text-center mb-10">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">שאלות נפוצות ❓</h2>
+                <p class="text-base text-gray-600 max-w-3xl mx-auto">לחצו על שאלה כדי לפתוח את התשובה</p>
+            </div>
+            <div class="max-w-4xl mx-auto space-y-1">
+                <details class="faq-item bg-gradient-to-r from-blue-50 to-orange-50 p-3 rounded-xl shadow-sm">
+                    <summary class="flex items-center justify-between cursor-pointer text-sm font-semibold text-gray-900">
+                        איך השיעורים שונים משיעורים פרטיים רגילים?
+                        <span class="faq-icon text-2xl leading-none" aria-hidden="true">＋</span>
+                    </summary>
+                    <div class="mt-1 text-gray-700 text-xs leading-snug">
+                        אנחנו משלבים למידה מקצועית עם אימון רגשי וחיזוק ביטחון. מטפלים בשורש הקושי ולא רק בחומר הנלמד.
+                    </div>
+                </details>
+
+                <details class="faq-item bg-gradient-to-r from-blue-50 to-orange-50 p-3 rounded-xl shadow-sm">
+                    <summary class="flex items-center justify-between cursor-pointer text-sm font-semibold text-gray-900">
+                        האם השיטה מתאימה לילדים עם לקויות למידה ו־ADHD?
+                        <span class="faq-icon text-2xl leading-none" aria-hidden="true">＋</span>
+                    </summary>
+                    <div class="mt-3 text-gray-700">כן. התהליך מותאם אישית, בקצב גמיש, עם כלים לעבודה בבית וליווי רציף.</div>
+                </details>
+
+                <details class="faq-item bg-gradient-to-r from-blue-50 to-orange-50 p-3 rounded-xl shadow-sm">
+                    <summary class="flex items-center justify-between cursor-pointer text-sm font-semibold text-gray-900">
+                        כמה זמן לוקח לראות תוצאות?
+                        <span class="faq-icon text-2xl leading-none" aria-hidden="true">＋</span>
+                    </summary>
+                    <div class="mt-3 text-gray-700">הביטחון והמוטיבציה עולים כבר אחרי מספר מפגשים; הישגים לימודיים ניכרים לרוב תוך 3–6 מפגשים, ותוך 4–6 שבועות רואים יציבות בלמידה.</div>
+                </details>
+
+                <details class="faq-item bg-gradient-to-r from-blue-50 to-orange-50 p-3 rounded-xl shadow-sm">
+                    <summary class="flex items-center justify-between cursor-pointer text-sm font-semibold text-gray-900">
+                        האם אתם עובדים גם בלי ריטלין?
+                        <span class="faq-icon text-2xl leading-none" aria-hidden="true">＋</span>
+                    </summary>
+                    <div class="mt-3 text-gray-700">כן. הגישה שלנו טבעית ומבוססת על חיזוק מוטיבציה פנימית ומסוגלות, בשיתוף ההורים והרופא המטפל במידת הצורך.</div>
+                </details>
+
+                <details class="faq-item bg-gradient-to-r from-blue-50 to-orange-50 p-3 rounded-xl shadow-sm">
+                    <summary class="flex items-center justify-between cursor-pointer text-sm font-semibold text-gray-900">
+                        איך מתבצעת ההתאמה האישית?
+                        <span class="faq-icon text-2xl leading-none" aria-hidden="true">＋</span>
+                    </summary>
+                    <div class="mt-3 text-gray-700">אנחנו מתחילים במיפוי קצר לילד, מגדירים מטרות ברורות, ובונים יחד תוכנית למידה־רגש מותאמת אישית.</div>
+                </details>
+
+                <details class="faq-item bg-gradient-to-r from-blue-50 to-orange-50 p-3 rounded-xl shadow-sm">
+                    <summary class="flex items-center justify-between cursor-pointer text-sm font-semibold text-gray-900">
+                        מה קורה במפגש הראשון?
+                        <span class="faq-icon text-2xl leading-none" aria-hidden="true">＋</span>
+                    </summary>
+                    <div class="mt-3 text-gray-700">במפגש הראשון אנחנו עושים הערכה פדגוגית ואישית, בונים תוכנית מותאמת ומעבירים משוב ראשוני להורים.</div>
+                </details>
+
+                <details class="faq-item bg-gradient-to-r from-blue-50 to-orange-50 p-3 rounded-xl shadow-sm">
+                    <summary class="flex items-center justify-between cursor-pointer text-sm font-semibold text-gray-900">
+                        היכן מתקיימים השיעורים?
+                        <span class="faq-icon text-2xl leading-none" aria-hidden="true">＋</span>
+                    </summary>
+                    <div class="mt-3 text-gray-700">במרכז שלנו ברחוב היצירה 3 ברעננה, או אונליין — תלוי בצרכי הילד ובגילו.</div>
+                </details>
+
+                <details class="faq-item bg-gradient-to-r from-blue-50 to-orange-50 p-3 rounded-xl shadow-sm">
+                    <summary class="flex items-center justify-between cursor-pointer text-sm font-semibold text-gray-900">
+                        האם אתם עובדים אונליין או פרונטלי?
+                        <span class="faq-icon text-2xl leading-none" aria-hidden="true">＋</span>
+                    </summary>
+                    <div class="mt-3 text-gray-700">גם וגם. לפי צרכי הילד וגילו אנחנו מוצאים את המתכונת שהכי מתאימה לו ולמשפחה.</div>
+                </details>
+
+                <details class="faq-item bg-gradient-to-r from-blue-50 to-orange-50 p-3 rounded-xl shadow-sm">
+                    <summary class="flex items-center justify-between cursor-pointer text-sm font-semibold text-gray-900">
+                        האם זה מתאים גם לילדים בחינוך ביתי (הום־סקולינג)?
+                        <span class="faq-icon text-2xl leading-none" aria-hidden="true">＋</span>
+                    </summary>
+                    <div class="mt-3 text-gray-700">כן. השירות נותן מענה לילדים הלומדים בבית במשרה מלאה או חלקית, עם תוכנית לימוד אישית.</div>
+                </details>
+
+                <details class="faq-item bg-gradient-to-r from-blue-50 to-orange-50 p-3 rounded-xl shadow-sm">
+                    <summary class="flex items-center justify-between cursor-pointer text-sm font-semibold text-gray-900">
+                        האם יש ליווי להורים?
+                        <span class="faq-icon text-2xl leading-none" aria-hidden="true">＋</span>
+                    </summary>
+                    <div class="mt-3 text-gray-700">כן. ההורים מקבלים הדרכה וכלים לבית, כדי לשמור על רציפות ולחזק את התהליך.</div>
+                </details>
+
+                <details class="faq-item bg-gradient-to-r from-blue-50 to-orange-50 p-3 rounded-xl shadow-sm">
+                    <summary class="flex items-center justify-between cursor-pointer text-sm font-semibold text-gray-900">
+                        מה קורה אם הילד לא "זורם" או לא רוצה לשתף פעולה?
+                        <span class="faq-icon text-2xl leading-none" aria-hidden="true">＋</span>
+                    </summary>
+                    <div class="mt-3 text-gray-700">באמצעות הכלים הרגשיים אנחנו מתחברים לילד בהדרגה, מזהים את מה שמעכב אותו, ויוצרים מוטיבציה פנימית. כמעט תמיד הילד מפתח שותפות אמיתית.</div>
+                </details>
+
+                <details class="faq-item bg-gradient-to-r from-blue-50 to-orange-50 p-3 rounded-xl shadow-sm">
+                    <summary class="flex items-center justify-between cursor-pointer text-sm font-semibold text-gray-900">
+                        האם יש חומרי תרגול בין המפגשים?
+                        <span class="faq-icon text-2xl leading-none" aria-hidden="true">＋</span>
+                    </summary>
+                    <div class="mt-3 text-gray-700">כן. הילדים מקבלים משימות קצרות, ברורות ומותאמות אישית — בלי להעמיס על הבית.</div>
+                </details>
+
+                <details class="faq-item bg-gradient-to-r from-blue-50 to-orange-50 p-3 rounded-xl shadow-sm">
+                    <summary class="flex items-center justify-between cursor-pointer text-sm font-semibold text-gray-900">
+                        איך נראית השגרה בין המפגשים?
+                        <span class="faq-icon text-2xl leading-none" aria-hidden="true">＋</span>
+                    </summary>
+                    <div class="mt-3 text-gray-700">הילד מתרגל מעט, באופן מדוד וברור, כך שהתהליך נשאר נעים ובר־ביצוע.</div>
+                </details>
+
+                <details class="faq-item bg-gradient-to-r from-blue-50 to-orange-50 p-3 rounded-xl shadow-sm">
+                    <summary class="flex items-center justify-between cursor-pointer text-sm font-semibold text-gray-900">
+                        איך מודדים התקדמות?
+                        <span class="faq-icon text-2xl leading-none" aria-hidden="true">＋</span>
+                    </summary>
+                    <div class="mt-3 text-gray-700">אנחנו בוחנים ביטחון, עצמאות והישגים לימודיים, עם שיקוף קבוע להורה והערכה רציפה.</div>
+                </details>
+
+                <details class="faq-item bg-gradient-to-r from-blue-50 to-orange-50 p-3 rounded-xl shadow-sm">
+                    <summary class="flex items-center justify-between cursor-pointer text-sm font-semibold text-gray-900">
+                        מה קורה אם אין חיבור למורה או לשיטה?
+                        <span class="faq-icon text-2xl leading-none" aria-hidden="true">＋</span>
+                    </summary>
+                    <div class="mt-3 text-gray-700">אנחנו מתאמים פגישה חוזרת ובוחנים התאמות — עד שמוצאים את הדרך הנכונה לילד.</div>
+                </details>
+
+                <details class="faq-item bg-gradient-to-r from-blue-50 to-orange-50 p-3 rounded-xl shadow-sm">
+                    <summary class="flex items-center justify-between cursor-pointer text-sm font-semibold text-gray-900">
+                        איך זה משתלב עם בית הספר?
+                        <span class="faq-icon text-2xl leading-none" aria-hidden="true">＋</span>
+                    </summary>
+                    <div class="mt-3 text-gray-700">אנחנו לא מחליפים את בית הספר אלא משלימים אותו. הילד מקבל כלים שיעזרו לו גם בכיתה וגם בבית.</div>
+                </details>
+
+                <details class="faq-item bg-gradient-to-r from-blue-50 to-orange-50 p-3 rounded-xl shadow-sm">
+                    <summary class="flex items-center justify-between cursor-pointer text-sm font-semibold text-gray-900">
+                        מה היתרון של למידת עמיתים?
+                        <span class="faq-icon text-2xl leading-none" aria-hidden="true">＋</span>
+                    </summary>
+                    <div class="mt-3 text-gray-700">בלמידת עמיתים (2–4 ילדים) הילד לומד יחד עם אחרים, מתרגל מיומנויות חברתיות, ביטחון ושותפות, תוך כדי קידום לימודי.</div>
+                </details>
+
+                <details class="faq-item bg-gradient-to-r from-blue-50 to-orange-50 p-3 rounded-xl shadow-sm">
+                    <summary class="flex items-center justify-between cursor-pointer text-sm font-semibold text-gray-900">
+                        האם אפשר להתחיל מיד בלמידת עמיתים?
+                        <span class="faq-icon text-2xl leading-none" aria-hidden="true">＋</span>
+                    </summary>
+                    <div class="mt-3 text-gray-700">לא. קודם כל אנחנו מעבירים קורס ראשון בלמידה אישית, ורק לאחר מכן ממשיכים ללמידת עמיתים, כדי להבטיח בסיס חזק וביטחון ראשוני.</div>
+                </details>
+
+                <details class="faq-item bg-gradient-to-r from-blue-50 to-orange-50 p-3 rounded-xl shadow-sm">
+                    <summary class="flex items-center justify-between cursor-pointer text-sm font-semibold text-gray-900">
+                        איך מתחילים?
+                        <span class="faq-icon text-2xl leading-none" aria-hidden="true">＋</span>
+                    </summary>
+                    <div class="mt-3 text-gray-700">בשיחת התאמה קצרה (חינם), מגדירים מטרות, וקובעים תאריך למפגש הראשון.</div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXTRA CTA BANNERS -->
+    <section class="py-12 bg-gradient-to-r from-orange-50 to-sky-50 animate-on-scroll">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-2xl font-bold text-slate-900 mb-4">יש לכם שאלה שלא עניתי עליה?</h2>
+            <p class="text-slate-600 mb-6">לחצו כאן ואני אחזור אליכם תוך שעה</p>
+            <a href="https://wa.me/972546508835" target="_blank" rel="noopener" class="px-6 py-3 rounded-full bg-orange-500 text-white font-bold shadow hover:shadow-lg transition" aria-label="שאלות בוואטסאפ">שאלו אותנו הכל ❓</a>
+        </div>
+    </section>
+
+    <section class="py-12 bg-gradient-to-r from-sky-100 to-amber-100 animate-on-scroll">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-2xl font-bold text-slate-900 mb-4">מוכנים להתחיל את המסע?</h2>
+            <p class="text-slate-600 mb-6">זה הזמן להצטרף למסלול שלנו</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#packages" class="px-8 py-3 rounded-full bg-blue-600 text-white font-extrabold shadow hover:shadow-xl transition">🚀 כן, אני רוצה להתחיל את המסלול</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- PACKAGES -->
+    <section id="packages" class="py-14 bg-gradient-to-b from-white to-slate-50 animate-on-scroll">
+        <div class="max-w-6xl mx-auto px-4">
+            <header class="text-center mb-8">
+                <h2 class="text-2xl md:text-3xl font-black">המסלולים שלנו</h2>
+                <p class="text-slate-600">בחרו את המסלול שמתאים — תמיד אפשר לשדרג בהמשך.</p>
+            </header>
+
+            <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+                <a href="https://pay.grow.link/28bf0236533b5e50beb9ec2e038c91a9-MjU1OTI1OQ" target="_blank" rel="noopener noreferrer" class="package-card rounded-2xl border bg-white/95 p-5 shadow hover:shadow-xl transition">
+                    <div class="flex items-center justify-between">
+                        <h3 class="font-black text-slate-900">שיעור בודד (הערכה)</h3>
+                        <div class="text-sm sm:text-base font-extrabold text-slate-500">₪320</div>
+                        <div class="text-xs text-slate-400 line-through mt-1">(במקום 360)</div>
+                    </div>
+                    <p class="mt-1 text-xs text-slate-400">כולל הערכה ומשוב</p>
+
+                    <div class="mt-4 space-y-3 text-[0.98rem] leading-6">
+                        <div>
+                            <p class="font-bold text-slate-900">מה מקבלים</p>
+                            <ul class="list-disc pr-5 text-slate-800">
+                                <li>מפגש לימודי</li>
+                                <li>הערכה פדגוגית ואישית</li>
+                                <li>תוכנית מותאמת אישית</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p class="font-bold text-slate-900">מה הערך הרגשי</p>
+                            <p class="text-slate-800">להורה—תמונת מצב ברורה. לילד—הצלחה ראשונית ותחושה שרואים אותו.</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-slate-800 text-white py-3 font-bold hover:opacity-95 transition-opacity">
+                        קביעת מפגש
+                    </div>
+                    <p class="mt-2 text-[0.8rem] text-slate-500 text-center">*לא מומלץ כתהליך מלא — לבדיקת התאמה</p>
+                </a>
+
+                <a href="https://pay.grow.link/02220f45a045938becb7e085cce396a7-MjU0NTMxNg" target="_blank" rel="noopener noreferrer" class="package-card rounded-2xl border-2 border-emerald-500 bg-emerald-50/70 p-5 shadow hover:shadow-2xl transition relative">
+                    <span class="absolute -top-3 left-4 bg-emerald-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow">הכי נבחר</span>
+                    <div class="flex items-center justify-between">
+                        <h3 class="font-black text-slate-900">קורס בסיסי – 10 מפגשים</h3>
+                        <div class="text-sm sm:text-base font-extrabold text-slate-500">
+                            ₪2,900
+                            <span class="text-xs text-slate-400 line-through ml-2">(במקום 3,600)</span>
+                        </div>
+                    </div>
+                    <p class="mt-1 text-[0.9rem] text-emerald-700">90% מההורים מתחילים כאן · שינוי מורגש תוך 4–6 שבועות</p>
+
+                    <div class="mt-4 space-y-3 text-[0.98rem] leading-6">
+                        <div>
+                            <p class="font-bold text-slate-900">מה מקבלים</p>
+                            <ul class="list-disc pr-5 text-slate-800">
+                                <li>מפגש הערכה + 9 מפגשים אישיים לפי התוכנית</li>
+                                <li>כלי למידה ומדדי מעקב</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p class="font-bold text-slate-900">מה הערך הרגשי</p>
+                            <p class="text-slate-800">הילד בונה ביטחון ומסוגלות. ההורה מרגיש הקלה ושקט בבית.</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-emerald-600 text-white py-3 font-bold hover:bg-emerald-700 transition-colors">
+                        בואו נתחיל
+                    </div>
+                </a>
+
+                <a href="https://pay.grow.link/2fcae8272bd9341e1bdcd298de26296b-MjU1OTI0MA" target="_blank" rel="noopener noreferrer" class="package-card rounded-2xl border bg-white/95 p-5 shadow hover:shadow-xl transition">
+                    <div class="flex items-center justify-between">
+                        <h3 class="font-black text-slate-900">למידת עמיתים – 10 מפגשים</h3>
+                        <div class="text-sm sm:text-base font-extrabold text-slate-500">
+                            ₪1,900
+                            <span class="text-xs text-slate-400 line-through ml-2">(במקום 2,600)</span>
+                        </div>
+                    </div>
+                    <p class="mt-1 text-xs text-emerald-700 bg-emerald-50 border border-emerald-200 rounded-lg px-2 py-1 inline-block">
+                        פתוח רק אחרי קורס אישי ראשון — כדי לבנות בסיס חזק לילד.
+                    </p>
+
+                    <div class="mt-4 space-y-3 text-[0.98rem] leading-6">
+                        <div>
+                            <p class="font-bold text-slate-900">מה מקבלים</p>
+                            <ul class="list-disc pr-5 text-slate-800">
+                                <li>קבוצה קטנה (2–4 ילדים)</li>
+                                <li>מיומנויות חברתיות + חיזוק לימודי</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p class="font-bold text-slate-900">מה הערך הרגשי</p>
+                            <p class="text-slate-800">מרגיש חלק, יוצר חברויות, מתרגל שותפות — לא לבד.</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-slate-800 text-white py-3 font-bold hover:opacity-95 transition-opacity">
+                        בדיקת זמינות
+                    </div>
+                </a>
+
+                <a href="https://pay.grow.link/c53efd2a195b72903ad2a247b0638f4d-MjU1OTE3Nw" target="_blank" rel="noopener noreferrer" class="package-card rounded-2xl border bg-white/95 p-5 shadow hover:shadow-xl transition">
+                    <div class="flex items-center justify-between">
+                        <h3 class="font-black text-slate-900">מסלול משולב – 20 מפגשים</h3>
+                        <div class="text-sm sm:text-base font-extrabold text-slate-500">
+                            ₪4,400
+                            <span class="text-xs text-slate-400 line-through ml-2">(במקום 6,200)</span>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 space-y-3 text-[0.98rem] leading-6">
+                        <div>
+                            <p class="font-bold text-slate-900">מה מקבלים</p>
+                            <ul class="list-disc pr-5 text-slate-800">
+                                <li>10 מפגשים אישיים + 10 מפגשי עמיתים</li>
+                                <li>שילוב עומק רגשי עם חוויה חברתית</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p class="font-bold text-slate-900">מה הערך הרגשי</p>
+                            <p class="text-slate-800">שינוי אמיתי ומתמשך: עצמאות, ביטחון ושקט בבית.</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-amber-500 text-white py-3 font-bold hover:bg-amber-600 transition-colors">
+                        הכי משתלם – סוגרים משולב
+                    </div>
+                </a>
+            </div>
+
+            <div class="mt-10 text-center">
+                <div class="inline-block bg-blue-50 border border-blue-200 text-blue-800 font-bold px-6 py-3 rounded-xl shadow-sm">
+                    מקומות מוגבלים — נעדכן על ביטולים
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-gradient-to-r from-gray-900 to-blue-900 text-white py-16">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-12 mb-12">
+                <div class="text-center">
+                    <div class="bg-blue-800 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl" aria-hidden="true">📞</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">טלפון</h3>
+                    <p class="text-blue-200"><a href="tel:0546508835" class="hover:text-white transition-colors">054-6508835</a></p>
+                    <p class="text-sm text-blue-300 mt-1">זמין 24/7</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-blue-800 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl" aria-hidden="true">📧</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">אימייל</h3>
+                    <p class="text-blue-200"><a href="mailto:amitshalom123@gmail.com" class="hover:text-white transition-colors">amitshalom123@gmail.com</a></p>
+                    <p class="text-sm text-blue-300 mt-1">מענה תוך 24 שעות</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-blue-800 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl" aria-hidden="true">📍</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">מיקום</h3>
+                    <p class="text-blue-200">שירות בכל הארץ</p>
+                    <p class="text-sm text-blue-300 mt-1">בבית או במרכז</p>
+                </div>
+            </div>
+
+            <div class="text-center mb-12">
+                <div class="bg-blue-800/50 rounded-xl p-6 max-w-2xl mx-auto">
+                    <div class="flex items-center justify-center mb-4">
+                        <span class="text-4xl ml-3" aria-hidden="true">🏆</span>
+                        <h3 class="text-2xl font-bold">יותר מ־2,000 משפחות מרוצות</h3>
+                    </div>
+                    <div class="flex justify-center space-x-4 space-x-reverse text-yellow-400 text-2xl" aria-label="דירוג 5 כוכבים">
+                        <span aria-hidden="true">⭐⭐⭐⭐⭐</span>
+                    </div>
+                    <p class="text-blue-200 mt-2">דירוג ממוצע של 4.9/5</p>
+                </div>
+            </div>
+
+            <div class="border-t border-blue-800 pt-8">
+                <div class="flex flex-col md:flex-row items-center justify-between">
+                    <div class="text-center md:text-right mb-4 md:mb-0">
+                        <h4 class="text-2xl font-bold bg-gradient-to-r from-orange-400 to-orange-500 bg-clip-text text-transparent mb-2">
+                            שיעורים פרטיים מותאמים
+                        </h4>
+                        <p class="text-blue-200">מחזקים ביטחון, בונים עתיד</p>
+                    </div>
+                    <div class="text-center md:text-left">
+                        <p class="text-blue-300 text-sm">© 2015 עמית שלום — לומדים בטוח</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- YouTube API -->
+    <script src="https://www.youtube.com/iframe_api"></script>
+    
+    <script>
+        let player;
+        let soundActivated = false;
+
+        // YouTube API ready callback
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('ytplayer', {
+                events: {
+                    'onReady': onPlayerReady,
+                    'onStateChange': onPlayerStateChange
+                }
+            });
+        }
+
+        function onPlayerReady(event) {
+            if (!soundActivated) {
+                event.target.mute();
+                event.target.setLoop(true);
+            }
+        }
+
+        function onPlayerStateChange(event) {
+            if (event.data === YT.PlayerState.ENDED && !soundActivated) {
+                event.target.seekTo(0);
+                event.target.playVideo();
+            }
+        }
+
+        function handleUnmute() {
+            if (player) {
+                player.unMute();
+                player.setVolume(100);
+                soundActivated = true;
+                player.setLoop(false);
+            }
+        }
+
+        // Cookie Consent Functions
+        function acceptCookies() {
+            // Update consent for analytics
+            gtag('consent','update',{
+              ad_storage:'granted',
+              analytics_storage:'granted',
+              ad_user_data:'granted',
+              ad_personalization:'granted'
+            });
+            dataLayer.push({event:'cookie_consent_granted'});
+            
+            // Hide banner
+            document.getElementById('cookieBanner').classList.remove('show');
+            
+            // Store consent preference
+            localStorage.setItem('cookieConsent', 'accepted');
+            
+            console.log('Cookies accepted - Analytics enabled');
+        }
+
+        function declineCookies() {
+            // Keep default denied settings
+            dataLayer.push({event:'cookie_consent_denied'});
+            
+            // Hide banner
+            document.getElementById('cookieBanner').classList.remove('show');
+            
+            // Store consent preference
+            localStorage.setItem('cookieConsent', 'declined');
+            
+            console.log('Cookies declined - Analytics disabled');
+        }
+
+        // Show cookie banner on page load (unless already decided)
+        document.addEventListener('DOMContentLoaded', function() {
+            const consent = localStorage.getItem('cookieConsent');
+            if (!consent) {
+                setTimeout(() => {
+                    document.getElementById('cookieBanner').classList.add('show');
+                }, 2000); // Show after 2 seconds
+            } else if (consent === 'accepted') {
+                // Auto-accept if previously accepted
+                acceptCookies();
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.addEventListener('click', function(e) {
+            const target = e.target;
+            if (target.getAttribute('href') && target.getAttribute('href').startsWith('#')) {
+                const targetElement = document.querySelector(target.getAttribute('href'));
+                if (targetElement) {
+                    e.preventDefault();
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            }
+        });
+
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+
+        // FAQ toggle functionality
+        document.addEventListener('toggle', function(e) {
+            const details = e.target;
+            const icon = details.querySelector('.faq-icon');
+            if (icon) {
+                icon.textContent = details.open ? '−' : '＋';
+            }
+        }, true);
+
+        // Remove loading class
+        setTimeout(() => {
+            document.body.classList.remove('loading');
+        }, 100);
+    </script>
+
+</body>
+</html>
