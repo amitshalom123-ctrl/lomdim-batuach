@@ -55,9 +55,10 @@ Read the visitor's **primary** browser language (`Accept-Language` first tag on 
 1. URL path locale (/en/ or /fr/)            → render that language. Stop.
 2. Saved choice (cookie zm_lang, 1 year)     → used only at root "/" and for the banner.
 3. Browser primary language is en* or fr*    → that language.
-4. Country (+ region) map, §2                → default language.
-5. Time-zone hint, §5 (geo failed)           → FR for French-speaking zones, else EN.
-6. Default                                    → EN.
+4. Country (+ region) map, §2, incl. §4 BE+nl / LU+de|lb → EN.
+5. Geo failed: browser nl*/de*/lb*         → EN (keeps the §4 Belgium/Luxembourg rule).
+6. Geo failed: time-zone hint, §5          → FR for French-speaking zones, else EN.
+7. Default                                    → EN.
 ```
 
 ---
@@ -70,7 +71,8 @@ Read the visitor's **primary** browser language (`Accept-Language` first tag on 
 
 **Also priced in EUR, because the euro is their currency:**
 - Euro-using non-members: `MC` Monaco · `AD` Andorra · `SM` San Marino · `VA` Vatican City · `ME` Montenegro · `XK` Kosovo (XK is a user-assigned code, but common IP databases use it)
-- EU territories reported separately by IP databases: `GP` Guadeloupe · `MQ` Martinique · `GF` French Guiana · `RE` Réunion · `YT` Mayotte · `PM` Saint-Pierre-et-Miquelon · `BL` Saint-Barthélemy · `MF` Saint-Martin · `AX` Åland Islands
+- EU outermost regions and EU territory that IP databases report separately: `GP` Guadeloupe · `MQ` Martinique · `GF` French Guiana · `RE` Réunion · `YT` Mayotte · `MF` Saint-Martin · `AX` Åland Islands (part of Finland)
+- French collectivities that use the euro but are **not part of the EU** (overseas countries and territories): `PM` Saint-Pierre-et-Miquelon · `BL` Saint-Barthélemy. They are priced in EUR because the euro is their currency, not because of EU membership.
 
 > Review this list every January. The next possible joiners are among the remaining non-euro EU states (CZ, PL, SE, HU, RO, DK); none is scheduled at the time of writing `[check annually]`.
 
@@ -145,7 +147,7 @@ America/St_Barthelemy America/Marigot
 Kosovo has no dedicated IANA zone (it uses `Europe/Belgrade`, shared with Serbia, which is non-euro), so it gets USD in the fallback. That's acceptable, and checkout corrects it.
 **Not EUR:** `Europe/Zurich`, `Europe/London`, `Europe/Busingen` (a German enclave that in practice uses CHF; treat as USD), and all others.
 
-**Time zones → FR language hint** (used only when the browser language is neither en nor fr):
+**Time zones → FR language hint** (used only when the browser language is neither en/fr nor nl/de/lb; Dutch, German and Luxembourgish speakers get EN, consistent with the §4 Belgium/Luxembourg rule):
 `Europe/Paris`, `Europe/Brussels`, `Europe/Luxembourg`, `Europe/Monaco`, `Africa/Casablanca`, `Africa/Tunis`, `Indian/Reunion`, `Indian/Mayotte`, `America/Guadeloupe`, `America/Martinique`, `America/Cayenne`, `America/Miquelon`, `Pacific/Noumea`, `Pacific/Tahiti`.
 `Europe/Zurich` and `America/Toronto` are mixed-language zones, so they fall back to EN unless the browser is `fr`.
 
@@ -201,7 +203,8 @@ function decide({ country, region, timeZone, languages }) {
     else if (country === 'CH') lang = FR_CH_CANTONS.has(region) ? 'fr' : 'en';
     else if (country === 'CA') lang = region === 'QC' ? 'fr' : 'en';
     else lang = 'en';
-  } else lang = FR_TZ.has(timeZone) ? 'fr' : 'en';
+  } else if (/^(nl|de|lb)/.test(primary)) lang = 'en';   // geo failed: keep BE+nl / LU+de|lb → EN (§4)
+  else lang = FR_TZ.has(timeZone) ? 'fr' : 'en';
 
   const showHebrewLink = isIL || primary.startsWith('he');
   return { lang, currency, showHebrewLink, isIL };
@@ -232,10 +235,12 @@ Log `{country, region, timeZone, lang, currency, source: 'edge'|'tz'|'locale'|'d
 |---|---|---|
 | EUR | "Price in euros for visitors in the Eurozone." | « Prix en euros pour les pays de la zone euro. » |
 | USD (US) | "Price in US dollars." | « Prix en dollars américains. » |
-| USD (outside US) | "Price in US dollars. Your bank converts at its own rate." | « Prix en dollars américains (US). Votre banque applique son propre taux de change. » |
-| Always appended | "Not in [Country]? **Change region**" | « Vous n'êtes pas en [Pays] ? **Changer de région** » |
+| USD (outside US) | "Price in US dollars. Your bank converts at its own rate." | « Prix en dollars américains. Votre banque applique son propre taux de change. » |
+| Always appended | "Detected location: [Country] · **Change region**" | « Pays détecté : [Pays] · **Changer de région** » |
 
-**"Change region"** opens a three-option chooser: *Eurozone (€)* · *Other countries (US$)* · *Israel → Hebrew site*. The choice is saved in the cookie `zm_region` and changes only the **displayed** price. Checkout still applies §3.4. Country names in the note are localised (`Intl.DisplayNames`).
+The label-plus-value pattern avoids country prepositions and articles (FR « en France », « au Canada », « aux États-Unis »; EN "the United States", "the UK"), so one string works for every country. In FR there is a non-breaking space (U+00A0) before the colon.
+
+**"Change region" / « Changer de région »** opens a three-option chooser: *Eurozone (€)* · *Other countries (US$)* · *Israel → Hebrew site*. The choice is saved in the cookie `zm_region` and changes only the **displayed** price. Checkout still applies §3.4. Country names in the note are localised (`Intl.DisplayNames`).
 
 ---
 
@@ -263,7 +268,7 @@ Log `{country, region, timeZone, lang, currency, source: 'edge'|'tz'|'locale'|'d
 - Store every lesson slot in **UTC** and render it with `Intl.DateTimeFormat(lang, { timeZone: userTZ, weekday:'short', hour:'numeric', minute:'2-digit' })`.
 - Show "your time" first, with a secondary toggle "Jerusalem time" / « heure de Jérusalem ».
 - **Never hard-code offsets.** Israel, the EU and North America change clocks on different dates, so the gap between Jerusalem and New York or Paris changes for a few weeks each spring and autumn. The IANA time-zone database (built into `Intl`) handles this. Reminder emails and messages must also state local time.
-- FR time format is 24-hour ("17 h 30" or "17:30"; pick one and use it everywhere). EN-US is 12-hour ("5:30 pm"); EN-UK/AU may use either. Let `Intl` choose based on the locale (`en-US`, `en-GB`, `fr-FR`, `fr-CA`).
+- FR time format is 24-hour ("17 h 30" or "17:30"; pick one and use it everywhere). EN-US is 12-hour, written "5:30 p.m." in our copy (glossary rule); EN-UK/AU may use either. Let `Intl` choose based on the locale (`en-US`, `en-GB`, `fr-FR`, `fr-CA`).
 
 ---
 
@@ -292,3 +297,6 @@ Test with a VPN or the edge's geo override for each row, in a clean browser prof
 | 18 | Any, cookie zm_lang=fr | en-US | any | FR at `/`; `/en/` still EN | per country | — |
 | 19 | Googlebot UA at `/` | — | — | No redirect; `/en/` and `/fr/` both crawlable | — | — |
 | 20 | `prefers-reduced-motion` + slow 3G | any | any | No price flash (skeleton → final) | — | — |
+| 21 | *geo fails* | nl-BE | Europe/Brussels | EN | €750 (via TZ) | no |
+| 22 | *geo fails* | de-LU | Europe/Luxembourg | EN | €750 (via TZ) | no |
+| 23 | PM | fr-FR | America/Miquelon | FR | 750 € | no |

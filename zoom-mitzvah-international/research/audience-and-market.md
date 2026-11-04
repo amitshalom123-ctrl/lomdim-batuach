@@ -13,7 +13,7 @@
 
 ## 0. Scope, sources and honesty notes
 
-- **Product facts** come only from the owner's brief: 1:1 live Zoom lessons with Israeli rabbis living in Israel/Jerusalem who speak English and/or French; Bar/Bat Mitzvah prep, leining (trope, aliyah blessings, Haftarah, maftir), tefillin, drasha writing and general Torah learning; adapted teaching for kids with ADHD or dyslexia; a 24/7 AI assistant; 123 guides translated into EN and FR; recordings; a parent portal; local-time scheduling; and the price, **€750 in the Eurozone and $850 everywhere else**.
+- **Product facts** come only from the owner's brief and the landing brief: a **free consultation** (the landing brief's Objective: "Families abroad book a free consultation or buy the full course"); 1:1 live Zoom lessons with Israeli rabbis living in Israel/Jerusalem who speak English and/or French; Bar/Bat Mitzvah prep, leining (trope, aliyah blessings, Haftarah, maftir), tefillin, drasha writing and general Torah learning; adapted teaching for kids with ADHD or dyslexia; a 24/7 AI assistant; 123 guides translated into EN and FR; recordings; a parent portal; local-time scheduling; and the price, **€750 in the Eurozone and $850 everywhere else**.
 - **Market facts** come from web searches run on 2026-11-04. Each one is tagged:
   - `[VERIFIED]`: read directly on the source page that day.
   - `[SEARCH-SUMMARY]`: seen in search-result snippets but not opened. May be out of date.
@@ -35,8 +35,9 @@
 | France | FR | Europe's largest Jewish community. A majority is Sephardi (North African roots), and the Consistoire is the central religious institution. "Talmud Torah" is the name for after-school/Sunday Jewish classes. | The core FR market. The family's minhag (Moroccan / Tunisian / Algerian chant) matters a lot. |
 | Belgium | FR (Brussels) / NL-EN-Yiddish (Antwerp) | Brussels is largely francophone. Antwerp's community is largely Haredi and not francophone. | Default to FR, but let the browser language override (see geo doc). Antwerp is not a primary target. |
 | Switzerland | FR (Geneva/Lausanne) / DE (Zurich/Basel) | Two linguistic worlds. | FR for Romandie, EN elsewhere. The price is in USD (CHF is not the euro). |
+| Luxembourg / Monaco | FR | Small, francophone, euro | FR language, €750 price. |
 | Morocco / Tunisia | FR | Small resident communities, but large diaspora ties to France and Montreal. | Low volume. FR language, USD price. |
-| Israeli expats abroad ("yordim" families) | HE parents / EN or FR kids | Parents speak Hebrew; the child is more comfortable in English or French. | An important niche. Parents may read the Hebrew site while the child learns in English. Cross-link both sites. |
+| Israeli expats abroad | HE parents / EN or FR kids | Parents speak Hebrew; the child is more comfortable in English or French. | An important niche. Parents may read the Hebrew site while the child learns in English. Cross-link both sites. |
 
 ---
 
@@ -70,7 +71,7 @@
 - **Situation:** Affiliated with a mainstream Orthodox or Masorti shul. The shul offers a programme, but the family wants extra 1:1 help, or lives in a smaller community (e.g., Perth, Cape Town, a regional UK town) with no available teacher.
 - **Job to be done:** "Make sure he leins his portion properly on the day and doesn't embarrass himself. Ideally he gets excited about it."
 - **Motivations:** Israel connection (strong in SA and Australia), quality of reading, a rabbi with real knowledge.
-- **Fears / objections:** "Will it clash with what the shul's chazzan teaches?" "Is this Orthodox?" Time zones: Australia is 7–9 hours ahead of Israel depending on DST, which can actually help (after-school in Sydney is mid-morning in Jerusalem). `[time offsets vary with DST; compute, don't hard-code]`
+- **Fears / objections:** "Will it clash with what the shul's chazzan teaches?" "Is this Orthodox?" Time zones: Australia is 7–9 hours ahead of Israel depending on DST, so after-school in Sydney (16:00) is early morning in Jerusalem (about 07:00–09:00, depending on DST), and rabbis must offer early slots. `[time offsets vary with DST; compute, don't hard-code]`
 - **Vocabulary (UK/AUS/SA):** "shul", "Bar Mitzvah lessons" (not "tutoring"), "leining", "sedra/parasha", "Bat Chayil" (UK Orthodox), "chazzan", "rebbe" (more Haredi), "Mum".
 
 ### P4. "The Adult Learner" (any country, EN or FR)
@@ -102,7 +103,7 @@ For children, the **mother is very often the researcher/organiser** and the fath
 | "Will it match our synagogue / our tradition?" | Library includes nusach guides; lessons are 1:1, so they can adapt | **Which traditions/nusachim the rabbis can teach** (Ashkenazi, Moroccan, Tunisian, Yemenite...) |
 | "Will my daughter be taught?" | Brief lists Bat Mitzvah prep | **What exactly a Bat Mitzvah track includes** (Torah reading or not; see §8) |
 | "Time zones" | Times shown in the family's local time; flexible scheduling | Actual teaching hours in Israel time, to state realistic windows per region |
-| "Is $850 / €750 worth it?" | Full course, 1:1, rabbi in Jerusalem, recordings, portal, 24/7 AI assistant, 120+ guides | **Number of lessons and minutes per lesson**; refund/guarantee policy; payment plans? |
+| "Is $850 / €750 worth it?" | Free consultation first (brief fact); full course, 1:1, rabbi in Jerusalem, recordings, portal, 24/7 AI assistant, 120+ guides | **Number of lessons and minutes per lesson**; refund/guarantee policy; payment plans? |
 | "Is this a legit company?" | Sister Hebrew site zoomitzvah.co.il exists | Company legal name, contact address, privacy policy, secure payment provider name |
 | "AI with my child?" | 24/7 assistant in their language | Data/privacy policy for minors (COPPA in the US, GDPR in the EU); what the AI does and doesn't do |
 
@@ -148,7 +149,7 @@ The brief says "full course", but **not how many lessons or minutes it includes.
 ### 5.3 Framing recommendations
 1. Show **what's included** next to the price: number of lessons (TBD), recordings, parent portal, AI assistant, 120+ guides, drasha help, tefillin.
 2. Use a **per-lesson anchor** only if the per-lesson figure is ≤ ~$45 (i.e., 19+ lessons). Otherwise anchor on "the whole journey, from first letter to the bimah".
-3. If the owner offers it: a free intro call / assessment. Chabad offers a free assessment plus a trial lesson, so the market expects one. This is **not in the facts given**, so don't advertise it unless confirmed.
+3. The brief confirms a free consultation. Make it the primary CTA; a free trial *lesson* is still unconfirmed. (Chabad offers a free assessment plus a trial lesson, so the market expects a free first step.)
 4. Offer instalments if the payment provider supports them. Not in the facts; owner to decide.
 
 ---
@@ -201,7 +202,7 @@ The brief says "full course", but **not how many lessons or minutes it includes.
 1. **Bat Mitzvah scope:** Do the rabbis teach girls to read from the Torah (leining), or is the Bat Mitzvah track different (drasha, Haftarah/Megillah, learning project)? US Reform/Conservative families will ask this first. The copy must be precise either way.
 2. **Traditions taught:** Which cantillation/nusach traditions can each rabbi teach (Ashkenazi, Moroccan, Tunisian, Algerian, Yemenite, Syrian, etc.)? Can they teach the melody of a specific community from a recording?
 3. **Course length:** Number of lessons, minutes per lesson, expected course duration (months).
-4. **Trial / guarantee:** Is there a free intro call or assessment? What is the refund policy?
+4. **Trial / guarantee:** The free consultation is confirmed (landing brief). Still open: is there also a free trial *lesson*? What is the refund policy? What happens in the consultation, how long is it, and who runs it?
 5. **Rabbis:** Names, photos, short bios and languages (EN/FR) for each rabbi, with written consent to publish.
 6. **Teaching hours** in Israel time, so we can promise realistic slots for the US West Coast and Australia.
 7. **AI assistant:** What exactly can it do (answer questions, play/assess reading, reschedule)? What are the data policies for minors? Is a parent account required?
