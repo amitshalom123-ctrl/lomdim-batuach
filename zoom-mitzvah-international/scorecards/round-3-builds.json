@@ -1,0 +1,173 @@
+{
+  "round": 3,
+  "date": "2026-11-04",
+  "scored_by": "zm-landing-qa + zm-landing-director; zm-crm-qa + zm-crm-director",
+  "method": "Code review through the Lovable MCP, read-only (list_edits, get_diff, read_file, list_files, list_messages). No send_message, deploy, set_*, respond_to_approval or query_database. The preview needs a login, so it was not run. Image findings come from the owner's 1920px screenshot.",
+  "weights": {
+    "marketing": 0.25,
+    "language": 0.2,
+    "design": 0.2,
+    "technical": 0.2,
+    "brand": 0.1,
+    "safety": 0.05
+  },
+  "crm_stage1_weights": {
+    "language": 0.444,
+    "technical": 0.444,
+    "safety": 0.111
+  },
+  "deliverables": [
+    {
+      "id": "L3",
+      "track": "landing",
+      "project": "47fcacc3-969c-4fb5-b0e8-89f0a87cf1aa",
+      "commit": "f264be66e8069f043892d60b39238853008db0e0",
+      "baseline_commit": "b7d025b0f844757ab78429a70b3f555b1fb43d60",
+      "score": 6.5,
+      "verdict": "REWORK",
+      "per_criterion": {
+        "brand": 7,
+        "marketing": 6,
+        "language": 7.5,
+        "design": 6,
+        "technical": 6,
+        "safety": 8
+      },
+      "weighted_uncapped": 6.5,
+      "safety_failure": false,
+      "safety_cap_applied": false,
+      "progress_score": 7,
+      "previous_score": 4.7,
+      "fix_status_summary": {
+        "pass": 19,
+        "partial": 3,
+        "fail": 3
+      },
+      "fix_status": {
+        "1": "PASS",
+        "2": "PASS",
+        "3": "PASS",
+        "4": "PASS",
+        "5": "PASS",
+        "6": "PASS",
+        "7": "PASS",
+        "8": "PARTIAL",
+        "9": "PASS",
+        "10": "PASS",
+        "11": "PASS",
+        "12": "PARTIAL",
+        "13": "PASS",
+        "14": "PASS",
+        "15": "PARTIAL",
+        "16": "PASS",
+        "17": "PASS",
+        "18": "PASS",
+        "19": "FAIL",
+        "20": "FAIL",
+        "21": "PASS",
+        "22": "PASS",
+        "23": "PASS",
+        "24": "PASS",
+        "25": "FAIL",
+        "copy": "PASS"
+      },
+      "regressions": [
+        "Raw i18n keys on screen. LeadForm.jsx still calls the old leadForm.* keys, but the new locale files use lead_form.*, so every label of the lead form renders as text like 'leadForm.title' or 'leadForm.name *'. CheckoutButton.jsx calls checkout.comingSoon and nav.bookConsultation, which no longer exist. IntlArticles.jsx calls articles.allCategories, which is missing too.",
+        "The header nav wraps onto two lines at 1920px. It holds 7 links, the 3-language switcher and the CTA pill, all inside max-w-6xl (1120px of content) from the lg breakpoint up, with no whitespace-nowrap.",
+        "IntlPrivacy.jsx reads useParams().slug, but the routes are /:lang/privacy|terms|accessibility and have no :slug param. As a result /terms and /accessibility show the privacy-policy text.",
+        "The catch-all '*' route renders the Hebrew PageNotFound ('הדף לא נמצא'), so EN/FR visitors who mistype a URL get a Hebrew 404."
+      ],
+      "fixes": [
+        {
+          "team": "development",
+          "fix": "Raw i18n keys: migrate LeadForm.jsx to lead_form.*, CheckoutButton.jsx to checkout.coming_soon plus an existing CTA key, and add articles.all_categories. Make t() return '' and console.warn in production instead of the raw key, and add a test that fails when any t('…') key is missing from en.json or fr.json."
+        },
+        {
+          "team": "production/design",
+          "fix": "Header: desktop nav at most 4 links (How it works, Our rabbis, Pricing, Guides) + CTA pill; whitespace-nowrap + shrink-0 on links, wordmark and pill; full nav only from xl (1280px), hamburger below; compact language menu; header container max-w-7xl."
+        },
+        {
+          "team": "development",
+          "fix": "Lead form (#25): consent line + privacy link, honeypot, per-IP/email rate limit in intl-lead, ISO-2 country select prefilled, send timezone/currency/source:'intl', fire consultation_booked (no PII) via trackEvent."
+        },
+        {
+          "team": "development",
+          "fix": "Articles workflow: translate-article must save status 'draft' with needs_review when Hebrew letters remain; admin preview + Publish; replace LANG_RULES (it still tells the model to write 'paracha, téfilines, aliya') with the glossary."
+        },
+        {
+          "team": "development",
+          "fix": "SEO and routing: international sitemap.xml + robots.txt (both still point at zoomitzvah.co.il); localized EN/FR 404 with noindex for /:lang/*; fix the IntlPrivacy slug bug."
+        }
+      ],
+      "polish": [
+        "Israel: the FAQ payment answer still resolves {{PRICE}} to 'US$850' for IL visitors and while detection is loading.",
+        "The assistant CTA 'Ask our assistant now' links to the consultation form. Hide it until a real assistant URL exists.",
+        "The hero alt text still describes a Zoom lesson, but the image is now the Kotel. FR: « Rav Asaf Shapira » (not « Rabbin »), « Mur occidental » (lowercase o).",
+        "Small text in text-intl-ink/50 (currency note, detected location) is about 3.3:1 on limestone. Use ink/70.",
+        "regionToCountry('usd') returns US, so a UK visitor who picks 'Other countries' sees '$850' instead of 'US$850'.",
+        "Delete public/grow-gmail-bridge.gs (it exposes the Hebrew production Supabase ref and the Grow pipeline) and the dead Hebrew funnel page files; limit DOMPurify iframes to youtube(-nocookie)."
+      ],
+      "owner_questions": [
+        "rabbis.intro / rabbis.promises say every rabbi 'teaches in English or French', but src/data/rabbis.js has no language field. Please confirm, per rabbi, which languages they actually teach in (glossary rule: never claim a language unless the data says so).",
+        "'New translations added every week' is a cadence promise. Can it be kept up?",
+        "Hero eyebrow 'live from Israel' vs H1 'from Jerusalem' (approved copy, open question Q5: do the rabbis live in Jerusalem or elsewhere in Israel?).",
+        "Pricing reassurance mentions 'Secure, encrypted online payment' and an e-mailed receipt, but online checkout is still 'coming soon'."
+      ],
+      "notes_he": "שיפור גדול: 4.7 → 6.5 ואין יותר כשל בטיחות. התפריט העברי ונתיבי Grow הוסרו, הפונקציות הישנות חסומות, ה-GA וה-Pixel העבריים הוסרו, והקופי המאושר הוטמע מילה במילה (חוץ מ-4 שינויים מוצדקים לפי תיקון #21). עדיין REWORK: טופס הלידים מציג מפתחות גולמיים ('leadForm.title'), התפריט נשבר לשתי שורות במסך רחב, ותיקונים 15, 19, 20 ו-25 לא בוצעו."
+    },
+    {
+      "id": "C2",
+      "track": "crm",
+      "project": "82b65911-b20c-4cb1-b23b-f42f0c395772",
+      "commit": "c2b4f0c86a7c1bcd68a0988d47be6738903e1409",
+      "baseline_commit": "e986a6d156b36d32fc406966bc4a5635e5fe1dad",
+      "score": 8.3,
+      "verdict": "APPROVED",
+      "per_criterion": {
+        "brand": null,
+        "marketing": null,
+        "language": 8,
+        "design": null,
+        "technical": 8.5,
+        "safety": 9
+      },
+      "weighted_uncapped": 8.33,
+      "safety_failure": false,
+      "safety_cap_applied": false,
+      "progress_score": 2,
+      "previous_score": 7.8,
+      "fix_status": {
+        "1_parity_live_before": "PASS (reconstructed from migrations; confirmed)",
+        "2_begin_commit": "ACCEPTED_DEVIATION",
+        "3_rollback": "PASS",
+        "4_tests": "PASS (14/14 counted; md5 of protect body vs production not added)",
+        "5_iso2_check": "PASS (new migration 0069)",
+        "6_post_apply_checks": "PARTIAL (live counts only; role-based checks only on scratch DB; roadmap not updated)"
+      },
+      "parity_evidence": [
+        "supabase/migrations/20251221002724_5e4e93ad-…: both functions created as LANGUAGE sql STABLE SECURITY DEFINER; get_student_safe_data has 19 columns and WHERE s.id = p_student_id; no auth predicate",
+        "supabase/migrations/20251227222817_ea7a779a-…: get_rabbi_students_safe dropped and recreated as DEFINER with package_type (20 columns), WHERE s.assigned_rabbi_id = p_rabbi_id; no auth predicate",
+        "supabase/migrations/20260723223655_ecad6198-…: REVOKE EXECUTE FROM anon, public; GRANT EXECUTE TO authenticated (both functions)",
+        "supabase/migrations/20260723232742_bf5a192f-…: ALTER FUNCTION get_rabbi_students_safe(uuid) SECURITY INVOKER; ALTER FUNCTION get_student_safe_data(uuid) SECURITY INVOKER",
+        "Conclusion: before 0068 both functions were INVOKER, with no body auth check, anon/PUBLIC revoked and authenticated granted. 0068 keeps exactly that (INVOKER is the default, explicit REVOKE/GRANT, plus an explicit service_role grant that it already had through default privileges). Nothing needed restoring. 'No later redefinition before 0068' is Lovable's claim; I verified the four cited files, not every migration from 0000 to 0067."
+      ],
+      "begin_commit_judgement": "Acceptable. 0068 already ran in production, so editing an applied migration would only change its hash and history. Drizzle's migrator runs pending migrations inside its own transaction, so an inner COMMIT would end that transaction early on a fresh run. The rollback file has its own BEGIN/COMMIT. Caveat: this holds only if the deploy runner is drizzle migrate(), not a raw psql -f.",
+      "fixes": [],
+      "polish": [
+        {
+          "team": "CRM development",
+          "fix": "Add the 0069 undo (ALTER TABLE … DROP CONSTRAINT students_country_iso2_check / pending_paid_country_iso2_check) to the rollback file as an optional, commented block."
+        },
+        {
+          "team": "CRM development",
+          "fix": "Add a test asserting md5(prosrc) of protect_student_package_fields equals the verbatim production copy in db/tests/rls_assignment/fixture.sql plus only the 4 country/currency lines."
+        },
+        {
+          "team": "CRM development + owner",
+          "fix": "Record '0068 + 0069 applied' and the live read-only counts in roadmap.md. Do a manual UI smoke test with a test rabbi and a test parent account (the tests run as superuser, so RLS is not exercised)."
+        }
+      ],
+      "notes_he": "CRM שלב 1 מאושר, 8.3. אימתתי מקבצי המיגרציה שהפונקציות היו SECURITY INVOKER עוד לפני 0068 (מאז 23.7.2026), כך שאבטחת הפורטלים לא השתנתה. יש קובץ rollback שנבדק, בדיקת ISO-2 ו-14 בדיקות שעוברות. אי-העטיפה ב-BEGIN/COMMIT מוצדקת. אפשר לעבור לשלב 2."
+    }
+  ]
+}
