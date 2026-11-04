@@ -1,0 +1,17 @@
+{
+  "name": "zoom-mitzvah-teams-orchestrator",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Multi-agent teams (GM → teams → language leads → QA → Director ≥8 gate) for Zoom Mitzvah International",
+  "scripts": {
+    "landing": "node run.mjs --track landing",
+    "crm": "node run.mjs --track crm",
+    "dry": "node run.mjs --track landing --dry-run"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^1.4.0",
+    "zod": "^4.1.0"
+  },
+  "engines": { "node": ">=20" }
+}
