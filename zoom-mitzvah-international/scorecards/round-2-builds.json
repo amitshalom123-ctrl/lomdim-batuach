@@ -1,0 +1,176 @@
+{
+  "round": 2,
+  "date": "2026-11-04",
+  "scored_by": "zm-landing-qa + zm-landing-director; zm-crm-qa + zm-crm-director",
+  "method": "Code review via Lovable MCP (read-only: list_edits, get_diff, read_file, list_files, get_project). No send_message, deploy, remix or DB query. Preview requires login, so it was not exercised.",
+  "weights": {
+    "marketing": 0.25,
+    "language": 0.2,
+    "design": 0.2,
+    "technical": 0.2,
+    "brand": 0.1,
+    "safety": 0.05
+  },
+  "deliverables": [
+    {
+      "id": "L2",
+      "track": "landing",
+      "project": "47fcacc3-969c-4fb5-b0e8-89f0a87cf1aa",
+      "commit": "b7d025b0f844757ab78429a70b3f555b1fb43d60",
+      "score": 4.7,
+      "verdict": "REWORK",
+      "per_criterion": {
+        "brand": 5,
+        "marketing": 5,
+        "language": 5,
+        "design": 5,
+        "technical": 4,
+        "safety": 3
+      },
+      "weighted_uncapped": 4.7,
+      "safety_failure": true,
+      "safety_cap_applied": true,
+      "progress_score": 5,
+      "fixes": [
+        {
+          "team": "development",
+          "fix": "src/App.jsx: render /, /:lang, /:lang/articles, /:lang/articles/:slug outside LayoutWrapper so src/Layout.jsx (Hebrew header/footer, dir=rtl, WhatsApp float, Hebrew cookie/a11y widgets) never renders on EN/FR."
+        },
+        {
+          "team": "development",
+          "fix": "Safety: redirect the Hebrew funnel routes (MainPackage*, GiftCheck, RegistrationDetails, PremiumPackages, YouTubeLanding, QR, Contact, Home…) to /en and remove the live pay.grow.link ILS links in src/pages/MainPackage.jsx; make legacy edge functions return 410 unless INTL_LEGACY_ENABLED; delete the roadmap.md request for 14 production secrets; remove production GA G-9B840DNYHY and FB Pixel 750977008087561 from index.html and gate analytics behind EN/FR consent."
+        },
+        {
+          "team": "script/marketing",
+          "fix": "src/i18n/en.json + fr.json: replace fabricated hero.trustLine with the approved factual line; remove the reading-tradition promise (faq[1], learn.subtitle, pricing.includes[5]), 'across North America, Europe', 'within one business day', 'Weekly'; stop upgrading rabbis to 'Torah scholar'."
+        },
+        {
+          "team": "development",
+          "fix": "src/lib/geo.js + supabase/functions/geo-detect + src/hooks/usePrice.js: full Eurozone list incl. BG/ME/XK/DOMs/AX; drop the server-side ipapi.co call; explicit EUR timezone set; per-language price format (€750 / US$850 / 750 € / 850 $ US); skeleton instead of price flash; Israel → Hebrew RTL banner + Hebrew-site card replacing the price."
+        },
+        {
+          "team": "FR language lead",
+          "fix": "src/i18n/fr.json: NBSP before : ; ? ! » and curly apostrophes; glossary fixes (té’amim not 'trop', montée à la Torah not 'aliya', rite not 'nussah', Paracha, appel découverte gratuit, parcours complet, espace parents, 24 h/24, plus de 120 guides)."
+        },
+        {
+          "team": "development",
+          "fix": "Articles: translate/map category_label (Hebrew chips now), rewrite /articles/<slug> links to /<lang>/…, drop Hebrew YouTube/legal blocks, DOMPurify, draft→review→publish, glossary in LANG_RULES."
+        },
+        {
+          "team": "production/design",
+          "fix": "Replace src/assets/intl/hero-jerusalem.jpg (Dome of the Rock is the focal point) with Kotel / Old City stone / rooftops; add --intl-gold-text ≈ #7F5F1A for AA contrast."
+        },
+        {
+          "team": "development",
+          "fix": "SEO: index.html lang=en dir=ltr; absolute canonical/hreflang incl. he; regenerate public/sitemap.xml for /en and /fr; real 404 + noindex for untranslated slugs."
+        },
+        {
+          "team": "development",
+          "fix": "Lead form: verify_jwt=false for intl-lead/geo-detect in supabase/config.toml (verify anonymous 200); consent + privacy link; honeypot + rate limit; ISO-2 country select; send timezone/currency/source=intl; fire consultation_booked."
+        }
+      ],
+      "checks": {
+        "routes_en_fr": "PASS",
+        "ltr": "FAIL (Hebrew RTL Layout wraps intl; index.html lang=he dir=rtl)",
+        "hebrew_header_removed": "FAIL (src/App.jsx LayoutWrapper → src/Layout.jsx)",
+        "locale_keys_identical": "PASS (146/146)",
+        "all_strings_from_locales": "FAIL",
+        "hreflang_canonical": "PARTIAL (relative, client-only, no he)",
+        "sitemap": "FAIL (unchanged Hebrew)",
+        "eurozone_list": "FAIL (missing BG, ME, XK, GP, MQ, GF, RE, YT, PM, BL, MF, AX)",
+        "geo_detection": "FAIL (server-side ipapi.co; Europe/* → FR)",
+        "price_format": "FAIL (EN shows 750 €)",
+        "price_flash": "FAIL",
+        "israel_banner_card": "FAIL",
+        "benefits_7": "PASS",
+        "translation_admin_only": "PASS",
+        "no_hebrew_articles": "PARTIAL (Hebrew category labels, links, videos)",
+        "lead_saved_locally": "PASS (verify verify_jwt)",
+        "no_crm_or_payment_push": "FAIL (live Grow ILS links reachable; production GA/Pixel; roadmap asks for prod secrets). crm_paid_push/lead-webhook no-op without secrets: PASS",
+        "reduced_motion": "PASS intl / FAIL legacy float + smooth scroll",
+        "contrast_AA": "FAIL (gold 2.1:1 on limestone)",
+        "fabricated_claims": "FAIL (hero.trustLine unverified; tradition promise Q2)",
+        "hero_image_brand": "FAIL (Dome of the Rock focal point)",
+        "fr_typography": "FAIL (17 plain spaces, 25 straight apostrophes)",
+        "glossary": "FAIL",
+        "kpi_event": "FAIL",
+        "secrets_in_code": "PASS"
+      },
+      "lovable_fix_message": "Round-2 QA found blocking issues. Please fix ALL of the following, in this order. Do not add new sections or features until these pass. After you finish, reply with a short list mapping each numbered item to the files you changed.\n\nSAFETY FIRST (blocking)\n1. Remove the Hebrew site chrome from the international pages.\n   - In src/App.jsx, the routes \"/\", \"/:lang\", \"/:lang/articles\" and \"/:lang/articles/:slug\" are rendered inside <LayoutWrapper>, which renders src/Layout.jsx (Hebrew header \"דף הבית / חבילות / אודות / מאמרים וכתבות\", Hebrew footer with the Ra'anana address, dir=\"rtl\" wrapper, Hebrew WhatsApp float, Hebrew CookieConsent and AccessibilityWidget). Render the international routes OUTSIDE LayoutWrapper (e.g. split <Routes> into an intl group without Layout and a legacy group with Layout), so that only IntlLayout renders on /en and /fr.\n   - Add an EN/FR cookie-consent banner and an accessibility-statement link inside IntlLayout (texts in src/i18n/*.json).\n2. Make payments and legacy side effects impossible from this clone.\n   - The Hebrew funnel is still routed and src/pages/MainPackage.jsx hard-codes live ILS checkout links (https://pay.grow.link/...). Redirect these routes to /en: Home, MainPackage, MainPackageSpecial, MainPackageTrial, GiftCheck, RegistrationDetails, PremiumPackages, YouTubeLanding, qr/QR, Contact, Gallery, About, articles (Hebrew). Remove all pay.grow.link / Meshulam URLs from the client bundle. Keep only /admin, /AdminLogin, /auth/callback and /reset-password working.\n   - In supabase/functions, make lead-webhook, youtube-lead-webhook, payment-webhook, grow-email-bridge, finalize-registration, contact-form, offer-eligibility and send-abandoned-cart-emails return HTTP 410 immediately unless the env var INTL_LEGACY_ENABLED === \"true\". Delete the call to schedulePaidPush (crm_paid_push.ts) or guard it with the same flag.\n   - Remove the task in roadmap.md that asks the owner to re-enter the 14 production secrets (GOOGLE_SHEET_WEBHOOK_URL, SMS4FREE_*, RESEND_API_KEY, etc.). This project must NOT use them. Never ask for them again.\n   - index.html loads the Hebrew site's Google Analytics (G-9B840DNYHY) and Facebook Pixel (750977008087561) on every page, before consent. Remove both. Add a consent-gated loader that reads new IDs from config (VITE_GA_ID / VITE_FB_PIXEL_ID, empty by default) and loads nothing until the visitor accepts cookies.\n3. Remove fabricated or unconfirmed claims (EN and FR):\n   - hero.trustLine → replace with the approved, factual line: EN \"Israeli rabbis who speak your language · Every lesson recorded · Times shown in your local time zone\"; FR « Des rabbins israéliens qui parlent votre langue · Chaque cours enregistré · Horaires affichés à votre heure locale » (both copied from content/landing.*.json hero.trust_line).\n   - faq.items[1].a: delete \"with your community's pronunciation (Ashkenazi, Sephardi or other traditions)\" / « avec la prononciation de votre communauté (achkénaze, séfarade ou autres traditions) ». Do not promise any specific reading tradition.\n   - learn.subtitle: replace \"adapted to your community's nusach and customs\" with \"built around your child's date and Torah portion\" (FR « construit autour de la date et de la Paracha de votre enfant »). pricing.includes[5]: drop \"and community customs\".\n   - faq.items[3].a: delete \"We teach families across North America, Europe and beyond.\" Keep only the local-time scheduling sentence.\n   - leadForm.subtitle / successText: remove \"within one business day\" (EN) and « sous un jour ouvré » (FR).\n   - howItWorks.steps[2] and pricing.includes[0]: replace \"Weekly\" with \"Regular one-on-one\" (FR « réguliers »), because the lesson count is not confirmed yet.\n   - Rabbi roles in src/pages/intl/IntlHome.jsx: do not upgrade \"לומד תורה\" to \"Torah scholar\" / « érudit en Torah ». Use \"Educator; teaches Torah and the weekly portion\" (FR « Éducateur ; enseigne la Torah et la Paracha de la semaine »), and map each rabbi from src/data/rabbis.js (occupation + teaches) faithfully. Move these strings into src/i18n/en.json and fr.json.\n\nGEO, PRICE, ISRAEL (src/lib/geo.js, src/hooks/usePrice.js, supabase/functions/geo-detect/index.ts, IntlLayout.jsx, IntlHome.jsx)\n4. EUROZONE must be exactly: AT BE BG HR CY EE FI FR DE GR IE IT LV LT LU MT NL PT SK SI ES + MC AD SM VA ME XK + GP MQ GF RE YT PM BL MF AX. (BG joined the euro on 2026-01-01.) Everything else is USD, including GB, CH, LI, CA, MA, TN, NC, PF, WF, CZ, PL, SE, HU, RO, DK.\n5. geo-detect: delete the server-side fetch to https://ipapi.co/json/ (it geolocates the server, not the visitor). Use edge headers only (cf-ipcountry, x-vercel-ip-country, x-country-code, plus region headers if present). Otherwise return {country:null}. Add \"[functions.geo-detect] verify_jwt = false\" and \"[functions.intl-lead] verify_jwt = false\" to supabase/config.toml, then confirm that an anonymous visitor gets HTTP 200 from both.\n6. Client fallback: replace countryFromTimezone() with explicit sets. EUR time zones = Europe/Paris, Brussels, Luxembourg, Monaco, Berlin, Amsterdam, Vienna, Rome, Madrid, Lisbon, Dublin, Helsinki, Mariehamn, Athens, Tallinn, Riga, Vilnius, Bratislava, Ljubljana, Zagreb, Malta, Sofia, Andorra, San_Marino, Vatican, Podgorica, Asia/Nicosia, Asia/Famagusta, Atlantic/Madeira, Atlantic/Azores, Atlantic/Canary, Africa/Ceuta, Indian/Reunion, Indian/Mayotte, America/Guadeloupe, America/Martinique, America/Cayenne, America/Miquelon, America/St_Barthelemy, America/Marigot. Asia/Jerusalem and Asia/Tel_Aviv → Israel. Everything else → USD. Remove the generic \"Europe/* → FR\" rule. Remove CH from FRENCH_COUNTRIES (Switzerland is French only for cantons GE, VD, NE, JU). Add GP MQ GF RE YT PM BL MF NC PF WF to the French-language list.\n7. Price formatting depends on page language AND country: EN + EUR → \"€750\"; EN + USD in US → \"$850\"; EN + USD elsewhere → \"US$850\"; FR + EUR → \"750 €\"; FR + USD → \"850 $ US\". Use U+00A0 non-breaking spaces in FR. Do not initialise the currency to USD: while loading, render a fixed-width skeleton in the hero chip and the pricing card, so the visitor never sees $850 change to €750.\n8. Israel (country IL, or time zone Asia/Jerusalem when geo fails): show a top banner in Hebrew with dir=\"rtl\" lang=\"he\" and the exact text \"נמצאים בישראל? לאתר זום מצווה בעברית ←\", linking to https://zoomitzvah.co.il. REPLACE the pricing card and the hero price chip with: EN \"In Israel? Lessons, pricing and registration are on our Hebrew site.\" / FR « Vous êtes en Israël ? Les cours, tarifs et inscriptions sont sur notre site en hébreu. », plus the same link. Never show a USD or EUR price to IL visitors. No redirect.\n9. Under the price, show the currency note and a \"Change region\" chooser with 3 options (Eurozone € · Other countries US$ · Israel → Hebrew site). Store the choice in localStorage key zm_region. The texts are in marketing/geo-pricing-and-language.md §7.1; put them in the locale files.\n\nLANGUAGE (src/i18n/fr.json, en.json, I18nContext.jsx, FindParasha.jsx)\n10. French typography in fr.json: use a non-breaking space (U+00A0) before every : ; ? ! and » and after «, and curly apostrophes (’) everywhere. Today there are 17 plain spaces and 25 straight apostrophes.\n11. French glossary fixes: \"Lecture de la Torah avec le trop\" → « Lecture de la Torah avec les té’amim (la cantillation) »; \"Bénédictions de l'aliya\" → « Bénédictions de la montée à la Torah »; \"nussah\" → « rite »; always « Paracha » (capital P); \"Réserver une consultation gratuite\" → « Réserver un appel découverte gratuit » (short button: « Appel gratuit »); \"Cours complet\" → « Parcours complet »; \"Portail parents\" → « Espace parents »; \"24/7\" → « 24 h/24 »; \"120+ guides\" → « plus de 120 guides »; « Téfilines » (capital T); « la Vieille Ville ». English: learn.subtitle \"nusach\" → \"tradition\"; \"Drasha (speech)\" → \"The speech (drasha)\".\n12. Move every remaining hard-coded UI string into the locale files: all <img alt> texts in IntlHome.jsx, aria-label \"Menu\" in IntlLayout.jsx, \"Parashat \" in FindParasha.jsx (FR must be « Paracha »; use French transliterations of the portion names on /fr), and the \"404\" heading.\n13. In I18nProvider, delete the effect that auto-navigates to another language after geo detection. It is dead code today (the first effect writes zm_intl_lang before the check), and the URL must remain the source of truth. Replace it with a dismissible suggestion bar (\"Ce site existe en français. Voir en français\" / \"This page is available in English. View in English\") that appears only when no saved choice exists. Make the language switcher use real <a> links with hreflang/lang, labelled \"English · Français · עברית\" (the Hebrew link goes to https://zoomitzvah.co.il). No flags.\n\nSEO\n14. index.html: change <html lang=\"he\" dir=\"rtl\"> to lang=\"en\" dir=\"ltr\". src/lib/intlSeo.js: use ABSOLUTE URLs (https://<international domain>/en/...) for canonical, og:url and hreflang. Emit the other-language alternate only when that translation exists. Add hreflang=\"he\" to the matching zoomitzvah.co.il page where one exists. x-default stays /en.\n15. Regenerate public/sitemap.xml for the international domain: /en, /fr, /en/articles, /fr/articles, and every published translated article, with xhtml:link alternates. Point robots.txt to it. Untranslated article slugs must return a real 404 page with <meta name=\"robots\" content=\"noindex\">.\n\nARTICLES (supabase/functions/translate-article/index.ts, IntlTranslations.jsx, IntlArticles.jsx, IntlArticlePage.jsx)\n16. category_label is saved in Hebrew (e.g. \"תפילין — מה, איך, קנייה ושמירה\") and shows as chips and headings on /en/articles and /fr/articles. Translate it, or better, map `category` to locale keys (articles.categories.* in content/landing.*.json).\n17. Rewrite internal links in translated bodies from /articles/<slug> to /<lang>/articles/<slug>, but only when that translation exists. Otherwise unwrap the link. Remove the Hebrew YouTube embeds, or label them \"Video in Hebrew\" / « Vidéo en hébreu ». Translate or remove the Hebrew <small class=\"zm-legal\"> block.\n18. Sanitize body_html with DOMPurify before dangerouslySetInnerHTML.\n19. Save new translations as status 'draft'. Add a per-article preview and a \"Publish\" button in the admin tab. Auto-flag (needs_review) any output that contains Hebrew letters [֐-׿] outside <blockquote>/<q> verse quotes.\n20. Put the project glossary into LANG_RULES. FR: Paracha (capital P), Haftara, Téfilines, Talit, « montée à la Torah » (never « aliya »/« alya »), té’amim, Chabbat, Mazal tov, vouvoiement, NBSP typography. EN: Bar Mitzvah, Torah portion (parasha), leyning, Haftarah, tefillin, tallit, Shabbat, \"aliyah (being called up to the Torah)\".\n21. Until at least 120 guides are published in BOTH languages, change the benefit/pricing line \"120+ guides in English & French\" to \"A growing library of guides in English & French\" (FR « Une bibliothèque de guides en français et en anglais, enrichie chaque semaine »).\n\nDESIGN & ACCESSIBILITY\n22. Replace the hero image src/assets/intl/hero-jerusalem.jpg. Its dominant focal point is the Dome of the Rock, which is wrong for a Jewish Torah-learning brand. Use the Western Wall (Kotel) at golden hour, Old City Jerusalem stone alleys, or Jerusalem rooftops, with no Dome of the Rock or other non-Jewish religious landmark as the subject. Check rooftops-sunset.jpg and jerusalem-alley.jpg the same way. Update the alt texts (from locale files).\n23. Contrast: gold text on limestone is 2.1:1 and on white 2.5:1, which fails WCAG AA. Add a text token --intl-gold-text ≈ #7F5F1A (about 5.0:1 on #F3EBDD) and use it for kickers, \"Read the guide\" links, rabbi expertise text and article links on light backgrounds. Keep #C9A24A for decorative use and on night blue.\n24. Respect prefers-reduced-motion in the anchor scroll (IntlHome.jsx scrollIntoView: use behavior \"auto\" when reduced).\n\nLEAD FORM (src/components/intl/LeadForm.jsx, supabase/functions/intl-lead/index.ts)\n25. Add a consent line with a link to an EN/FR privacy policy page (create /en/privacy and /fr/privacy with placeholder text clearly marked \"draft — pending owner/legal approval\"). Add a hidden honeypot field and a simple per-IP/per-email rate limit in intl-lead. Make country an ISO-2 select prefilled from detection. Also send timezone (Intl), currency and source:\"intl\". Fire the analytics event \"consultation_booked\" on success (no PII in the event).\n\nDo NOT: re-enter production secrets, enable any CRM forwarding, add Stripe, or invent statistics, testimonials, customer locations or rabbi languages.",
+      "notes_he": "אתר הנחיתה: 4.7/10, חוזר לעיבוד. הכותרת העברית הישנה עוטפת את האתר (src/App.jsx → src/Layout.jsx), דרכה אפשר להגיע לקישורי תשלום חיים של Grow בשקלים, נטענים ה-GA וה-Pixel של האתר העברי, ושורת האמון 'Trusted by families across the USA…' מומצאת. ברשימת האירו חסרה בולגריה, זיהוי המדינה בודק את השרת ולא את המבקר, ותמונת ה-hero ממוקדת בכיפת הסלע. לא להזין בשכפול את 14 הסודות של הייצור."
+    },
+    {
+      "id": "C1",
+      "track": "crm",
+      "project": "82b65911-b20c-4cb1-b23b-f42f0c395772",
+      "commit": "e986a6d156b36d32fc406966bc4a5635e5fe1dad",
+      "score": 7.8,
+      "verdict": "REWORK",
+      "per_criterion": {
+        "brand": "n/a",
+        "marketing": "n/a",
+        "language": 8,
+        "design": "n/a",
+        "technical": 7.5,
+        "safety": 8
+      },
+      "weights_redistributed": {
+        "language": 0.444,
+        "technical": 0.444,
+        "safety": 0.111
+      },
+      "weighted_uncapped": 7.78,
+      "safety_failure": false,
+      "safety_cap_applied": false,
+      "progress_score": 2,
+      "fixes": [
+        {
+          "team": "CRM development",
+          "fix": "Capture live pg_get_functiondef/prosecdef/proacl for get_student_safe_data, get_rabbi_students_safe, protect_student_package_fields into db/tests/intl_locale/live_before.sql; load it in fixture.sql instead of the SETOF uuid stubs; restore SECURITY DEFINER/auth predicates/ACL exactly in 0068 if production had them."
+        },
+        {
+          "team": "CRM development",
+          "fix": "Wrap drizzle/migrations/0068_intl_family_locale_columns.sql in BEGIN/COMMIT (DROP+CREATE must be atomic)."
+        },
+        {
+          "team": "CRM development",
+          "fix": "Add 0068 rollback SQL restoring the previous function bodies + ACLs and dropping the two triggers and validate_locale_timezone()."
+        },
+        {
+          "team": "CRM QA",
+          "fix": "Extend db/tests/intl_locale/test.sql: student INSERT without timezone, legacy columns and order in both safe functions, has_function_privilege for anon/authenticated, protect-body md5 parity, rabbi cannot change country/currency."
+        },
+        {
+          "team": "CRM development",
+          "fix": "Optional CHECK (country IS NULL OR country ~ '^[A-Z]{2}$'); after approved apply, read-only verification + portal smoke test, then mark applied in roadmap.md."
+        }
+      ],
+      "checks": {
+        "additive": "PASS",
+        "hebrew_unaffected": "PASS",
+        "rabbi_safe_columns": "PASS (20 legacy + 4 appended)",
+        "student_safe_columns": "PASS (19 legacy + 4 appended)",
+        "security_mode_parity": "UNVERIFIED (new = SECURITY INVOKER, no caller check; fixture stubs)",
+        "grants": "PARTIAL (explicit; previous ACL not captured)",
+        "protect_trigger": "PASS (verbatim production + country/currency)",
+        "timezone_trigger_omitted_insert": "PASS",
+        "atomic": "FAIL",
+        "rollback": "FAIL",
+        "tests": "PARTIAL"
+      },
+      "notes_he": "CRM שלב 1: 7.8/10, תיקון קטן. המיגרציה מוסיפה בלבד ובטוחה: ברירות מחדל עבריות, אף עמודה לא נמחקה, טריגר ההגנה זהה לייצור ונוספו לו country ו-currency, וטריגר אזור הזמן לא חוסם הוספה בלי timezone. חסרות הוכחה שהפונקציות 'safe' שנבנו מחדש זהות לייצור (SECURITY DEFINER והרשאות), עטיפה ב-BEGIN/COMMIT, קובץ rollback ובדיקות נוספות."
+    }
+  ],
+  "progress": {
+    "landing": 5,
+    "crm": 2
+  },
+  "owner_questions_he": [
+    "האם יש משפחות מחו\"ל שכבר למדו (לשורת אמון אמיתית)?",
+    "אילו מסורות קריאה הרבנים מלמדים (Q2)?",
+    "האם בנות קוראות בתורה (Q1)?",
+    "כמה שיעורים בקורס, והאם מאשרים 'תשובה תוך יום עסקים'?",
+    "האם הרבנים גרים בירושלים או 'בישראל'?",
+    "מזהי GA ו-Pixel חדשים לאתר הבינלאומי"
+  ]
+}
