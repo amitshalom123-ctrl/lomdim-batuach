@@ -1,7 +1,7 @@
 {
   "_meta": {
     "locale": "en",
-    "version": "1.0.0",
+    "version": "2.0.0",
     "notes": "Bodies are plain text with \\n line breaks; the email template wraps them and renders cta_label/cta_url as a button. WhatsApp texts use WhatsApp formatting (*bold*) and must be submitted as approved WhatsApp Business templates before use; send only to families who opted in. Keep the same keys in both languages. Dates, times and amounts must be pre-formatted in the recipient's locale and time zone by the CRM. Do not add any rescheduling, refund or cancellation policy line unless the business supplies the exact wording.",
     "placeholders": {
       "{{PARENT_FIRST_NAME}}": "Recipient's first name (parent, or the adult learner).",
@@ -11,7 +11,7 @@
       "{{RABBI_BIO_SHORT}}": "2-3 sentence bio from the rabbi data (in the email's language).",
       "{{LESSON_LANGUAGE}}": "'English' or 'French' (FR: 'français' / 'anglais').",
       "{{LESSON_DATE}}": "Localized date in the family's time zone, e.g. 'Tuesday, March 4' (FR: 'mardi 4 mars').",
-      "{{LESSON_TIME}}": "Localized time in the family's time zone, e.g. '5:30 p.m.' (FR: '17 h 30').",
+      "{{LESSON_TIME}}": "Localized time in the family's time zone: '5:30 p.m.' (FR file: '17 h 30').",
       "{{TIMEZONE}}": "Human-readable time zone of the family, e.g. 'New York time' (FR: 'heure de Paris').",
       "{{LESSON_DURATION}}": "Lesson length in minutes.",
       "{{NEXT_LESSON_DATE}}": "Next lesson date, localized.",
@@ -28,13 +28,11 @@
       "{{GUIDES_URL}}": "Link to the guides library (in the family's language).",
       "{{PARASHA_GUIDE_URL}}": "Link to the guide of the student's Torah portion.",
       "{{RECORDING_URL}}": "Link to the lesson recording in the portal.",
-      "{{LESSON_SUMMARY}}": "Rabbi's summary of the lesson (bullet list, in the email's language).",
-      "{{HOMEWORK}}": "Practice tasks before the next lesson (bullet list).",
       "{{MILESTONE}}": "Short noun phrase describing the milestone, e.g. 'Both aliyah blessings, by heart' (FR: 'Les deux bénédictions de la montée à la Torah, par cœur').",
       "{{LESSONS_COMPLETED}}": "Number of lessons completed so far.",
       "{{NEXT_GOAL}}": "Next goal set by the rabbi, short phrase.",
       "{{EVENT_DATE}}": "Date of the Bar/Bat Mitzvah, localized.",
-      "{{AMOUNT}}": "Amount, formatted with currency in the email's locale ('€750' / '$850'; FR: '750 €' / '850 $').",
+      "{{AMOUNT}}": "Amount with ISO code, as on receipts (geo §7): '€750 (EUR)' / 'US$850 (USD)'.",
       "{{INVOICE_NUMBER}}": "Receipt / invoice number.",
       "{{PAYMENT_DATE}}": "Payment date, localized.",
       "{{PAYMENT_METHOD}}": "e.g. 'Visa ending in 4242' (FR: 'Visa se terminant par 4242').",
@@ -43,11 +41,81 @@
       "{{UPDATE_PAYMENT_URL}}": "Link to update payment details.",
       "{{PAYMENT_DUE_DATE}}": "Date by which payment must be updated, localized.",
       "{{FEEDBACK_URL}}": "Feedback form link.",
-      "{{SUPPORT_EMAIL}}": "Support email address."
+      "{{SUPPORT_EMAIL}}": "Support email address.",
+      "{{PRICE}}": "Course price as displayed on the landing page (geo §7): '€750' | '$850' (US) | 'US$850' (other non-euro countries).",
+      "{{LESSON_SUMMARY_LINE}}": "ONE-LINE summary of the lesson written by the rabbi (max ~160 characters, no line breaks).",
+      "{{HOMEWORK_SUMMARY}}": "ONE-LINE practice summary (max ~160 characters, no line breaks). The full list stays in the portal.",
+      "{{PLAN_SUMMARY}}": "ONE-LINE summary of the personal plan discussed in the consultation (max ~300 characters, no line breaks).",
+      "{{CONSULTATION_DATE}}": "Consultation date, localized in the family's time zone.",
+      "{{CONSULTATION_TIME}}": "Consultation time, localized ('5:30 p.m.' / FR '17 h 30').",
+      "{{CONSULTATION_LINK}}": "Video call link for the free consultation.",
+      "{{CONSULTATION_RESCHEDULE_URL}}": "Link to rebook the free consultation.",
+      "{{CHECKOUT_URL}}": "Checkout link for the full course, in the family's geo currency (geo §3.4)."
     },
-    "signature": "Warmly,\nThe Zoom Mitzvah International team"
+    "signature": "Warmly,\nThe Zoom Mitzvah International team",
+    "whatsapp_rules": "WhatsApp rules (Meta): no template body starts or ends with a variable; every URL is in `whatsapp_button` (a CTA-URL button: Meta requires a fixed domain with a dynamic suffix, e.g. https://portal.example.com/{{1}}, so the CRM should pass only the path/token). No variable may contain line breaks, tabs or 4+ consecutive spaces (applies to e-mail too). Long content lives in the portal. `whatsapp_button` is null when the template has no link. Consultation templates go to leads who opted in on the booking form."
   },
   "templates": {
+    "consultation_booked": {
+      "trigger": "A visitor books a free consultation (event consultation_booked).",
+      "email": {
+        "subject": "Your free consultation is booked: {{CONSULTATION_DATE}} at {{CONSULTATION_TIME}}",
+        "preheader": "Your call link, and what we'll talk about.",
+        "body": "Hi {{PARENT_FIRST_NAME}},\n\nThank you for booking a free consultation with Zoom Mitzvah International. We're looking forward to meeting you.\n\nDate: {{CONSULTATION_DATE}}\nTime: {{CONSULTATION_TIME}}, {{TIMEZONE}} (your local time)\nVideo call link: {{CONSULTATION_LINK}}\n\nWhat we'll ask you, so you can think about it beforehand:\n• who will be learning, and their age\n• the Bar or Bat Mitzvah date, if there is one (or \"not sure yet\")\n• your family's tradition and your synagogue's customs\n• how your child learns best, and anything we should know\n• the days and times that usually work for your family\n\nAnd of course, bring all your questions. There's no commitment.\n\nNeed another time? {{CONSULTATION_RESCHEDULE_URL}}\n\nWarmly,\nThe Zoom Mitzvah International team",
+        "cta_label": "Add to my calendar",
+        "cta_url": "{{CALENDAR_URL}}"
+      },
+      "whatsapp": "Hi {{PARENT_FIRST_NAME}}, your free consultation with Zoom Mitzvah is booked for *{{CONSULTATION_DATE}} at {{CONSULTATION_TIME}}* ({{TIMEZONE}}, your local time). We look forward to meeting you, so bring all your questions!",
+      "whatsapp_button": {
+        "label": "Join the call",
+        "url": "{{CONSULTATION_LINK}}"
+      }
+    },
+    "consultation_reminder_24h": {
+      "trigger": "24 hours before a free consultation.",
+      "email": {
+        "subject": "Tomorrow: your free consultation at {{CONSULTATION_TIME}}",
+        "preheader": "A quick reminder and your call link.",
+        "body": "Hi {{PARENT_FIRST_NAME}},\n\nA quick reminder: your free consultation with Zoom Mitzvah International is tomorrow.\n\n{{CONSULTATION_DATE}} at {{CONSULTATION_TIME}} ({{TIMEZONE}}, your local time)\nVideo call link: {{CONSULTATION_LINK}}\n\nA computer is the most comfortable, but a phone works too. If your child would like to join, they're very welcome.\n\nCan't make it? Choose another time here: {{CONSULTATION_RESCHEDULE_URL}}\n\nWarmly,\nThe Zoom Mitzvah International team",
+        "cta_label": "Join the call",
+        "cta_url": "{{CONSULTATION_LINK}}"
+      },
+      "whatsapp": "Reminder: your free consultation with Zoom Mitzvah is *tomorrow at {{CONSULTATION_TIME}}* ({{TIMEZONE}}, your local time). See you then!",
+      "whatsapp_button": {
+        "label": "Join the call",
+        "url": "{{CONSULTATION_LINK}}"
+      }
+    },
+    "consultation_no_show": {
+      "trigger": "The visitor did not join the booked free consultation.",
+      "email": {
+        "subject": "We missed you today. Shall we find another time?",
+        "preheader": "No problem at all: choosing a new time takes a minute.",
+        "body": "Hi {{PARENT_FIRST_NAME}},\n\nWe were looking forward to our call today at {{CONSULTATION_TIME}} ({{TIMEZONE}}), but we didn't manage to connect. No problem at all: these things happen.\n\nChoosing a new time takes a minute: {{CONSULTATION_RESCHEDULE_URL}}\n\nA question in the meantime? Just reply to this email, or ask our assistant any time, in English: {{AI_ASSISTANT_URL}}\n\nWarmly,\nThe Zoom Mitzvah International team",
+        "cta_label": "Choose a new time",
+        "cta_url": "{{CONSULTATION_RESCHEDULE_URL}}"
+      },
+      "whatsapp": "Hi {{PARENT_FIRST_NAME}}, we missed you at today's free consultation. No problem at all: you can choose a new time with the button below.",
+      "whatsapp_button": {
+        "label": "Choose a new time",
+        "url": "{{CONSULTATION_RESCHEDULE_URL}}"
+      }
+    },
+    "consultation_follow_up": {
+      "trigger": "After a completed free consultation (same day or next day). No pressure, no countdowns.",
+      "email": {
+        "subject": "Your personal plan, and the next steps",
+        "preheader": "Everything we discussed, in one place. No rush.",
+        "body": "Hi {{PARENT_FIRST_NAME}},\n\nThank you for taking the time to talk with us. Here's a summary of what we discussed:\n\n{{PLAN_SUMMARY}}\n\nThe complete course is {{PRICE}}, everything included: private live lessons with your Israeli rabbi, every lesson recorded, the parent portal, your personal AI assistant 24/7 and our 120+ guides in English and French. Your final price is confirmed before you pay.\n\nWhen you're ready, you can enrol with the button below.\n\nThere's no rush. If you'd like to think it over, talk it through as a family or ask another question, simply reply to this email. We're here.\n\nWarmly,\nThe Zoom Mitzvah International team",
+        "cta_label": "Enrol in the full course",
+        "cta_url": "{{CHECKOUT_URL}}"
+      },
+      "whatsapp": "Hi {{PARENT_FIRST_NAME}}, thank you for our conversation. Your plan summary and the next steps are in your email. Whenever you're ready, you can enrol with the button below, and if you have any question, just reply here.",
+      "whatsapp_button": {
+        "label": "Enrol",
+        "url": "{{CHECKOUT_URL}}"
+      }
+    },
     "welcome_after_payment": {
       "trigger": "Payment for the full course succeeded (first payment).",
       "email": {
@@ -57,7 +125,11 @@
         "cta_label": "Open my parent portal",
         "cta_url": "{{PORTAL_URL}}"
       },
-      "whatsapp": "Hi {{PARENT_FIRST_NAME}}, welcome to Zoom Mitzvah! 🎉 Your payment is confirmed and {{STUDENT_FIRST_NAME}}'s journey starts today. Your portal login is on its way by email, and we'll introduce your rabbi very soon. Questions anytime: {{AI_ASSISTANT_URL}}"
+      "whatsapp": "Hi {{PARENT_FIRST_NAME}}, welcome to Zoom Mitzvah! 🎉 Your payment is confirmed and {{STUDENT_FIRST_NAME}}'s journey starts today. Your portal login is on its way by email, and we'll introduce your rabbi very soon.",
+      "whatsapp_button": {
+        "label": "Ask the assistant",
+        "url": "{{AI_ASSISTANT_URL}}"
+      }
     },
     "portal_access": {
       "trigger": "Parent account created.",
@@ -68,7 +140,11 @@
         "cta_label": "Set my password",
         "cta_url": "{{PASSWORD_SETUP_URL}}"
       },
-      "whatsapp": "Hi {{PARENT_FIRST_NAME}}, your Zoom Mitzvah parent portal is ready. Set your password here (valid {{LINK_EXPIRY_HOURS}} h): {{PASSWORD_SETUP_URL}}\nLogin email: {{LOGIN_EMAIL}}"
+      "whatsapp": "Hi {{PARENT_FIRST_NAME}}, your Zoom Mitzvah parent portal is ready. Your login email is {{LOGIN_EMAIL}}. Set your password with the button below; the link is valid for {{LINK_EXPIRY_HOURS}} hours.",
+      "whatsapp_button": {
+        "label": "Set my password",
+        "url": "{{PASSWORD_SETUP_URL}}"
+      }
     },
     "rabbi_matched": {
       "trigger": "A rabbi has been assigned to the student.",
@@ -79,7 +155,11 @@
         "cta_label": "Book the first lesson",
         "cta_url": "{{BOOKING_URL}}"
       },
-      "whatsapp": "Hi {{PARENT_FIRST_NAME}}! Meet *{{RABBI_NAME}}*, {{STUDENT_FIRST_NAME}}'s rabbi in Israel. Book the first lesson here (times shown in your local time): {{BOOKING_URL}}"
+      "whatsapp": "Hi {{PARENT_FIRST_NAME}}! Meet *{{RABBI_NAME}}*, {{STUDENT_FIRST_NAME}}'s rabbi in Israel. Book the first lesson with the button below; times are shown in your local time.",
+      "whatsapp_button": {
+        "label": "Book the first lesson",
+        "url": "{{BOOKING_URL}}"
+      }
     },
     "lesson_scheduled": {
       "trigger": "A lesson is booked (first or any later lesson).",
@@ -90,7 +170,11 @@
         "cta_label": "Add to my calendar",
         "cta_url": "{{CALENDAR_URL}}"
       },
-      "whatsapp": "✅ Lesson confirmed: *{{LESSON_DATE}} at {{LESSON_TIME}}* ({{TIMEZONE}}, your local time) with {{RABBI_NAME}}.\nZoom: {{ZOOM_LINK}}\nChange the time: {{RESCHEDULE_URL}}"
+      "whatsapp": "✅ Lesson confirmed with {{RABBI_NAME}}: *{{LESSON_DATE}} at {{LESSON_TIME}}* ({{TIMEZONE}}, your local time). Need another time? You can change it in your parent portal.",
+      "whatsapp_button": {
+        "label": "Join on Zoom",
+        "url": "{{ZOOM_LINK}}"
+      }
     },
     "reminder_24h": {
       "trigger": "24 hours before a lesson.",
@@ -101,29 +185,41 @@
         "cta_label": "Join the lesson",
         "cta_url": "{{ZOOM_LINK}}"
       },
-      "whatsapp": "Reminder: {{STUDENT_FIRST_NAME}}'s lesson with {{RABBI_NAME}} is *tomorrow at {{LESSON_TIME}}* ({{TIMEZONE}}).\nZoom: {{ZOOM_LINK}}\nCan't make it? {{RESCHEDULE_URL}}"
+      "whatsapp": "Reminder: {{STUDENT_FIRST_NAME}}'s lesson with {{RABBI_NAME}} is *tomorrow at {{LESSON_TIME}}* ({{TIMEZONE}}). Can't make it? Please let us know as early as possible.",
+      "whatsapp_button": {
+        "label": "Join on Zoom",
+        "url": "{{ZOOM_LINK}}"
+      }
     },
     "reminder_1h": {
       "trigger": "1 hour before a lesson.",
       "email": {
         "subject": "In 1 hour: lesson with {{RABBI_NAME}}",
-        "preheader": "Your Zoom link is inside.",
+        "preheader": "Your Zoom link to join the lesson.",
         "body": "Hi {{PARENT_FIRST_NAME}},\n\n{{STUDENT_FIRST_NAME}}'s lesson starts in one hour, at {{LESSON_TIME}} ({{TIMEZONE}}).\n\nJoin here: {{ZOOM_LINK}}\n\nQuick checklist: laptop charged, headphones, a quiet corner, the text open. {{RABBI_NAME}} is looking forward to it!\n\nWarmly,\nThe Zoom Mitzvah International team",
         "cta_label": "Join the lesson",
         "cta_url": "{{ZOOM_LINK}}"
       },
-      "whatsapp": "⏰ {{STUDENT_FIRST_NAME}}'s lesson starts in *1 hour* ({{LESSON_TIME}}, {{TIMEZONE}}).\nJoin: {{ZOOM_LINK}}"
+      "whatsapp": "⏰ Starting in *1 hour*: {{STUDENT_FIRST_NAME}}'s lesson with {{RABBI_NAME}} ({{LESSON_TIME}}, {{TIMEZONE}}). See you soon!",
+      "whatsapp_button": {
+        "label": "Join on Zoom",
+        "url": "{{ZOOM_LINK}}"
+      }
     },
     "lesson_summary_homework": {
       "trigger": "The rabbi submits the lesson summary.",
       "email": {
         "subject": "Today's lesson: summary and practice for {{STUDENT_FIRST_NAME}}",
         "preheader": "What you worked on, and what to practice before next time.",
-        "body": "Hi {{PARENT_FIRST_NAME}},\n\nHere's a summary of today's lesson with {{RABBI_NAME}}.\n\nWhat we worked on:\n{{LESSON_SUMMARY}}\n\nPractice before next time:\n{{HOMEWORK}}\n\nNext lesson: {{NEXT_LESSON_DATE}} at {{NEXT_LESSON_TIME}} ({{TIMEZONE}})\n\nTip: a little practice every day works better than one long session the night before. Ten minutes with the recording is plenty.\n\nA question about the homework? Your AI assistant is available any time: {{AI_ASSISTANT_URL}}\n\nWarmly,\nThe Zoom Mitzvah International team",
+        "body": "Hi {{PARENT_FIRST_NAME}},\n\nHere's a summary of today's lesson with {{RABBI_NAME}}.\n\nWhat we worked on: {{LESSON_SUMMARY_LINE}}\n\nPractice before next time: {{HOMEWORK_SUMMARY}}\n\nThe full practice plan is in your parent portal.\n\nNext lesson: {{NEXT_LESSON_DATE}} at {{NEXT_LESSON_TIME}} ({{TIMEZONE}})\n\nTip: a little practice every day works better than one long session the night before. Ten minutes with the recording is plenty.\n\nA question about the homework? Your AI assistant is available any time: {{AI_ASSISTANT_URL}}\n\nWarmly,\nThe Zoom Mitzvah International team",
         "cta_label": "See it in the portal",
         "cta_url": "{{PORTAL_URL}}"
       },
-      "whatsapp": "Today's lesson with {{RABBI_NAME}} ✔️\n*Practice before next time:*\n{{HOMEWORK}}\nNext lesson: {{NEXT_LESSON_DATE}}, {{NEXT_LESSON_TIME}} ({{TIMEZONE}}). Full summary: {{PORTAL_URL}}"
+      "whatsapp": "Today's lesson with {{RABBI_NAME}} is done ✔️ Your practice plan and the full summary are in the parent portal. Next lesson: {{NEXT_LESSON_DATE}}, {{NEXT_LESSON_TIME}} ({{TIMEZONE}}). See you then!",
+      "whatsapp_button": {
+        "label": "Open the portal",
+        "url": "{{PORTAL_URL}}"
+      }
     },
     "recording_available": {
       "trigger": "The lesson recording has been processed.",
@@ -134,7 +230,11 @@
         "cta_label": "Watch the recording",
         "cta_url": "{{RECORDING_URL}}"
       },
-      "whatsapp": "🎥 The recording of today's lesson is ready. Perfect for practicing between lessons: {{RECORDING_URL}}"
+      "whatsapp": "🎥 The recording of today's lesson is ready. Perfect for practicing between lessons.",
+      "whatsapp_button": {
+        "label": "Watch",
+        "url": "{{RECORDING_URL}}"
+      }
     },
     "missed_lesson": {
       "trigger": "The student did not join a scheduled lesson.",
@@ -145,7 +245,11 @@
         "cta_label": "Choose a new time",
         "cta_url": "{{RESCHEDULE_URL}}"
       },
-      "whatsapp": "Hi {{PARENT_FIRST_NAME}}, we missed {{STUDENT_FIRST_NAME}} at today's lesson. Hope all is well! Choose a new time here: {{RESCHEDULE_URL}}"
+      "whatsapp": "Hi {{PARENT_FIRST_NAME}}, we missed {{STUDENT_FIRST_NAME}} at today's lesson. We hope all is well! You can choose a new time with the button below.",
+      "whatsapp_button": {
+        "label": "Choose a new time",
+        "url": "{{RESCHEDULE_URL}}"
+      }
     },
     "payment_receipt": {
       "trigger": "Any successful payment.",
@@ -156,7 +260,11 @@
         "cta_label": "Download my receipt (PDF)",
         "cta_url": "{{RECEIPT_URL}}"
       },
-      "whatsapp": "Thank you, {{PARENT_FIRST_NAME}}! Payment of *{{AMOUNT}}* received. Your receipt: {{RECEIPT_URL}}"
+      "whatsapp": "Thank you, {{PARENT_FIRST_NAME}}! We've received your payment of *{{AMOUNT}}*. Your receipt is ready to download.",
+      "whatsapp_button": {
+        "label": "Download receipt",
+        "url": "{{RECEIPT_URL}}"
+      }
     },
     "payment_failed": {
       "trigger": "A payment attempt failed.",
@@ -167,18 +275,26 @@
         "cta_label": "Update my payment details",
         "cta_url": "{{UPDATE_PAYMENT_URL}}"
       },
-      "whatsapp": "Hi {{PARENT_FIRST_NAME}}, your payment of {{AMOUNT}} didn't go through. Please update your details by {{PAYMENT_DUE_DATE}} to keep lessons on track: {{UPDATE_PAYMENT_URL}}"
+      "whatsapp": "Hi {{PARENT_FIRST_NAME}}, your payment of {{AMOUNT}} didn't go through. Please update your details by {{PAYMENT_DUE_DATE}} to keep the lessons on track. Need help? Just reply here.",
+      "whatsapp_button": {
+        "label": "Update payment",
+        "url": "{{UPDATE_PAYMENT_URL}}"
+      }
     },
     "progress_milestone": {
       "trigger": "The rabbi marks a milestone as reached.",
       "email": {
         "subject": "Good news: {{STUDENT_FIRST_NAME}} just reached a milestone",
         "preheader": "A message from {{RABBI_NAME}} worth sharing at dinner tonight.",
-        "body": "Hi {{PARENT_FIRST_NAME}},\n\nSome good news from {{RABBI_NAME}}: {{STUDENT_FIRST_NAME}} has reached a new milestone.\n\n✓ {{MILESTONE}}\n\nThat's {{LESSONS_COMPLETED}} lessons of steady work. A word of encouragement from you tonight will mean a lot.\n\nNext goal: {{NEXT_GOAL}}\n\nWarmly,\nThe Zoom Mitzvah International team",
+        "body": "Hi {{PARENT_FIRST_NAME}},\n\nSome good news from {{RABBI_NAME}}: {{STUDENT_FIRST_NAME}} has reached a new milestone.\n\n✓ {{MILESTONE}}\n\nThat's the result of steady work over {{LESSONS_COMPLETED}} lessons. A word of encouragement from you tonight will mean a lot.\n\nNext goal: {{NEXT_GOAL}}\n\nWarmly,\nThe Zoom Mitzvah International team",
         "cta_label": "See progress in the portal",
         "cta_url": "{{PORTAL_URL}}"
       },
-      "whatsapp": "🌟 Milestone reached! {{STUDENT_FIRST_NAME}}: *{{MILESTONE}}*. Next goal: {{NEXT_GOAL}}. A word of encouragement tonight will mean a lot!"
+      "whatsapp": "🌟 Milestone reached! {{STUDENT_FIRST_NAME}}: *{{MILESTONE}}*. Next goal: {{NEXT_GOAL}}. A word of encouragement tonight will mean a lot!",
+      "whatsapp_button": {
+        "label": "See progress",
+        "url": "{{PORTAL_URL}}"
+      }
     },
     "countdown_30_days": {
       "trigger": "30 days before {{EVENT_DATE}}.",
@@ -189,18 +305,23 @@
         "cta_label": "Open the parent portal",
         "cta_url": "{{PORTAL_URL}}"
       },
-      "whatsapp": "⏳ 30 days to {{STUDENT_FIRST_NAME}}'s {{CEREMONY}}! Tip: a little practice every day with the recordings, and read the speech out loud at home. Any change at the synagogue? Let {{RABBI_NAME}} know."
+      "whatsapp": "⏳ 30 days to {{STUDENT_FIRST_NAME}}'s {{CEREMONY}}! Tip: a little practice every day with the recordings, and read the speech out loud at home. Any change at the synagogue? Let {{RABBI_NAME}} know.",
+      "whatsapp_button": {
+        "label": "Read the portion guide",
+        "url": "{{PARASHA_GUIDE_URL}}"
+      }
     },
     "course_completed": {
       "trigger": "The course is marked complete (usually after the Bar/Bat Mitzvah).",
       "email": {
         "subject": "Mazal tov, {{STUDENT_FIRST_NAME}}!",
         "preheader": "From all of us in Israel: we're so proud.",
-        "body": "Hi {{PARENT_FIRST_NAME}},\n\nMazal tov! {{STUDENT_FIRST_NAME}} has completed the course with {{RABBI_NAME}}.\n\nBehind this moment are hours of practice, courage and patience, from {{STUDENT_FIRST_NAME}} and from you. Thank you for trusting us with such an important step in your family's life. From all of us in Israel, and from {{RABBI_NAME}} personally: we are so proud.\n\nLearning doesn't have to stop here. If {{STUDENT_FIRST_NAME}} would like to keep going, with tefillin, the weekly portion or any other topic, just reply to this email and we'll talk about it.\n\nMazal tov again, to the whole family.\n\nWarmly,\nThe Zoom Mitzvah International team",
+        "body": "Hi {{PARENT_FIRST_NAME}},\n\nMazal tov! {{STUDENT_FIRST_NAME}} has completed the course with {{RABBI_NAME}}.\n\nBehind this moment are hours of practice, courage and patience, from {{STUDENT_FIRST_NAME}} and from you. Thank you for trusting us with such an important step in your family's life. From all of us in Israel, and from {{RABBI_NAME}} personally: we are very proud of {{STUDENT_FIRST_NAME}}.\n\nLearning doesn't have to stop here. If {{STUDENT_FIRST_NAME}} would like to keep going, with tefillin, the weekly portion or any other topic, just reply to this email and we'll talk about it.\n\nMazal tov again, to the whole family.\n\nWarmly,\nThe Zoom Mitzvah International team",
         "cta_label": "Open my parent portal",
         "cta_url": "{{PORTAL_URL}}"
       },
-      "whatsapp": "🎉 *Mazal tov, {{STUDENT_FIRST_NAME}}!* The course with {{RABBI_NAME}} is complete. From all of us in Israel: we're so proud of you, and grateful to your family for your trust."
+      "whatsapp": "🎉 *Mazal tov, {{STUDENT_FIRST_NAME}}!* The course with {{RABBI_NAME}} is complete. From all of us in Israel: we're very proud of {{STUDENT_FIRST_NAME}}, and grateful to your family for your trust.",
+      "whatsapp_button": null
     },
     "feedback_request": {
       "trigger": "Suggested: 7 days after course completion (can also be sent mid-course as a check-in).",
@@ -212,7 +333,11 @@
         "cta_url": "{{FEEDBACK_URL}}",
         "optional_line": "At the end of the form, you can choose whether we may share a few of your words with other families. It's entirely up to you."
       },
-      "whatsapp": "Hi {{PARENT_FIRST_NAME}}, how was it with {{RABBI_NAME}}? Two minutes of feedback would help us a lot: {{FEEDBACK_URL}} Thank you!"
+      "whatsapp": "Hi {{PARENT_FIRST_NAME}}, how was it with {{RABBI_NAME}}? Two minutes of feedback would help us a lot. Thank you!",
+      "whatsapp_button": {
+        "label": "Give feedback",
+        "url": "{{FEEDBACK_URL}}"
+      }
     }
   }
 }
