@@ -1,0 +1,684 @@
+{
+  "_meta": {
+    "locale": "fr",
+    "version": "1.0.0",
+    "status": "DRAFT for CRM QA and Director review. Not approved for sending. Per the implementation plan, nothing is sent or published without owner approval at each step.",
+    "source_conventions": "Voice and structure follow content/emails-and-messages.fr.json (generic templates). CRM placeholders are lower_snake_case because they map 1:1 to renderCustomer vars; see placeholders[].generic_equivalent.",
+    "placeholders": {
+      "{{recipient_first_name}}": {
+        "meaning": "First name of the person receiving the message (parent, or the adult learner).",
+        "example": "Rebecca",
+        "generic_equivalent": "PARENT_FIRST_NAME"
+      },
+      "{{student_first_name}}": {
+        "meaning": "Student's first name.",
+        "example": "Benjamin",
+        "generic_equivalent": "STUDENT_FIRST_NAME"
+      },
+      "{{ceremony}}": {
+        "meaning": "Ceremony name in the recipient's language.",
+        "example": "Bar Mitsva / Bat Mitsva",
+        "generic_equivalent": "CEREMONY"
+      },
+      "{{rabbi_name}}": {
+        "meaning": "Rabbi's display name with title, from the rabbi data. FR: no article, so it works at the start of a sentence.",
+        "example": "Rav Yosef",
+        "generic_equivalent": "RABBI_NAME"
+      },
+      "{{login_email}}": {
+        "meaning": "Email address used to log in.",
+        "example": "rebecca@example.com",
+        "generic_equivalent": "LOGIN_EMAIL"
+      },
+      "{{password_setup_url}}": {
+        "meaning": "One-time password setup link (email only).",
+        "example": "https://…",
+        "generic_equivalent": "PASSWORD_SETUP_URL"
+      },
+      "{{password_reset_url}}": {
+        "meaning": "One-time password reset link (email only). Never a password.",
+        "example": "https://…",
+        "generic_equivalent": "PASSWORD_SETUP_URL"
+      },
+      "{{link_expiry}}": {
+        "meaning": "Pre-formatted validity of a setup/reset link, with unit, singular/plural handled by the CRM.",
+        "example": "1 heure / 24 heures",
+        "generic_equivalent": "LINK_EXPIRY_HOURS (now pre-formatted with its unit)"
+      },
+      "{{portal_url}}": {
+        "meaning": "Student/parent portal URL (deep link to the relevant screen when possible).",
+        "example": "https://…",
+        "generic_equivalent": "PORTAL_URL"
+      },
+      "{{ai_assistant_url}}": {
+        "meaning": "Link to the family's AI assistant (StudentAssistant).",
+        "example": "https://…",
+        "generic_equivalent": "AI_ASSISTANT_URL"
+      },
+      "{{lesson_date_family}}": {
+        "meaning": "Lesson date in the FAMILY's time zone, localized.",
+        "example": "mercredi 12 mars",
+        "generic_equivalent": "LESSON_DATE"
+      },
+      "{{lesson_time_family}}": {
+        "meaning": "Lesson time in the FAMILY's time zone, localized.",
+        "example": "17 h 30",
+        "generic_equivalent": "LESSON_TIME"
+      },
+      "{{lesson_time_jerusalem}}": {
+        "meaning": "Lesson time in Jerusalem (Asia/Jerusalem), localized. If the Jerusalem date differs from the family's date, append the weekday in parentheses.",
+        "example": "0 h 30 (jeudi)",
+        "generic_equivalent": "(new)"
+      },
+      "{{family_timezone_label}}": {
+        "meaning": "Human-readable name of the family's time zone, from students.timezone.",
+        "example": "heure de Paris",
+        "generic_equivalent": "TIMEZONE"
+      },
+      "{{abroad}}": {
+        "meaning": "SECTION FLAG, not text. true when students.timezone is not Asia/Jerusalem. {{#abroad}}…{{/abroad}} renders the Jerusalem-time line only for families outside Israel (plan §3).",
+        "example": "true",
+        "generic_equivalent": "(new)"
+      },
+      "{{zoom_link}}": {
+        "meaning": "Zoom join URL for the lesson(s).",
+        "example": "https://…",
+        "generic_equivalent": "ZOOM_LINK"
+      },
+      "{{lesson_summary}}": {
+        "meaning": "Rabbi's lesson summary, already in the family's language (never auto-translated). Plain text, may be multi-line.",
+        "example": "• Bénédictions…",
+        "generic_equivalent": "LESSON_SUMMARY"
+      },
+      "{{homework}}": {
+        "meaning": "Practice before next lesson, rabbi-written, in the family's language. Also a SECTION: empty = block dropped.",
+        "example": "• Réviser les lignes 1 à 3…",
+        "generic_equivalent": "HOMEWORK"
+      },
+      "{{payment_url}}": {
+        "meaning": "Secure payment link for the complete course.",
+        "example": "https://…",
+        "generic_equivalent": "UPDATE_PAYMENT_URL (closest)"
+      },
+      "{{price}}": {
+        "meaning": "Course price formatted for the family's currency and locale.",
+        "example": "750 € / 850 $",
+        "generic_equivalent": "AMOUNT / PRICE"
+      },
+      "{{feedback_url}}": {
+        "meaning": "Feedback form link (ParentFeedback or TrialFeedback).",
+        "example": "https://…",
+        "generic_equivalent": "FEEDBACK_URL"
+      },
+      "{{message_excerpt}}": {
+        "meaning": "Optional first ~200 chars of the portal message, plain text, only if written in the family's language. Also a SECTION: empty = block dropped. Email only.",
+        "example": "Bonjour Rebecca, …",
+        "generic_equivalent": "(new)"
+      },
+      "{{deletion_date}}": {
+        "meaning": "Date when the recordings will be removed, localized, family time zone.",
+        "example": "mercredi 12 mars",
+        "generic_equivalent": "(new)"
+      },
+      "{{recordings_list}}": {
+        "meaning": "Optional list of the lesson dates whose recordings will be removed, one per line. Also a SECTION.",
+        "example": "• Cours du mardi 4 mars",
+        "generic_equivalent": "(new)"
+      },
+      "{{recordings_url}}": {
+        "meaning": "Link to the recordings screen in the portal.",
+        "example": "https://…",
+        "generic_equivalent": "RECORDING_URL"
+      }
+    },
+    "sections": "{{#abroad}}, {{#homework}}, {{#message_excerpt}}, {{#recordings_list}} open an optional block closed by {{/name}}. Email bodies only; never in SMS or WhatsApp.",
+    "formatting_rules": [
+      "Français de France, vouvoiement systématique. Formule d’appel « Bonjour {{recipient_first_name}}, » et signature « Bien chaleureusement, / L’équipe Zoom Mitzvah International » (ajoutée à chaque e-mail).",
+      "Heures sur 24 h : « 17 h 30 », « 9 h 05 », heure pile « 17 h », minuit et demi « 0 h 30 ». Espace insécable (U+00A0) de part et d’autre du « h » dans les e-mails et WhatsApp ; espace normale dans les SMS.",
+      "Dates : « mercredi 12 mars » (pas de majuscule aux jours et aux mois). Les gabarits écrivent « le {{lesson_date_family}} » / « du {{lesson_date_family}} » : la valeur ne contient donc pas d’article.",
+      "Fuseau : « heure de <ville> », ex. « heure de Paris », « heure de Montréal », « heure de Jérusalem ».",
+      "Prix : « 750 € » / « 850 $ » (espace insécable, symbole après le nombre).",
+      "E-mail et WhatsApp : espace insécable U+00A0 avant : ; ? ! et à l’intérieur des « », apostrophe typographique ’ (déjà présentes dans ce fichier, ne pas les remplacer).",
+      "SMS : texte limité au jeu GSM-7 pour rester à 160 caractères par segment. Donc apostrophe droite ', espaces normales, pas de « », pas de ê ç î ô û â œ ni de À. Les accents é è à ù restent autorisés (GSM-7).",
+      "Rav + prénom sans article (« Rav Yosef »). « cours », jamais « leçon ». « e-mail » avec trait d’union."
+    ],
+    "channel_rules": {
+      "rendering": "renderCustomer(type, lang, vars) reads templates[type] from customer-templates.<lang>.json. {{name}} = value; {{#name}}…{{/name}} = section rendered only when vars[name] is truthy / non-empty (Mustache semantics). Any placeholder left unresolved = do not send, log an error. HTML-escape all values in email. Hebrew (lang 'he') never uses these files: the existing Hebrew code runs unchanged.",
+      "email": "body is plain text with \\n; the brand wrapper (email-brand.ts, dir='ltr') turns blank lines into paragraphs and renders cta_label + the URL from cta_url_placeholder as a button. The signature is already part of body.",
+      "sms": "sms.text must stay within 1 GSM-7 segment (160 chars) after rendering. URLs in SMS must be shortened by the CRM (target ≤ 30 chars); chars_sample is computed with 30-char links and the sample values in this file. Names with non-GSM letters (e.g. 'Noémie' is fine, 'Zoë' is not) switch the SMS to UCS-2 (70 chars per segment): the sender should fall back to email/WhatsApp in that case. If a rendered SMS still exceeds 160 chars (very long names), send it as a 2-part concatenated SMS rather than cutting text; never truncate a link. SMS4Free delivery abroad is not yet confirmed.",
+      "whatsapp": "Each text must be submitted to Meta as a WhatsApp Business template (category UTILITY) before use, sent only to opted-in families. Named placeholders map to Meta positional {{1}}, {{2}}… in order of first appearance. Meta rules respected here: no text starts or ends with a placeholder; parameters must not contain line breaks (so no homework/summary/excerpt in WhatsApp); *bold* formatting only.",
+      "security": "No password ever appears in any channel. Password-setup / reset links appear in email only; SMS and WhatsApp for import-external-customer.welcome, recover-password and reset-user-password only point to the email."
+    },
+    "generic_template_mapping": [
+      {
+        "generic_id": "welcome_after_payment",
+        "crm_keys": [
+          "import-external-customer.welcome"
+        ],
+        "relation": "partial",
+        "note": "The import welcome merges payment welcome + portal access. No payment wording (the import may not follow a payment)."
+      },
+      {
+        "generic_id": "portal_access",
+        "crm_keys": [
+          "import-external-customer.welcome",
+          "recover-password",
+          "reset-user-password"
+        ],
+        "relation": "partial",
+        "note": "Password links are email-only in the CRM keys; SMS/WhatsApp point to the email."
+      },
+      {
+        "generic_id": "rabbi_matched",
+        "crm_keys": [
+          "schedule-first-lesson",
+          "swap-rabbi-same-schedule",
+          "reassign-orphaned-students"
+        ],
+        "relation": "partial",
+        "note": "No CRM function sends a standalone 'rabbi matched' message; the rabbi is introduced in these three."
+      },
+      {
+        "generic_id": "lesson_scheduled",
+        "crm_keys": [
+          "schedule-first-lesson",
+          "notify-manual-lesson"
+        ],
+        "relation": "direct",
+        "note": "calendar_url and reschedule_url dropped: not confirmed to exist in the CRM."
+      },
+      {
+        "generic_id": "reminder_24h",
+        "crm_keys": [
+          "send-lesson-reminders.24h"
+        ],
+        "relation": "direct",
+        "note": "Date stated instead of 'tomorrow'."
+      },
+      {
+        "generic_id": "reminder_1h",
+        "crm_keys": [
+          "send-lesson-reminders.1h"
+        ],
+        "relation": "direct",
+        "note": ""
+      },
+      {
+        "generic_id": "lesson_summary_homework",
+        "crm_keys": [
+          "notify-lesson-summary"
+        ],
+        "relation": "direct",
+        "note": "Next-lesson line removed (not confirmed that the function has it); homework is an optional section."
+      },
+      {
+        "generic_id": "recording_available",
+        "crm_keys": [],
+        "relation": "none",
+        "note": "No customer function in plan §5. Related: check-recording-deletion."
+      },
+      {
+        "generic_id": "missed_lesson",
+        "crm_keys": [],
+        "relation": "none",
+        "note": "No customer function in plan §5."
+      },
+      {
+        "generic_id": "payment_receipt",
+        "crm_keys": [],
+        "relation": "none",
+        "note": "No customer function in plan §5 (receipts likely from the payment provider)."
+      },
+      {
+        "generic_id": "payment_failed",
+        "crm_keys": [],
+        "relation": "none",
+        "note": "No customer function in plan §5."
+      },
+      {
+        "generic_id": "progress_milestone",
+        "crm_keys": [],
+        "relation": "none",
+        "note": "No customer function in plan §5."
+      },
+      {
+        "generic_id": "countdown_30_days",
+        "crm_keys": [],
+        "relation": "none",
+        "note": "No customer function in plan §5."
+      },
+      {
+        "generic_id": "course_completed",
+        "crm_keys": [],
+        "relation": "none",
+        "note": "No customer function in plan §5."
+      },
+      {
+        "generic_id": "feedback_request",
+        "crm_keys": [
+          "send-parent-feedback-emails",
+          "trial-feedback"
+        ],
+        "relation": "partial",
+        "note": "Testimonial-consent optional_line not carried over (no confirmed consent step)."
+      }
+    ],
+    "functions_not_covered": {
+      "sync-external-customers": "Reuse import-external-customer.welcome if it sends a welcome; confirm what (if anything) it sends to customers.",
+      "parent-feedback": "Appears to be the endpoint behind the ParentFeedback form; confirm whether it sends a customer message (e.g. a thank-you). No template written.",
+      "admin-preview-parent-emails": "Admin preview tool: should render send-parent-feedback-emails in the family's language. No separate template.",
+      "16 Meta WhatsApp templates + DB triggers into notifications_queue": "Need the current list of Hebrew template names to map each to a key here; new EN/FR WhatsApp templates need Meta approval."
+    },
+    "open_questions": [
+      "Does reset-user-password currently send a temporary password? If so, the EN/FR flow must switch to a reset link.",
+      "Are trial lessons free or paid? Copy says nothing about the trial's price until confirmed.",
+      "Do trial families get portal access (check-trial-completion CTA)?",
+      "Can families download recordings, and what is the retention period? Copy mentions neither.",
+      "Do rabbis teaching EN/FR families write summaries and messages in that language? If not, summaries cannot be sent (no auto-translation).",
+      "Does SMS4Free deliver abroad? Is there a URL shortener for SMS?",
+      "EUR/USD charging via Grow or Stripe (trial-upgrade-payment must wait)."
+    ]
+  },
+  "templates": {
+    "import-external-customer.welcome": {
+      "function": "import-external-customer",
+      "trigger": "Un client ayant payé est importé dans le CRM (site international ou système externe) et son compte est créé.",
+      "notes": "Also usable by sync-external-customers if that function sends a welcome. The password-setup link goes by email only; SMS and WhatsApp only point to the email.",
+      "email": {
+        "subject": "Bienvenue chez Zoom Mitzvah, {{recipient_first_name}}",
+        "preheader": "Votre espace parents est prêt. Créez votre mot de passe pour commencer.",
+        "body": "Bonjour {{recipient_first_name}},\n\nBienvenue chez Zoom Mitzvah International. Nous sommes très heureux d’accompagner {{student_first_name}} vers sa {{ceremony}}.\n\nVotre espace parents est prêt. Vous y retrouverez le planning des cours (toujours à votre heure locale), les enregistrements, les messages de votre rabbin et votre assistant IA personnel.\n\nVotre identifiant : {{login_email}}\n\nPour commencer, créez votre mot de passe avec le bouton ci-dessous. Pour votre sécurité, ce lien est valable {{link_expiry}}.\n\nProchaine étape : nous revenons vers vous au sujet du rabbin de {{student_first_name}} et du premier cours.\n\nUne question d’ici là ? Votre assistant IA vous répond jour et nuit, en français : {{ai_assistant_url}}\n\nBien chaleureusement,\nL’équipe Zoom Mitzvah International",
+        "cta_label": "Créer mon mot de passe",
+        "cta_url_placeholder": "{{password_setup_url}}"
+      },
+      "sms": {
+        "text": "Bienvenue chez Zoom Mitzvah, {{recipient_first_name}} ! Votre espace parents est en ligne : un e-mail vous attend pour créer votre mot de passe.",
+        "encoding": "GSM-7",
+        "chars_template": 148,
+        "chars_sample": 127,
+        "segments_sample": 1
+      },
+      "whatsapp": "Bonjour {{recipient_first_name}}, bienvenue chez Zoom Mitzvah ! 🎉 L’espace parents de {{student_first_name}} est prêt. Nous vous avons envoyé par e-mail un lien sécurisé pour créer votre mot de passe. À très bientôt !"
+    },
+    "recover-password": {
+      "function": "recover-password",
+      "trigger": "L’utilisateur a demandé à réinitialiser son mot de passe depuis la page de connexion.",
+      "notes": "Email carries the reset link only. Never put a password or the reset link in SMS/WhatsApp.",
+      "email": {
+        "subject": "Réinitialisez votre mot de passe Zoom Mitzvah",
+        "preheader": "Ce lien est valable {{link_expiry}}.",
+        "body": "Bonjour {{recipient_first_name}},\n\nNous avons reçu une demande de réinitialisation du mot de passe de votre compte Zoom Mitzvah ({{login_email}}).\n\nPour choisir un nouveau mot de passe, cliquez sur le bouton ci-dessous. Pour votre sécurité, ce lien est valable {{link_expiry}}.\n\nVous n’êtes pas à l’origine de cette demande ? Ignorez simplement cet e-mail : votre mot de passe actuel reste inchangé.\n\nBien chaleureusement,\nL’équipe Zoom Mitzvah International",
+        "cta_label": "Choisir un nouveau mot de passe",
+        "cta_url_placeholder": "{{password_reset_url}}"
+      },
+      "sms": {
+        "text": "Zoom Mitzvah : nous vous avons envoyé par e-mail un lien pour réinitialiser votre mot de passe. Pas de demande de votre part ? Ignorez-le.",
+        "encoding": "GSM-7",
+        "chars_template": 138,
+        "chars_sample": 138,
+        "segments_sample": 1
+      },
+      "whatsapp": "Bonjour {{recipient_first_name}}, nous venons de vous envoyer par e-mail un lien pour réinitialiser votre mot de passe Zoom Mitzvah. Vous n’avez rien demandé ? Ignorez simplement cet e-mail : rien ne change."
+    },
+    "reset-user-password": {
+      "function": "reset-user-password",
+      "trigger": "Un membre de l’équipe a réinitialisé le mot de passe depuis l’espace d’administration.",
+      "notes": "If the Hebrew flow generates a temporary password, the EN/FR flow must NOT send it: generate a reset link (password_reset_url) instead. SMS/WhatsApp only point to the email.",
+      "email": {
+        "subject": "Votre mot de passe Zoom Mitzvah a été réinitialisé",
+        "preheader": "Choisissez un nouveau mot de passe pour vous reconnecter.",
+        "body": "Bonjour {{recipient_first_name}},\n\nNotre équipe a réinitialisé le mot de passe de votre compte Zoom Mitzvah ({{login_email}}).\n\nPour vous reconnecter, choisissez un nouveau mot de passe avec le bouton ci-dessous. Ce lien est valable {{link_expiry}}.\n\nVous ne vous attendiez pas à ce message ? Répondez à cet e-mail et nous vérifierons ce qui s’est passé.\n\nBien chaleureusement,\nL’équipe Zoom Mitzvah International",
+        "cta_label": "Choisir un nouveau mot de passe",
+        "cta_url_placeholder": "{{password_reset_url}}"
+      },
+      "sms": {
+        "text": "Zoom Mitzvah : notre équipe a réinitialisé le mot de passe de votre compte. Un e-mail vous attend pour en choisir un nouveau.",
+        "encoding": "GSM-7",
+        "chars_template": 125,
+        "chars_sample": 125,
+        "segments_sample": 1
+      },
+      "whatsapp": "Bonjour {{recipient_first_name}}, notre équipe a réinitialisé votre mot de passe Zoom Mitzvah. Un lien sécurisé pour en choisir un nouveau vous attend par e-mail. Une question ? Nous sommes là pour vous aider."
+    },
+    "schedule-first-lesson": {
+      "function": "schedule-first-lesson",
+      "trigger": "Le premier cours est programmé (rabbin attribué, créneau fixé).",
+      "notes": "Dual time block: the {{#abroad}} section renders only when the family time zone is not Asia/Jerusalem.",
+      "email": {
+        "subject": "Premier cours de {{student_first_name}} : {{lesson_date_family}} à {{lesson_time_family}}",
+        "preheader": "Votre rabbin, votre lien Zoom et quelques conseils.",
+        "body": "Bonjour {{recipient_first_name}},\n\nC’est officiel : le premier cours de {{student_first_name}} avec {{rabbi_name}} est réservé.\n\nDate : {{lesson_date_family}}\nHeure : {{lesson_time_family}}, {{family_timezone_label}} (votre heure locale){{#abroad}}\nHeure de Jérusalem : {{lesson_time_jerusalem}}{{/abroad}}\nLien Zoom : {{zoom_link}}\n\nPour un premier cours réussi :\n• un coin tranquille, et un casque si possible\n• une connexion quelques minutes en avance pour vérifier le son et l’image\n• un parent à proximité au début, si vous souhaitez faire connaissance\n\nY a-t-il quelque chose que {{rabbi_name}} devrait savoir avant de commencer ? La façon dont {{student_first_name}} apprend le mieux, les usages de votre synagogue, la date de la {{ceremony}}… Répondez simplement à cet e-mail.\n\nVous retrouverez aussi tous ces détails dans votre espace parents.\n\nBien chaleureusement,\nL’équipe Zoom Mitzvah International",
+        "cta_label": "Accéder à mon espace parents",
+        "cta_url_placeholder": "{{portal_url}}"
+      },
+      "sms": {
+        "text": "Zoom Mitzvah : 1er cours de {{student_first_name}} avec {{rabbi_name}} le {{lesson_date_family}} à {{lesson_time_family}} ({{family_timezone_label}}). Zoom : {{zoom_link}}",
+        "encoding": "GSM-7",
+        "chars_template": 195,
+        "chars_sample": 138,
+        "segments_sample": 1
+      },
+      "whatsapp": "Bonjour {{recipient_first_name}} ! Le premier cours de {{student_first_name}} avec *{{rabbi_name}}* est réservé : *{{lesson_date_family}} à {{lesson_time_family}}* ({{family_timezone_label}}, votre heure locale).\nZoom : {{zoom_link}}\nÀ très bientôt !"
+    },
+    "notify-manual-lesson": {
+      "function": "notify-manual-lesson",
+      "trigger": "Un membre de l’équipe ajoute manuellement un cours au planning de l’élève.",
+      "notes": "No rescheduling policy is stated: the family is only asked to let us know early.",
+      "email": {
+        "subject": "Nouveau cours ajouté : {{lesson_date_family}} à {{lesson_time_family}}",
+        "preheader": "Les détails et votre lien Zoom.",
+        "body": "Bonjour {{recipient_first_name}},\n\nUn cours a été ajouté au planning de {{student_first_name}} avec {{rabbi_name}}.\n\nDate : {{lesson_date_family}}\nHeure : {{lesson_time_family}}, {{family_timezone_label}} (votre heure locale){{#abroad}}\nHeure de Jérusalem : {{lesson_time_jerusalem}}{{/abroad}}\nLien Zoom : {{zoom_link}}\n\nCet horaire ne vous convient pas ? Merci de nous prévenir le plus tôt possible en répondant à cet e-mail.\n\nBien chaleureusement,\nL’équipe Zoom Mitzvah International",
+        "cta_label": "Voir mon planning",
+        "cta_url_placeholder": "{{portal_url}}"
+      },
+      "sms": {
+        "text": "Zoom Mitzvah : un cours avec {{rabbi_name}} a été ajouté pour {{student_first_name}} le {{lesson_date_family}} à {{lesson_time_family}} ({{family_timezone_label}}).",
+        "encoding": "GSM-7",
+        "chars_template": 184,
+        "chars_sample": 113,
+        "segments_sample": 1
+      },
+      "whatsapp": "Bonjour {{recipient_first_name}}, un nouveau cours a été ajouté pour {{student_first_name}} avec {{rabbi_name}} : *{{lesson_date_family}} à {{lesson_time_family}}* ({{family_timezone_label}}).\nZoom : {{zoom_link}}\nCet horaire ne vous convient pas ? Merci de nous prévenir le plus tôt possible."
+    },
+    "send-lesson-reminders.24h": {
+      "function": "send-lesson-reminders",
+      "trigger": "Environ 24 heures avant un cours.",
+      "notes": "The copy states the date instead of 'tomorrow', because the Jerusalem date and the family's date can differ.",
+      "email": {
+        "subject": "Rappel : cours de {{student_first_name}} le {{lesson_date_family}} à {{lesson_time_family}}",
+        "preheader": "Petit rappel et lien Zoom.",
+        "body": "Bonjour {{recipient_first_name}},\n\nPetit rappel du prochain cours de {{student_first_name}} avec {{rabbi_name}}.\n\nDate : {{lesson_date_family}}\nHeure : {{lesson_time_family}}, {{family_timezone_label}} (votre heure locale){{#abroad}}\nHeure de Jérusalem : {{lesson_time_jerusalem}}{{/abroad}}\nLien Zoom : {{zoom_link}}\n\nDix minutes avec l’enregistrement du dernier cours d’ici là, et la différence se sentira.\n\nUn empêchement ? Merci de nous prévenir le plus tôt possible en répondant à cet e-mail.\n\nBien chaleureusement,\nL’équipe Zoom Mitzvah International",
+        "cta_label": "Rejoindre le cours",
+        "cta_url_placeholder": "{{zoom_link}}"
+      },
+      "sms": {
+        "text": "Rappel Zoom Mitzvah : cours de {{student_first_name}} avec {{rabbi_name}} le {{lesson_date_family}} à {{lesson_time_family}}. Zoom : {{zoom_link}}",
+        "encoding": "GSM-7",
+        "chars_template": 166,
+        "chars_sample": 124,
+        "segments_sample": 1
+      },
+      "whatsapp": "Rappel 📅 Cours de {{student_first_name}} avec {{rabbi_name}} : *{{lesson_date_family}} à {{lesson_time_family}}* ({{family_timezone_label}}).\nZoom : {{zoom_link}}\nUn empêchement ? Merci de nous prévenir le plus tôt possible."
+    },
+    "send-lesson-reminders.1h": {
+      "function": "send-lesson-reminders",
+      "trigger": "Environ 1 heure avant un cours.",
+      "notes": "'About' covers scheduler jitter. No Jerusalem time here on purpose: only the family's time matters one hour before.",
+      "email": {
+        "subject": "Dans 1 heure : cours de {{student_first_name}} avec {{rabbi_name}}",
+        "preheader": "Votre lien Zoom est à l’intérieur.",
+        "body": "Bonjour {{recipient_first_name}},\n\nLe cours de {{student_first_name}} avec {{rabbi_name}} commence dans environ une heure, à {{lesson_time_family}} ({{family_timezone_label}}).\n\nPour rejoindre le cours : {{zoom_link}}\n\nPetite liste express : ordinateur chargé, casque, coin tranquille, texte ouvert. {{rabbi_name}} vous attend avec plaisir !\n\nBien chaleureusement,\nL’équipe Zoom Mitzvah International",
+        "cta_label": "Rejoindre le cours",
+        "cta_url_placeholder": "{{zoom_link}}"
+      },
+      "sms": {
+        "text": "Zoom Mitzvah : le cours de {{student_first_name}} avec {{rabbi_name}} commence dans environ 1 heure, à {{lesson_time_family}}. Zoom : {{zoom_link}}",
+        "encoding": "GSM-7",
+        "chars_template": 163,
+        "chars_sample": 131,
+        "segments_sample": 1
+      },
+      "whatsapp": "⏰ Le cours de {{student_first_name}} avec {{rabbi_name}} commence dans environ *1 heure*, à {{lesson_time_family}} ({{family_timezone_label}}).\nPour le rejoindre : {{zoom_link}}\nBon cours !"
+    },
+    "send-lesson-cancellation": {
+      "function": "send-lesson-cancellation",
+      "trigger": "Un cours prévu est annulé.",
+      "notes": "Neutral on who cancelled and why. No cancellation, make-up or refund policy is stated; add one only with wording supplied by the business.",
+      "email": {
+        "subject": "Cours annulé : {{lesson_date_family}} à {{lesson_time_family}}",
+        "preheader": "Les détails, et comment nous joindre.",
+        "body": "Bonjour {{recipient_first_name}},\n\nLe cours ci-dessous a été annulé :\n\n{{student_first_name}} avec {{rabbi_name}}\nDate : {{lesson_date_family}}\nHeure : {{lesson_time_family}}, {{family_timezone_label}} (votre heure locale){{#abroad}}\nHeure de Jérusalem : {{lesson_time_jerusalem}}{{/abroad}}\n\nInutile donc de vous connecter à Zoom à cet horaire.\n\nVotre planning à jour se trouve toujours dans votre espace parents. Une question, ou envie de prévoir un autre horaire ? Répondez simplement à cet e-mail.\n\nBien chaleureusement,\nL’équipe Zoom Mitzvah International",
+        "cta_label": "Voir mon planning",
+        "cta_url_placeholder": "{{portal_url}}"
+      },
+      "sms": {
+        "text": "Zoom Mitzvah : le cours de {{student_first_name}} avec {{rabbi_name}} du {{lesson_date_family}} à {{lesson_time_family}} est annulé. Détails par e-mail.",
+        "encoding": "GSM-7",
+        "chars_template": 168,
+        "chars_sample": 112,
+        "segments_sample": 1
+      },
+      "whatsapp": "Bonjour {{recipient_first_name}}, le cours de {{student_first_name}} avec {{rabbi_name}} du *{{lesson_date_family}} à {{lesson_time_family}}* ({{family_timezone_label}}) a été annulé. Votre planning à jour se trouve dans votre espace parents. Une question ? Nous sommes là pour vous aider."
+    },
+    "swap-rabbi-same-schedule": {
+      "function": "swap-rabbi-same-schedule",
+      "trigger": "Le rabbin de l’élève change ; les jours et horaires des cours restent les mêmes.",
+      "notes": "Does not mention the previous rabbi or a reason. zoom_link = the link to use from now on (it may be the new rabbi's room).",
+      "email": {
+        "subject": "Les cours de {{student_first_name}} : faites connaissance avec {{rabbi_name}}",
+        "preheader": "Mêmes jours, mêmes horaires, un nouveau rabbin.",
+        "body": "Bonjour {{recipient_first_name}},\n\nNous souhaitons vous informer d’un changement : désormais, les cours de {{student_first_name}} seront assurés par {{rabbi_name}}.\n\nLes cours restent aux mêmes jours et aux mêmes horaires, toujours affichés à votre heure locale dans votre espace parents.\n\nLe lien Zoom des prochains cours : {{zoom_link}}\n\nY a-t-il quelque chose que {{rabbi_name}} devrait savoir ? La façon dont {{student_first_name}} apprend le mieux, les usages de votre synagogue, la date de la {{ceremony}}… Répondez simplement à cet e-mail, nous lui transmettrons.\n\nBien chaleureusement,\nL’équipe Zoom Mitzvah International",
+        "cta_label": "Voir mon planning",
+        "cta_url_placeholder": "{{portal_url}}"
+      },
+      "sms": {
+        "text": "Zoom Mitzvah : les cours de {{student_first_name}} seront désormais assurés par {{rabbi_name}}. Jours et horaires inchangés. Lien Zoom par e-mail.",
+        "encoding": "GSM-7",
+        "chars_template": 154,
+        "chars_sample": 127,
+        "segments_sample": 1
+      },
+      "whatsapp": "Bonjour {{recipient_first_name}}, petite nouvelle : désormais, les cours de {{student_first_name}} seront assurés par *{{rabbi_name}}*. Mêmes jours, mêmes horaires.\nLien Zoom des prochains cours : {{zoom_link}}\nUne question ? Nous sommes là pour vous aider."
+    },
+    "reassign-orphaned-students": {
+      "function": "reassign-orphaned-students",
+      "trigger": "L’élève n’a plus de rabbin actif et un nouveau rabbin lui est attribué ; le planning peut changer.",
+      "notes": "Gives no reason for the change and promises no times: the family is pointed to the portal for the updated schedule.",
+      "email": {
+        "subject": "Le nouveau rabbin de {{student_first_name}} : {{rabbi_name}}",
+        "preheader": "Ce qui change, et où trouver votre planning.",
+        "body": "Bonjour {{recipient_first_name}},\n\nDésormais, les cours de {{student_first_name}} seront assurés par {{rabbi_name}}.\n\nLes jours et les horaires des cours peuvent changer. Votre planning à jour, avec tous les horaires à votre heure locale, se trouve dans votre espace parents.\n\nChanger de rabbin n’est jamais anodin. Y a-t-il quelque chose que {{rabbi_name}} devrait savoir ? La façon dont {{student_first_name}} apprend le mieux, les usages de votre synagogue, la date de la {{ceremony}}… Répondez simplement à cet e-mail, nous lui transmettrons.\n\nMerci de votre patience et de votre confiance.\n\nBien chaleureusement,\nL’équipe Zoom Mitzvah International",
+        "cta_label": "Voir mon planning",
+        "cta_url_placeholder": "{{portal_url}}"
+      },
+      "sms": {
+        "text": "Zoom Mitzvah : les cours de {{student_first_name}} seront désormais assurés par {{rabbi_name}}. Votre planning à jour : {{portal_url}}",
+        "encoding": "GSM-7",
+        "chars_template": 146,
+        "chars_sample": 132,
+        "segments_sample": 1
+      },
+      "whatsapp": "Bonjour {{recipient_first_name}}, désormais, les cours de {{student_first_name}} seront assurés par *{{rabbi_name}}*. Les horaires peuvent changer : votre planning à jour se trouve dans votre espace parents. Merci de votre confiance !"
+    },
+    "send-zoom-link-to-students": {
+      "function": "send-zoom-link-to-students",
+      "trigger": "L’équipe envoie (ou renvoie) le lien Zoom des cours de l’élève.",
+      "notes": "CTA points to the portal, not to Zoom, because the message may arrive outside lesson time.",
+      "email": {
+        "subject": "Votre lien Zoom pour les cours avec {{rabbi_name}}",
+        "preheader": "À garder sous la main pour le prochain cours de {{student_first_name}}.",
+        "body": "Bonjour {{recipient_first_name}},\n\nVoici le lien Zoom des cours de {{student_first_name}} avec {{rabbi_name}} :\n\n{{zoom_link}}\n\nNotre conseil : connectez-vous quelques minutes en avance pour vérifier le son et l’image. Un casque aide beaucoup.\n\nLe lien est aussi disponible dans votre espace parents.\n\nBien chaleureusement,\nL’équipe Zoom Mitzvah International",
+        "cta_label": "Accéder à mon espace parents",
+        "cta_url_placeholder": "{{portal_url}}"
+      },
+      "sms": {
+        "text": "Zoom Mitzvah : voici le lien Zoom des cours de {{student_first_name}} avec {{rabbi_name}} : {{zoom_link}}",
+        "encoding": "GSM-7",
+        "chars_template": 117,
+        "chars_sample": 104,
+        "segments_sample": 1
+      },
+      "whatsapp": "Bonjour {{recipient_first_name}}, voici le lien Zoom des cours de {{student_first_name}} avec {{rabbi_name}} :\n{{zoom_link}}\nIl est aussi disponible dans votre espace parents. À très bientôt !"
+    },
+    "notify-lesson-summary": {
+      "function": "notify-lesson-summary",
+      "trigger": "Le rabbin transmet le compte rendu du cours.",
+      "notes": "lesson_summary and homework are written by the rabbi: they must already be in the family's language (never auto-translated, per the plan). The {{#homework}} block is dropped when there is no practice. WhatsApp does not carry the homework because Meta parameters cannot contain line breaks.",
+      "email": {
+        "subject": "Compte rendu du cours : {{student_first_name}} avec {{rabbi_name}}",
+        "preheader": "Ce qui a été travaillé, et quoi réviser d’ici le prochain cours.",
+        "body": "Bonjour {{recipient_first_name}},\n\nVoici le compte rendu de {{rabbi_name}} sur le cours de {{student_first_name}} du {{lesson_date_family}}.\n\nCe qui a été travaillé :\n{{lesson_summary}}\n\n{{#homework}}À réviser d’ici le prochain cours :\n{{homework}}\n\n{{/homework}}Notre conseil : un peu chaque jour vaut mieux qu’une longue séance la veille. Dix minutes avec l’enregistrement suffisent.\n\nUne question sur les exercices ? Votre assistant IA répond à toute heure : {{ai_assistant_url}}\n\nBien chaleureusement,\nL’équipe Zoom Mitzvah International",
+        "cta_label": "Voir dans l’espace parents",
+        "cta_url_placeholder": "{{portal_url}}"
+      },
+      "sms": {
+        "text": "Zoom Mitzvah : {{rabbi_name}} a partagé le compte rendu du cours de {{student_first_name}}, avec les exercices à réviser. Le voici : {{portal_url}}",
+        "encoding": "GSM-7",
+        "chars_template": 159,
+        "chars_sample": 145,
+        "segments_sample": 1
+      },
+      "whatsapp": "Compte rendu du cours ✔️ {{rabbi_name}} a partagé ce que {{student_first_name}} a travaillé, avec les exercices à réviser. À lire dans votre espace parents : {{portal_url}}\nBonne révision !"
+    },
+    "send-trial-reminder": {
+      "function": "send-trial-reminder",
+      "trigger": "Rappel avant le cours d’essai.",
+      "notes": "Says nothing about the price of the trial (free or paid is not confirmed). States the date, not 'tomorrow'.",
+      "email": {
+        "subject": "Rappel : cours d’essai de {{student_first_name}} le {{lesson_date_family}} à {{lesson_time_family}}",
+        "preheader": "Votre lien Zoom et quelques conseils.",
+        "body": "Bonjour {{recipient_first_name}},\n\nPetit rappel du cours d’essai de {{student_first_name}} avec {{rabbi_name}}.\n\nDate : {{lesson_date_family}}\nHeure : {{lesson_time_family}}, {{family_timezone_label}} (votre heure locale){{#abroad}}\nHeure de Jérusalem : {{lesson_time_jerusalem}}{{/abroad}}\nLien Zoom : {{zoom_link}}\n\nPour bien démarrer : un coin tranquille, un casque si possible, et une connexion quelques minutes en avance pour vérifier le son et l’image.\n\nC’est l’occasion pour {{student_first_name}} et {{rabbi_name}} de faire connaissance, et pour vous de découvrir comment se déroulent les cours.\n\nUn empêchement ? Merci de nous prévenir le plus tôt possible en répondant à cet e-mail.\n\nBien chaleureusement,\nL’équipe Zoom Mitzvah International",
+        "cta_label": "Rejoindre le cours",
+        "cta_url_placeholder": "{{zoom_link}}"
+      },
+      "sms": {
+        "text": "Rappel Zoom Mitzvah : cours d'essai de {{student_first_name}} avec {{rabbi_name}} le {{lesson_date_family}} à {{lesson_time_family}}. Zoom : {{zoom_link}}",
+        "encoding": "GSM-7",
+        "chars_template": 174,
+        "chars_sample": 132,
+        "segments_sample": 1
+      },
+      "whatsapp": "Rappel 📅 Cours d’essai de {{student_first_name}} avec {{rabbi_name}} : *{{lesson_date_family}} à {{lesson_time_family}}* ({{family_timezone_label}}, votre heure locale).\nZoom : {{zoom_link}}\nÀ très bientôt !"
+    },
+    "check-trial-completion": {
+      "function": "check-trial-completion",
+      "trigger": "Le cours d’essai a eu lieu (vérification automatique).",
+      "notes": "Thank-you and soft next step only. Payment is handled by trial-upgrade-payment; no price, lesson count or guarantee here. Confirm trial families have portal access (CTA).",
+      "email": {
+        "subject": "Merci pour le cours d’essai avec {{rabbi_name}}",
+        "preheader": "Et maintenant ? La suite, à votre rythme.",
+        "body": "Bonjour {{recipient_first_name}},\n\nMerci d’avoir participé au cours d’essai avec {{rabbi_name}}. Nous espérons que {{student_first_name}} a apprécié ce premier échange.\n\nEt maintenant ? Si vous souhaitez continuer, {{student_first_name}} peut poursuivre avec le parcours complet : des cours particuliers en direct sur Zoom, les enregistrements des cours et votre assistant IA personnel.\n\nUne question avant de vous décider, sur le parcours, les horaires ou autre chose ? Répondez simplement à cet e-mail : nous en parlerons volontiers.\n\nBien chaleureusement,\nL’équipe Zoom Mitzvah International",
+        "cta_label": "Accéder à mon espace parents",
+        "cta_url_placeholder": "{{portal_url}}"
+      },
+      "sms": {
+        "text": "Zoom Mitzvah : merci pour le cours d'essai avec {{rabbi_name}} ! Une question sur la suite ? Répondez simplement à notre e-mail.",
+        "encoding": "GSM-7",
+        "chars_template": 132,
+        "chars_sample": 123,
+        "segments_sample": 1
+      },
+      "whatsapp": "Bonjour {{recipient_first_name}}, merci pour le cours d’essai avec {{rabbi_name}} ! Nous espérons que {{student_first_name}} l’a apprécié. Une question sur la suite ? Nous sommes là pour vous aider."
+    },
+    "trial-upgrade-payment": {
+      "function": "trial-upgrade-payment",
+      "trigger": "Lien de paiement pour passer du cours d’essai au parcours complet.",
+      "notes": "price is pre-formatted by the CRM from the family's currency (EUR 750 / USD 850 per the pricing rules). Do not send until Grow (or Stripe) charging in EUR/USD is confirmed.",
+      "email": {
+        "subject": "La suite pour {{student_first_name}} : le parcours complet",
+        "preheader": "Votre lien de paiement sécurisé est à l’intérieur.",
+        "body": "Bonjour {{recipient_first_name}},\n\nMerci encore pour le cours d’essai avec {{rabbi_name}}. Pour poursuivre la préparation de la {{ceremony}} de {{student_first_name}} avec le parcours complet, vous pouvez régler en toute sécurité avec le bouton ci-dessous.\n\nLe parcours complet : {{price}}\n\nDès que votre paiement est confirmé, nous vous envoyons la suite par e-mail.\n\nUne question avant de vous décider ? Répondez simplement à cet e-mail : nous sommes là pour vous aider.\n\nBien chaleureusement,\nL’équipe Zoom Mitzvah International",
+        "cta_label": "Procéder au paiement sécurisé",
+        "cta_url_placeholder": "{{payment_url}}"
+      },
+      "sms": {
+        "text": "Zoom Mitzvah : pour poursuivre avec le parcours complet de {{student_first_name}}, voici votre lien de paiement sécurisé : {{payment_url}}",
+        "encoding": "GSM-7",
+        "chars_template": 146,
+        "chars_sample": 140,
+        "segments_sample": 1
+      },
+      "whatsapp": "Bonjour {{recipient_first_name}}, merci encore pour le cours d’essai ! Pour poursuivre la préparation de {{student_first_name}} avec le parcours complet ({{price}}), voici votre lien de paiement sécurisé : {{payment_url}}\nUne question ? Nous sommes là pour vous aider."
+    },
+    "trial-feedback": {
+      "function": "trial-feedback",
+      "trigger": "Demande d’avis après le cours d’essai.",
+      "notes": "No testimonial-consent line here: the trial form has no confirmed consent step.",
+      "email": {
+        "subject": "Comment s’est passé le cours d’essai ? (2 minutes)",
+        "preheader": "Vos réponses nous aident à mieux accompagner chaque famille.",
+        "body": "Bonjour {{recipient_first_name}},\n\nComment s’est passé le cours d’essai de {{student_first_name}} avec {{rabbi_name}} ? Nous aimerions beaucoup connaître votre avis : ce qui vous a plu, et ce que nous pourrions améliorer.\n\nCela prend environ deux minutes, et vos réponses nous aident à mieux accompagner chaque famille.\n\nMerci beaucoup !\n\nBien chaleureusement,\nL’équipe Zoom Mitzvah International",
+        "cta_label": "Donner mon avis",
+        "cta_url_placeholder": "{{feedback_url}}"
+      },
+      "sms": {
+        "text": "Zoom Mitzvah : comment s'est passé le cours d'essai de {{student_first_name}} ? Votre avis en 2 minutes : {{feedback_url}} Merci !",
+        "encoding": "GSM-7",
+        "chars_template": 138,
+        "chars_sample": 131,
+        "segments_sample": 1
+      },
+      "whatsapp": "Bonjour {{recipient_first_name}}, comment s’est passé le cours d’essai de {{student_first_name}} avec {{rabbi_name}} ? Deux minutes de votre avis nous aideraient beaucoup : {{feedback_url}} Merci !"
+    },
+    "send-parent-feedback-emails": {
+      "function": "send-parent-feedback-emails",
+      "trigger": "Point régulier pour demander aux parents comment se passent les cours.",
+      "notes": "Also the copy shown by admin-preview-parent-emails. The form itself is parent-feedback (ParentFeedback screen).",
+      "email": {
+        "subject": "Comment se passent les cours avec {{rabbi_name}} ? (2 minutes)",
+        "preheader": "Vos réponses nous aident à accompagner {{student_first_name}} encore mieux.",
+        "body": "Bonjour {{recipient_first_name}},\n\nNous aimerions savoir comment se passent les cours de {{student_first_name}} avec {{rabbi_name}} : ce qui fonctionne bien, et ce que nous pourrions améliorer.\n\nCela prend environ deux minutes. Vos réponses nous aident à accompagner {{student_first_name}}, et chaque famille, encore mieux.\n\nMerci beaucoup !\n\nBien chaleureusement,\nL’équipe Zoom Mitzvah International",
+        "cta_label": "Donner mon avis",
+        "cta_url_placeholder": "{{feedback_url}}"
+      },
+      "sms": {
+        "text": "Zoom Mitzvah : comment se passent les cours de {{student_first_name}} ? Votre avis en 2 minutes : {{feedback_url}} Merci !",
+        "encoding": "GSM-7",
+        "chars_template": 130,
+        "chars_sample": 123,
+        "segments_sample": 1
+      },
+      "whatsapp": "Bonjour {{recipient_first_name}}, comment se passent les cours de {{student_first_name}} avec {{rabbi_name}} ? Deux minutes de votre avis nous aideraient beaucoup : {{feedback_url}} Merci !"
+    },
+    "notify-admin-to-student-message": {
+      "function": "notify-admin-to-student-message",
+      "trigger": "L’équipe envoie un message à la famille via l’espace parents.",
+      "notes": "message_excerpt is optional (email only, max ~200 chars, plain text, HTML-escaped). Leave it empty if the message is not in the family's language. SMS/WhatsApp never carry message content.",
+      "email": {
+        "subject": "Nouveau message de l’équipe Zoom Mitzvah",
+        "preheader": "À lire dans votre espace parents.",
+        "body": "Bonjour {{recipient_first_name}},\n\nVous avez un nouveau message de l’équipe Zoom Mitzvah au sujet de {{student_first_name}}.\n\n{{#message_excerpt}}« {{message_excerpt}} »\n\n{{/message_excerpt}}Pour lire le message en entier et y répondre, rendez-vous dans votre espace parents.\n\nBien chaleureusement,\nL’équipe Zoom Mitzvah International",
+        "cta_label": "Lire le message",
+        "cta_url_placeholder": "{{portal_url}}"
+      },
+      "sms": {
+        "text": "Zoom Mitzvah : vous avez un nouveau message de notre équipe. Pour le lire : {{portal_url}}",
+        "encoding": "GSM-7",
+        "chars_template": 94,
+        "chars_sample": 107,
+        "segments_sample": 1
+      },
+      "whatsapp": "Bonjour {{recipient_first_name}}, vous avez un nouveau message de l’équipe Zoom Mitzvah au sujet de {{student_first_name}}. À lire dans votre espace parents : {{portal_url}}\nMerci !"
+    },
+    "notify-student-rabbi-message": {
+      "function": "notify-student-rabbi-message",
+      "trigger": "Le rabbin envoie un message à l’élève ou à la famille via l’espace parents.",
+      "notes": "Same excerpt rule as notify-admin-to-student-message: omit the excerpt if the rabbi wrote in Hebrew and the family's language is EN/FR.",
+      "email": {
+        "subject": "Nouveau message de {{rabbi_name}}",
+        "preheader": "À lire dans votre espace parents.",
+        "body": "Bonjour {{recipient_first_name}},\n\n{{rabbi_name}} vous a envoyé un nouveau message au sujet des cours de {{student_first_name}}.\n\n{{#message_excerpt}}« {{message_excerpt}} »\n\n{{/message_excerpt}}Pour lire le message en entier et répondre à {{rabbi_name}}, rendez-vous dans votre espace parents.\n\nBien chaleureusement,\nL’équipe Zoom Mitzvah International",
+        "cta_label": "Lire le message",
+        "cta_url_placeholder": "{{portal_url}}"
+      },
+      "sms": {
+        "text": "Zoom Mitzvah : {{rabbi_name}} vous a envoyé un nouveau message. Pour le lire : {{portal_url}}",
+        "encoding": "GSM-7",
+        "chars_template": 101,
+        "chars_sample": 105,
+        "segments_sample": 1
+      },
+      "whatsapp": "Bonjour {{recipient_first_name}}, {{rabbi_name}} vous a envoyé un nouveau message au sujet des cours de {{student_first_name}}. À lire dans votre espace parents : {{portal_url}}\nMerci !"
+    },
+    "check-recording-deletion": {
+      "function": "check-recording-deletion",
+      "trigger": "Des enregistrements de cours vont bientôt être retirés de l’espace parents.",
+      "notes": "States no retention period and does not say recordings can be downloaded (not confirmed). recordings_list is optional (one localized lesson date per line).",
+      "email": {
+        "subject": "Des enregistrements de cours seront retirés le {{deletion_date}}",
+        "preheader": "Pensez à les réécouter dans votre espace parents d’ici là.",
+        "body": "Bonjour {{recipient_first_name}},\n\nPetite information : certains enregistrements des cours de {{student_first_name}} seront retirés de votre espace parents le {{deletion_date}}.\n\n{{#recordings_list}}Enregistrements concernés :\n{{recordings_list}}\n\n{{/recordings_list}}Si {{student_first_name}} s’en sert encore pour réviser, c’est le bon moment pour les réécouter.\n\nUne question sur vos enregistrements ? Répondez simplement à cet e-mail.\n\nBien chaleureusement,\nL’équipe Zoom Mitzvah International",
+        "cta_label": "Voir mes enregistrements",
+        "cta_url_placeholder": "{{recordings_url}}"
+      },
+      "sms": {
+        "text": "Zoom Mitzvah : certains enregistrements des cours de {{student_first_name}} seront retirés le {{deletion_date}}. Pour les réécouter : {{recordings_url}}",
+        "encoding": "GSM-7",
+        "chars_template": 164,
+        "chars_sample": 150,
+        "segments_sample": 1
+      },
+      "whatsapp": "Bonjour {{recipient_first_name}}, petite information : certains enregistrements des cours de {{student_first_name}} seront retirés de votre espace parents le *{{deletion_date}}*. Pour les réécouter : {{recordings_url}}\nMerci !"
+    }
+  }
+}
