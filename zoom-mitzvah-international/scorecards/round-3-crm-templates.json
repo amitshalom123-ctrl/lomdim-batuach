@@ -1,0 +1,127 @@
+{
+  "score": 8.5,
+  "verdict": "APPROVED",
+  "per_criterion": {
+    "brand": 8,
+    "marketing": 8.5,
+    "language": 8.5,
+    "design": 9,
+    "technical": 8,
+    "safety": 9.5
+  },
+  "fixes": [],
+  "progress_score": 5,
+  "notes_he": "תבניות ה-CRM (I) אושרו בסבב 3 עם ציון 8.5 (בסבב 2: 7.6). בדקתי את חמשת התיקונים בקבצים עצמם, וכולם בוצעו: אזור זמן בכל SMS עם שעה, ביטויים מתורגמים בצרפתית הוסרו, פורמט המחיר לפי סעיף 7, שורת 'מה כלול' בהודעת התשלום עם קטגוריית MARKETING, ואין קישורים בגוף הודעות WhatsApp. אין סיסמה ואין קישור סיסמה מחוץ למייל, ואין עובדות מומצאות. שלוש הערות ליטוש קטנות, לא חוסמות. התקדמות מסלול ה-CRM: 5/10. התוכן מוכן, אבל תוכנית היישום עדיין מחכה לאישור שלך, ושום קוד ב-CRM לא שונה.",
+  "round": 3,
+  "date": "2026-11-04",
+  "deliverable": {
+    "id": "I",
+    "files": [
+      "crm/customer-templates.en.json",
+      "crm/customer-templates.fr.json",
+      "crm/customer-templates-review.md"
+    ],
+    "team": "CRM Script (zm-crm-*)",
+    "version": "1.1.0",
+    "commit": "9c32d09"
+  },
+  "scored_by": "zm-crm-director",
+  "weights": {
+    "marketing": 0.25,
+    "language": 0.2,
+    "design": 0.2,
+    "technical": 0.2,
+    "brand": 0.1,
+    "safety": 0.05
+  },
+  "weighted_uncapped": 8.5,
+  "safety_cap_applied": false,
+  "history": {
+    "round_2": 7.6,
+    "round_3": 8.5
+  },
+  "verification_method": "Each round-2 fix was checked by reading both JSON files directly (not from the team report). The team validator was run (PASS, 0 errors) and an independent script re-checked JSON parse, EN/FR key and placeholder parity, WhatsApp body rules, password-link placement, GSM-7 charset, SMS length with stricter worst-case values than the team's, time-zone labels, price formats, FR typography and claim words.",
+  "round_2_fixes_verified": [
+    {
+      "fix": 1,
+      "topic": "Time-zone label in reminder SMS",
+      "status": "APPLIED",
+      "evidence": "All 6 SMS that contain {{lesson_time_family}} also contain {{family_timezone_label}} in EN and FR (24h, 1h, cancellation, trial reminder, plus schedule-first-lesson and notify-manual-lesson)."
+    },
+    {
+      "fix": 2,
+      "topic": "FR calques",
+      "status": "APPLIED",
+      "evidence": "1h preheader « Votre lien Zoom pour rejoindre le cours. »; payment preheader « Votre lien de paiement sécurisé, en un clic. »; both feedback WhatsApp « Deux minutes pour nous donner votre avis nous aideraient beaucoup. »; swap WhatsApp « une information : désormais… »; recording deletion « Pour information : » (email + WhatsApp). No banned form (à l’intérieur, petite information/nouvelle, deux minutes de votre avis, si fiers) remains in any customer-facing field."
+    },
+    {
+      "fix": 3,
+      "topic": "Price format",
+      "status": "APPLIED",
+      "evidence": "EN {{price}} example and formatting rule: '€750' | '$850' (US) | 'US$850' (other non-euro countries); FR « 750 € » | « 850 $ US » with U+00A0; ISO codes only at checkout/receipts. Matches geo §7 and glossary row 55. No bare '$850' outside the US and no « 850 $ » anywhere."
+    },
+    {
+      "fix": 4,
+      "topic": "Value line + WhatsApp category in trial-upgrade-payment",
+      "status": "APPLIED",
+      "evidence": "EN and FR email carry the approved 'everything included' line verbatim (it matches content/landing.*.json pricing.includes and emails consultation_follow_up). WhatsApp has a shorter version. whatsapp_category is set on all 20 templates: MARKETING on trial-upgrade-payment, UTILITY on the others; opt-in rule stated in channel_rules and open question 10."
+    },
+    {
+      "fix": 5,
+      "topic": "No URLs in WhatsApp bodies + consultation mapping",
+      "status": "APPLIED",
+      "evidence": "0/40 WhatsApp bodies contain a URL or a *_url/*_link placeholder. 16/20 templates have whatsapp_button {label, url} (all labels ≤ 25 chars); 4 are null (3 password templates + check-trial-completion). generic_template_mapping now has rows for consultation_booked, consultation_reminder_24h, consultation_no_show and consultation_follow_up, with candidate_crm_keys, needs_new_function and owner question 9."
+    }
+  ],
+  "objective_checks": {
+    "team_validator": "PASS (0 errors). Max worst case EN 158, FR 156.",
+    "json_parse": "PASS (2/2)",
+    "key_parity": "PASS. templates identical EN/FR; _meta key paths identical.",
+    "placeholder_parity": "PASS. Same placeholder set per field (subject, preheader, body, CTA, SMS, WhatsApp, button) in EN and FR; every placeholder is defined in _meta.placeholders.",
+    "whatsapp_no_url_in_body": "PASS (0/40)",
+    "whatsapp_start_end_variable": "PASS (0/40 start or end with a variable). Note: EN send-lesson-reminders.1h starts with '⏰ {{student_first_name}}' (only an emoji before the variable; see polish 3).",
+    "password_safety": "PASS. {{password_setup_url}} / {{password_reset_url}} appear only in the email CTA of the 3 password templates; their SMS and WhatsApp only point to the email and whatsapp_button is null. No 'temporary password' text in any channel.",
+    "sms_gsm7": "PASS. 40/40 SMS texts are pure GSM-7 with no extension characters (€, [ ] etc.); no « », ’ or U+00A0 in SMS.",
+    "sms_length_team_values": "PASS. All ≤ 160 (EN max 158, FR max 156).",
+    "sms_length_stricter_values": "1 marginal FAIL. With Maximilian / Rabbi Menachem / 'Wednesday, September 24' / '12:30 p.m.' / 'Johannesburg time' (ZA is a target market) and a 30-char link: EN schedule-first-lesson = 161 (2 segments). All others ≤ 160 (EN 24h 151, EN trial 157, FR 1h 159, FR trial 158, FR 24h 157). The file's own fallback (send concatenated, never truncate) means nothing breaks; see polish 1.",
+    "timezone_label_in_sms": "PASS (6/6 time-bearing SMS, EN+FR).",
+    "price_format": "PASS vs geo §7 and glossary row 55.",
+    "fr_typography": "PASS. 115 correct U+00A0 before : ; ? ! » and after «, 0 missing, 0 straight apostrophes in email/WhatsApp. One slip: trial-upgrade-payment email « 24 h/24 » uses a regular space (the approved landing and email files use U+00A0); see polish 2.",
+    "invented_facts": "PASS. No refund, make-up or cancellation policy, no lesson count, no guarantee, no trial price, no recording retention or download claim in any customer-facing field (words found only in internal notes that say these are NOT stated). The value line uses only claims already approved on the landing (Israeli rabbi, every lesson recorded, parent portal, AI assistant 24/7, 120+ guides in EN and FR)."
+  },
+  "polish": [
+    {
+      "team": "zm-crm script + zm-crm dev",
+      "where": "_meta.channel_rules.sms; templates.schedule-first-lesson.sms.text (EN), notify-manual-lesson.sms.text (EN)",
+      "problem": "(a) The FR rule 'espace normale dans les SMS' is only in formatting_rules, but the SMS uses the same {{lesson_time_family}} value as the email (« 17 h 30 » with U+00A0). One U+00A0 (or the U+202F that Intl en-US now puts before 'PM') switches the SMS to UCS-2: 70 chars per segment, so a 150-char reminder becomes 3 paid segments. (b) EN schedule-first-lesson reaches 161 with Johannesburg time / Rabbi Menachem / Maximilian.",
+      "fix": "(a) Add to channel_rules.sms: 'Before rendering an SMS, replace U+00A0 and U+202F with U+0020 and ’ with \\' in every value; then check the text is GSM-7.' Add one validator case with « 17 h 30 » using U+00A0. (b) Drop the parentheses in the two EN SMS so they match the 24h/1h/trial SMS: '…on {{lesson_date_family}} at {{lesson_time_family}} {{family_timezone_label}}. Zoom: {{zoom_link}}' (159 with the stricter values). Add 'Johannesburg time' / 'heure de Johannesburg' and 'Rabbi Menachem' to the worst-case set."
+    },
+    {
+      "team": "zm-crm script + FR lead",
+      "where": "FR trial-upgrade-payment.email.body « 24 h/24 »; FR send-lesson-reminders.24h.email.body « Dix minutes avec l’enregistrement du dernier cours d’ici là, et la différence se sentira. »",
+      "problem": "Regular space inside « 24 h/24 » (the approved landing/email files use U+00A0, so the line can break between 24 and h). The 24h tip reads a little literary.",
+      "fix": "« 24\\u00a0h/24 ». « Réécouter dix minutes l’enregistrement du dernier cours d’ici là peut faire toute la différence. »"
+    },
+    {
+      "team": "zm-crm script + zm-crm dev",
+      "where": "EN send-lesson-reminders.1h.whatsapp; every whatsapp_button.url",
+      "problem": "The EN 1h body starts '⏰ {{student_first_name}}', so only an emoji sits before the first variable. Meta's start-with-variable check can reject this. The FR version starts with text. Also whatsapp_button.url is '{{zoom_link}}' etc., but channel_rules says Meta needs a fixed domain and the CRM passes only a token. The data model does not show that yet.",
+      "fix": "EN: '⏰ In about *1 hour*: {{student_first_name}}'s lesson with {{rabbi_name}}, at {{lesson_time_family}} ({{family_timezone_label}}). Have a great lesson!' Write button URLs as a pattern, e.g. \"url\": \"https://<our-domain>/z/{{link_token}}\", with link_token defined in _meta.placeholders (EN+FR)."
+    }
+  ],
+  "other_notes": [
+    "Glossary §5 says no variable may contain line breaks, 'applied to e-mail too for consistency'. The CRM emails deliberately carry multi-line {{lesson_summary}}, {{homework}} and {{recordings_list}}, and WhatsApp never does. I accept this for the CRM, because the rabbi's summary is the content of that email. Script should add a one-line CRM exception to glossary §5 so the two documents agree.",
+    "Brand: the templates are warm, clear and premium, but Jerusalem appears only as a time label. That is right for transactional messages. If the owner wants more brand feeling, put it in the welcome email only, not in reminders.",
+    "Nothing here is sent until the owner approves the implementation plan and answers questions 1–10 in crm/customer-templates-review.md (especially trial price, Grow/Stripe, SMS4Free abroad, WhatsApp marketing opt-in)."
+  ],
+  "progress_notes": "CRM track 5/10 (round 2: 4/10). Brief scope item 5 (EN/FR e-mail, WhatsApp and SMS copy) is now approved content. Items 1–4, 6 and 7 (additive migration, i18n portal, family time zone rendering, AI assistant language, rabbi language filter, intl lead intake) are not built. crm/lovable-implementation-plan.md is still AWAITING OWNER APPROVAL, and no CRM code has changed. The Hebrew flow is untouched, so production risk is zero so far.",
+  "handoff": {
+    "next": "zm-crm-general-manager",
+    "what_i_did": "Verified round-2 fixes 1–5 in the files, ran the team validator and my own independent checks, scored deliverable I.",
+    "open_questions": "Owner questions 1–10 in crm/customer-templates-review.md; owner approval of crm/lovable-implementation-plan.md.",
+    "files_touched": [
+      "scorecards/round-3-crm-templates.json",
+      "scorecards/round-3-crm-templates.md"
+    ]
+  }
+}
