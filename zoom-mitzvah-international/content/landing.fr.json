@@ -1,0 +1,433 @@
+{
+  "_meta": {
+    "locale": "fr",
+    "version": "1.0.0",
+    "placeholders": {
+      "{{PRICE}}": "Prix du parcours complet, déjà formaté avec la devise par la détection du pays. En français : « 750 € » (espace insécable entre le nombre et le symbole, symbole après le nombre) ou « 850 $ ».",
+      "{{CTA_URL}}": "URL de réservation de l’appel découverte gratuit.",
+      "{{YEAR}}": "Année en cours, pour le copyright du pied de page.",
+      "{{MINUTES}}": "Temps de lecture d’un guide, en minutes.",
+      "{{COUNT}}": "Nombre de résultats."
+    },
+    "notes": "Structure de clés identique à landing.en.json. Typographie française : espaces insécables (U+00A0) déjà placées avant : ; ? ! et à l’intérieur des guillemets. Ne pas les remplacer par des espaces normales. Les noms, photos et biographies des rabbins sont chargés depuis les données ; ce fichier ne contient que les textes génériques. Ne pas ajouter de témoignages, chiffres ou distinctions non fournis par l’entreprise."
+  },
+  "meta": {
+    "title": "Bar Mitsva sur Zoom avec un rabbin en Israël | Zoom Mitzvah",
+    "description": "Cours particuliers en direct sur Zoom avec un rabbin israélien qui parle français : Bar et Bat Mitsva, lecture de la Torah, Téfilines. Appel offert.",
+    "og": {
+      "title": "Étudier la Torah en Israël, sans quitter la maison",
+      "description": "Cours particuliers de Bar et Bat Mitsva sur Zoom avec un rabbin israélien qui parle français. Réservez un appel découverte gratuit.",
+      "image_alt": "Un enfant chez lui, en cours vidéo avec un rabbin à Jérusalem",
+      "site_name": "Zoom Mitzvah International",
+      "locale": "fr_FR"
+    }
+  },
+  "a11y": {
+    "skip_to_content": "Aller au contenu principal",
+    "open_menu": "Ouvrir le menu",
+    "close_menu": "Fermer le menu",
+    "logo_alt": "Zoom Mitzvah International, accueil"
+  },
+  "nav": {
+    "links": {
+      "why": "Pourquoi Jérusalem",
+      "how": "Comment ça se passe",
+      "curriculum": "Le programme",
+      "rabbis": "Nos rabbins",
+      "articles": "Guides",
+      "pricing": "Tarif",
+      "faq": "FAQ"
+    },
+    "cta": "Appel gratuit",
+    "login": "Espace parents"
+  },
+  "hero": {
+    "eyebrow": "Cours particuliers de Bar et Bat Mitsva, en direct d’Israël",
+    "headline": "Étudier la Torah en Israël. Sans quitter la maison.",
+    "headline_emphasis": "en Israël",
+    "subheadline": "Des cours individuels sur Zoom avec un rabbin israélien qui parle français : lecture de la Torah, bénédictions, Haftara, Téfilines et discours. Avec patience, au rythme de votre enfant, à des horaires qui s’accordent avec la semaine de votre famille.",
+    "cta_primary": {
+      "label": "Réserver un appel découverte gratuit",
+      "href": "{{CTA_URL}}"
+    },
+    "cta_secondary": {
+      "label": "Voir comment ça se passe",
+      "href": "#how-it-works"
+    },
+    "trust_line": "Des rabbins israéliens qui parlent votre langue · Chaque cours enregistré · Horaires affichés à votre heure locale",
+    "image_alt": "Un rabbin à Jérusalem donnant un cours sur Zoom",
+    "alternatives": [
+      {
+        "headline": "Un rabbin à Jérusalem. Votre enfant, à la maison.",
+        "subheadline": "Des cours particuliers de Bar et Bat Mitsva en direct sur Zoom, en français, avec un rabbin israélien qui avance au rythme de votre enfant.",
+        "angle": "Image concrète : deux lieux, un même cours. La plus efficace en publicité sur les réseaux sociaux et en vignette vidéo."
+      },
+      {
+        "headline": "Loin d’Israël, jamais loin de la Torah.",
+        "subheadline": "Où que vous viviez, votre enfant peut préparer sa Bar ou sa Bat Mitsva en tête-à-tête avec un rabbin en Israël, en français.",
+        "angle": "Émotionnelle, identitaire. Parle aux parents qui craignent que leur enfant grandisse loin de ses racines."
+      },
+      {
+        "headline": "Préparer sa Bar Mitsva avec un rabbin de Jérusalem, en français.",
+        "subheadline": "Lecture de la Torah, bénédictions, Téfilines et discours : des cours particuliers sur Zoom, planifiés à votre heure locale.",
+        "angle": "La plus explicite et la mieux adaptée au référencement. Idéale pour les annonces Google. Remplacer par « Bat Mitsva » pour la campagne filles."
+      }
+    ]
+  },
+  "why_jerusalem": {
+    "eyebrow": "Pourquoi un rabbin en Israël",
+    "headline": "Certaines choses s’apprennent mieux à la source.",
+    "paragraphs": [
+      "Depuis des générations, les enfants juifs apprennent à lire la Torah de la même façon : auprès d’un maître, qui l’a lui-même apprise d’un maître… Une chaîne qui remonte jusqu’à Jérusalem.",
+      "Nos rabbins vivent et enseignent en Israël. L’hébreu que votre enfant lira dans le Sefer Torah, c’est celui que son rabbin entend au marché, dans le bus, autour de la table du Chabbat. Bien des lieux cités dans la Torah font partie de son quotidien.",
+      "Et quelque chose change lorsqu’un enfant comprend qui se trouve de l’autre côté de l’écran. Le cours n’est plus un devoir de plus. Il devient une rencontre : une vraie personne, un vrai lieu, un lien avec Israël que votre enfant gardera bien après le grand jour."
+    ],
+    "highlights": [
+      {
+        "title": "Une langue vivante",
+        "text": "Un hébreu transmis par quelqu’un qui le vit, et pas seulement qui le lit."
+      },
+      {
+        "title": "Une chaîne ininterrompue",
+        "text": "Votre enfant s’inscrit dans une transmission qui passe de maître à élève depuis des siècles."
+      },
+      {
+        "title": "Un lien personnel avec Israël",
+        "text": "Ni un voyage, ni un manuel : un rendez-vous régulier avec quelqu’un qui vit là-bas."
+      }
+    ],
+    "closing_line": "Étudier la Torah en Israël, sans quitter la maison."
+  },
+  "how_it_works": {
+    "eyebrow": "Comment ça se passe",
+    "headline": "Du premier appel au grand jour, en quatre étapes.",
+    "intro": "Aucune application compliquée, aucun déplacement. Un ordinateur, un coin tranquille, et un rabbin heureux de retrouver votre enfant.",
+    "steps": [
+      {
+        "number": "1",
+        "title": "Réservez un appel découverte gratuit",
+        "text": "Un échange en visio, en toute simplicité. Parlez-nous de votre enfant, de la date, des coutumes de votre communauté et de ce qui compte pour vous."
+      },
+      {
+        "number": "2",
+        "title": "Rencontrez votre rabbin",
+        "text": "Nous vous proposons un rabbin israélien qui parle votre langue et qui correspond à la personnalité, aux objectifs et à la tradition de votre enfant."
+      },
+      {
+        "number": "3",
+        "title": "Des cours en direct, en tête-à-tête",
+        "text": "Des cours particuliers sur Zoom, aux horaires qui vous conviennent, toujours affichés à votre heure locale. Chaque cours est enregistré pour réviser entre deux séances."
+      },
+      {
+        "number": "4",
+        "title": "Le jour J, en toute confiance",
+        "text": "Pas à pas, la lecture, les bénédictions et le discours deviennent les siens. Le jour venu, votre enfant vit ce moment avec assurance."
+      }
+    ],
+    "cta": "Commencer par un appel gratuit"
+  },
+  "curriculum": {
+    "eyebrow": "Ce que votre enfant va apprendre",
+    "headline": "Tout pour le grand jour, et le sens qui va avec.",
+    "intro": "Chaque programme est construit autour de la date, de la Paracha et de la communauté de votre enfant. Voici ce qu’il peut inclure.",
+    "cards": [
+      {
+        "id": "torah_reading",
+        "icon": "scroll",
+        "title": "La lecture de la Torah",
+        "text": "Apprendre à lire sa Paracha avec les té’amim, ces signes de cantillation qui donnent à chaque mot sa mélodie."
+      },
+      {
+        "id": "aliyah_blessings",
+        "icon": "book-open",
+        "title": "Les bénédictions de la montée à la Torah",
+        "text": "Les berakhot d’avant et d’après la lecture, travaillées jusqu’à être dites avec aisance. Et comprises, pas seulement récitées par cœur."
+      },
+      {
+        "id": "haftarah_maftir",
+        "icon": "music",
+        "title": "La Haftara et le Maftir",
+        "text": "Chanter la Haftara sur sa mélodie propre, et préparer la lecture du Maftir si votre synagogue la prévoit."
+      },
+      {
+        "id": "tefillin",
+        "icon": "hand",
+        "title": "Les Téfilines",
+        "text": "Comment mettre les Téfilines, les bénédictions et leur signification : pour que la première fois soit un moment de fierté, pas de stress."
+      },
+      {
+        "id": "drasha",
+        "icon": "pen",
+        "title": "Le discours (drasha)",
+        "text": "Le rabbin aide votre enfant à trouver son propre message dans la Paracha, et à en faire un discours à son image, prononcé avec fierté."
+      },
+      {
+        "id": "torah_learning",
+        "icon": "lightbulb",
+        "title": "Étudier la Torah, au-delà du jour J",
+        "text": "Les récits, les valeurs et les questions de la Paracha de la semaine, pour les enfants comme pour les adultes qui ont simplement envie de continuer à apprendre."
+      }
+    ]
+  },
+  "rabbis": {
+    "eyebrow": "Vos rabbins",
+    "headline": "Des rabbins israéliens, patients, qui parlent votre langue.",
+    "intro": "Tous nos rabbins vivent en Israël et enseignent en français ou en anglais. Nous les choisissons pour une qualité qui ne figure sur aucun CV : la patience de prendre chaque enfant là où il en est, et la chaleur qui lui donne envie de revenir au cours suivant.",
+    "promises": [
+      "Vit et enseigne en Israël",
+      "Enseigne en français ou en anglais",
+      "En tête-à-tête, au rythme de votre enfant",
+      "À l’aise avec les enfants qui ont besoin d’une autre approche"
+    ],
+    "card_labels": {
+      "lives_in": "Vit à",
+      "languages": "Enseigne en",
+      "nusach": "Rite",
+      "specialties": "Spécialités",
+      "view_profile": "En savoir plus",
+      "book": "Réserver un appel gratuit"
+    },
+    "loading": "Chargement de nos rabbins…",
+    "empty_state": "Les profils de nos rabbins sont en cours de mise à jour. Réservez un appel gratuit : nous vous les présenterons personnellement.",
+    "matching_note": "Vous n’avez pas à choisir seuls : après l’appel découverte, nous vous proposons le rabbin le plus adapté à votre enfant."
+  },
+  "benefits": {
+    "eyebrow": "Pourquoi les familles nous choisissent",
+    "headline": "Pensé pour les familles qui vivent loin d’Israël.",
+    "intro": "Autour des cours, tout est conçu pour simplifier la vie de votre enfant… et la vôtre.",
+    "items": [
+      {
+        "id": "rabbi_your_language",
+        "icon": "message-circle",
+        "title": "Un rabbin israélien qui parle votre langue",
+        "text": "Les explications en français, la Torah en hébreu. Votre enfant comprend chaque étape, et vous aussi."
+      },
+      {
+        "id": "ai_assistant",
+        "icon": "sparkles",
+        "title": "Un assistant IA personnel, 24 h/24",
+        "text": "Une question à 22 h, la veille d’un cours ? L’assistant IA de votre famille répond à toute heure, en français. Il accompagne le rabbin, il ne le remplace jamais."
+      },
+      {
+        "id": "guides",
+        "icon": "library",
+        "title": "Plus de 120 guides approfondis",
+        "text": "Les 54 Parachot, les Téfilines, les té’amim, la lecture de la Torah, le discours, le Talit, les coutumes et des guides pour les parents. En français et en anglais."
+      },
+      {
+        "id": "learning_difficulties",
+        "icon": "heart",
+        "title": "Pour les enfants qui apprennent autrement",
+        "text": "TDAH, dyslexie, ou simplement une scolarité difficile ? Un enseignement individuel, patient et adapté, une petite étape à la fois."
+      },
+      {
+        "id": "local_time",
+        "icon": "clock",
+        "title": "Planifié à votre heure locale",
+        "text": "Les horaires des cours s’affichent toujours dans votre fuseau horaire, sur l’espace parents comme dans chaque rappel. Fini les calculs de décalage horaire."
+      },
+      {
+        "id": "recordings",
+        "icon": "video",
+        "title": "Chaque cours enregistré",
+        "text": "Votre enfant peut réécouter la lecture de son rabbin et s’entraîner entre deux cours, autant de fois que nécessaire."
+      },
+      {
+        "id": "parent_portal",
+        "icon": "layout-dashboard",
+        "title": "Un espace parents",
+        "text": "Planning, enregistrements, devoirs et progrès réunis au même endroit : vous savez toujours où en est votre enfant."
+      },
+      {
+        "id": "one_on_one",
+        "icon": "user",
+        "title": "Vraiment en tête-à-tête",
+        "text": "Pas de cours collectif, pas d’attente : tout le cours est consacré à votre enfant."
+      }
+    ]
+  },
+  "articles": {
+    "eyebrow": "Guides et ressources",
+    "headline": "Une bibliothèque pour toute la famille.",
+    "intro": "Plus de 120 guides approfondis, écrits pour les familles qui vivent hors d’Israël : chaque Paracha de la semaine, les Téfilines, les té’amim, le discours et bien plus encore. En français et en anglais.",
+    "find_parasha": {
+      "label": "Trouvez votre Paracha",
+      "text": "Retrouvez la Paracha de votre enfant et ouvrez son guide détaillé.",
+      "search_placeholder": "Rechercher une Paracha, ex. Béréchit",
+      "date_label": "Ou indiquez la date de la Bar/Bat Mitsva",
+      "button": "Trouver ma Paracha",
+      "no_results": "Aucune Paracha trouvée. Essayez une autre orthographe, ou posez-nous la question lors de l’appel découverte.",
+      "results_count": "{{COUNT}} résultats"
+    },
+    "popular_guides": {
+      "label": "Guides les plus lus",
+      "view_all": "Voir tous les guides"
+    },
+    "categories": {
+      "parasha": "La Paracha de la semaine",
+      "tefillin": "Les Téfilines",
+      "trope": "Les té’amim (cantillation)",
+      "torah_reading": "La lecture de la Torah",
+      "parents": "Pour les parents",
+      "customs": "Coutumes et rites",
+      "speech": "Le discours (drasha)",
+      "tallit": "Le Talit"
+    },
+    "read_more": "Lire le guide",
+    "reading_time": "{{MINUTES}} min de lecture",
+    "also_in_language": "Également disponible en anglais"
+  },
+  "pricing": {
+    "eyebrow": "Tarif",
+    "headline": "Un tarif clair. Tout compris.",
+    "intro": "Pas de formules à comparer, pas de mauvaise surprise. Un parcours complet, construit autour de votre enfant.",
+    "plan_name": "Le parcours complet Bar et Bat Mitsva",
+    "price": "{{PRICE}}",
+    "price_suffix": "pour le parcours complet",
+    "price_note": "Affiché dans votre devise, selon votre pays.",
+    "includes_title": "Ce qui est inclus",
+    "includes": [
+      "Des cours particuliers en direct sur Zoom avec votre rabbin israélien",
+      "Un programme personnalisé selon la date, la Paracha et la communauté de votre enfant",
+      "La lecture de la Torah avec les té’amim, les bénédictions, la Haftara et le Maftir",
+      "La préparation aux Téfilines, le cas échéant",
+      "Un accompagnement pour écrire le discours (drasha)",
+      "Chaque cours enregistré pour réviser",
+      "L’espace parents : planning, enregistrements, devoirs et progrès",
+      "Un assistant IA personnel pour la famille, 24 h/24, en français",
+      "L’accès à plus de 120 guides en français et en anglais",
+      "Des horaires planifiés à votre heure locale"
+    ],
+    "reassurance": [
+      "Un premier appel gratuit et sans engagement",
+      "Paiement en ligne sécurisé et chiffré",
+      "Pas de frais cachés : le prix affiché est le prix payé",
+      "Reçu envoyé par e-mail"
+    ],
+    "cta_primary": "Réserver mon appel gratuit",
+    "cta_secondary": "Une question avant ? Consultez la FAQ",
+    "consultation_note": "Vous hésitez encore ? Parlons-en d’abord. L’appel découverte est gratuit, et vous saurez précisément à quoi ressemble le programme de votre enfant avant de payer quoi que ce soit."
+  },
+  "faq": {
+    "eyebrow": "FAQ",
+    "headline": "Les questions que les parents nous posent.",
+    "items": [
+      {
+        "id": "time_zones",
+        "question": "Nous vivons loin d’Israël. Comment gérez-vous le décalage horaire ?",
+        "answer": "Vous réservez à votre heure, pas à l’heure d’Israël. Chaque cours s’affiche dans votre fuseau horaire, sur l’espace parents comme dans chaque rappel : aucun calcul à faire. Lors de l’appel découverte, nous regardons ensemble l’emploi du temps de votre enfant (école, activités, Chabbat) pour trouver des créneaux réguliers qui tiennent vraiment."
+      },
+      {
+        "id": "language",
+        "question": "En quelle langue se déroulent les cours ? Mon enfant doit-il parler hébreu ?",
+        "answer": "Votre rabbin enseigne en français (ou en anglais, si vous préférez). La Torah, les bénédictions et la Haftara se lisent bien sûr en hébreu, mais tout est expliqué en français. Votre enfant n’a pas besoin de parler hébreu : nous partons de son niveau actuel, quel qu’il soit."
+      },
+      {
+        "id": "nusach",
+        "question": "Nous sommes séfarades (ou ashkénazes). Notre enfant apprendra-t-il notre tradition ?",
+        "answer": "Oui. Les mélodies de la lecture de la Torah et de la Haftara, la prononciation et le texte des bénédictions varient d’une communauté à l’autre. Indiquez-nous votre tradition lors de l’appel découverte, y compris une tradition familiale particulière (marocaine, tunisienne ou autre) : nous vous proposerons un rabbin capable de l’enseigner telle qu’on la pratique dans votre famille et votre communauté."
+      },
+      {
+        "id": "synagogue_customs",
+        "question": "Notre synagogue a ses propres usages. Pouvez-vous préparer notre enfant exactement à ce qu’il fera le jour J ?",
+        "answer": "C’est précisément notre façon de travailler. Dites-nous ce que prévoit votre synagogue : quelle partie de la Paracha votre enfant lira, s’il y a un Maftir et une Haftara, quelles bénédictions… Et, si possible, transmettez-nous des enregistrements de votre hazan ou de votre rabbin. Le rabbin prépare votre enfant à tout cela, et à rien d’inutile."
+      },
+      {
+        "id": "adhd",
+        "question": "Mon enfant a un TDAH (ou une dyslexie) et l’école est difficile pour lui. Est-ce adapté ?",
+        "answer": "Bien souvent, le tête-à-tête est justement ce dont ces enfants ont besoin. Le rabbin adapte le rythme, garde des séances concentrées et variées, découpe le travail en petites étapes et valorise chaque vrai progrès. Les enregistrements permettent de réviser à la maison par petites séances. Parlez-nous de votre enfant lors de l’appel découverte : nous choisirons ensemble le bon rabbin et la bonne approche."
+      },
+      {
+        "id": "adults",
+        "question": "Est-ce réservé aux enfants ? Je suis adulte et je n’ai jamais fait ma Bar ou Bat Mitsva.",
+        "answer": "Pas du tout, les adultes sont les bienvenus : pour préparer une Bar ou Bat Mitsva à l’âge adulte, apprendre à lire dans la Torah pour la première fois, ou tout simplement étudier la Torah avec un rabbin en Israël. Même formule en tête-à-tête, à votre rythme."
+      },
+      {
+        "id": "how_many_lessons",
+        "question": "Combien de cours faut-il prévoir, et quand commencer ?",
+        "answer": "Cela dépend du niveau de départ de votre enfant, de la longueur du texte à lire et du temps qui reste avant la date. Après l’appel découverte, le rabbin vous propose un programme personnalisé : vous savez à quoi vous attendre avant de payer. En règle générale, commencer tôt permet d’avancer sereinement. Mais si la date approche, parlez-nous-en : nous vous dirons franchement ce qui est réaliste."
+      },
+      {
+        "id": "not_religious",
+        "question": "Nous ne sommes pas pratiquants. Est-ce un problème ?",
+        "answer": "Pas du tout, et vous ne serez jamais jugés. Beaucoup de familles non pratiquantes souhaitent que leur enfant se sente relié à son judaïsme, d’une manière qui ait du sens pour elles. Le rabbin accueille votre famille telle qu’elle est, avec respect et bienveillance."
+      },
+      {
+        "id": "rabbi_matching",
+        "question": "Comment choisissez-vous le rabbin de notre enfant ?",
+        "answer": "Nous tenons compte de votre langue, de votre tradition et des usages de votre synagogue, de la personnalité et des besoins de votre enfant, de vos objectifs et de vos disponibilités. Nous vous proposons ensuite le rabbin qui nous semble le plus adapté. Si quelque chose ne vous convient pas, dites-le-nous : nous en parlerons ensemble."
+      },
+      {
+        "id": "payment",
+        "question": "Combien ça coûte, et comment payer ?",
+        "answer": "Le parcours complet coûte {{PRICE}}, avec tout ce qui est décrit plus haut. Le prix s’affiche automatiquement dans votre devise. Le paiement se fait en ligne, de façon sécurisée, et votre reçu vous est envoyé par e-mail. Le premier appel est gratuit et sans engagement."
+      }
+    ],
+    "more_questions": "Une autre question ?",
+    "more_questions_cta": "Posez-la-nous lors d’un appel gratuit"
+  },
+  "final_cta": {
+    "headline": "Le grand jour approche. Préparons-le ensemble.",
+    "text": "Réservez un appel découverte gratuit. Parlez-nous de votre enfant : nous vous montrerons comment il apprendra, et avec qui.",
+    "cta_primary": {
+      "label": "Réserver un appel découverte gratuit",
+      "href": "{{CTA_URL}}"
+    },
+    "note": "Gratuit · Sans engagement · En français"
+  },
+  "footer": {
+    "tagline": "Étudier la Torah en Israël, sans quitter la maison.",
+    "columns": {
+      "program": {
+        "title": "Le parcours",
+        "links": {
+          "how": "Comment ça se passe",
+          "curriculum": "Le programme",
+          "rabbis": "Nos rabbins",
+          "pricing": "Tarif"
+        }
+      },
+      "resources": {
+        "title": "Ressources",
+        "links": {
+          "parasha": "Trouvez votre Paracha",
+          "guides": "Tous les guides",
+          "parents": "Guides pour les parents",
+          "faq": "FAQ"
+        }
+      },
+      "contact": {
+        "title": "Contact",
+        "links": {
+          "consultation": "Réserver un appel gratuit",
+          "portal": "Espace parents",
+          "contact": "Nous contacter"
+        }
+      }
+    },
+    "hebrew_site": "Vous cherchez notre site en hébreu ? zoomitzvah.co.il",
+    "legal": {
+      "copyright": "© {{YEAR}} Zoom Mitzvah International. Tous droits réservés.",
+      "privacy": "Politique de confidentialité",
+      "terms": "Conditions générales",
+      "cookies": "Gestion des cookies",
+      "accessibility": "Accessibilité"
+    }
+  },
+  "language_switcher": {
+    "aria_label": "Choisir la langue",
+    "current": "Français",
+    "options": {
+      "en": "English",
+      "fr": "Français",
+      "he": "עברית"
+    }
+  },
+  "cookie_notice": {
+    "text": "Nous utilisons des cookies pour faire fonctionner le site, mémoriser votre langue et comprendre comment il est utilisé.",
+    "accept": "Accepter",
+    "decline": "Refuser",
+    "settings": "Personnaliser",
+    "learn_more": "En savoir plus"
+  }
+}
