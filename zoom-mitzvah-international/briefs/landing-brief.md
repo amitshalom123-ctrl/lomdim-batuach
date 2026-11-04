@@ -11,7 +11,7 @@
 Families abroad book a free consultation or buy the full course. Primary KPI: consultation_booked; secondary: checkout_started, purchase, article → CTA click-through.
 
 ## Avatar
-Jewish family abroad (US/Canada/UK/Australia/South Africa — English; France/Belgium/Switzerland/Luxembourg/Monaco/Quebec/Morocco/Tunisia — French) who wants Bar/Bat Mitzvah preparation or to read from the Torah, with an Israeli rabbi who lives in Israel/Jerusalem and speaks their language. Also adults (adult Bar Mitzvah, learning to leyn).
+Jewish family abroad (US/Canada/UK/Australia/South Africa — English; France/Belgium/Switzerland/Luxembourg/Monaco/Quebec/Morocco/Tunisia — French) who wants Bar Mitzvah (boys) preparation or to read from the Torah, with an Israeli rabbi who lives in Israel/Jerusalem and speaks their language. Also adults (adult Bar Mitzvah, learning to leyn).
 
 ## Must-haves
 1. EN + FR only, LTR, `/en` `/fr` routes, auto-detect + switcher, hreflang/canonical/sitemap.
@@ -23,3 +23,9 @@ Jewish family abroad (US/Canada/UK/Australia/South Africa — English; France/Be
 
 ## Teams & gate
 GM → research / marketing / script / development / production → EN & FR language leads → QA → Director (score ≥ 8 to ship; < 8 back to the owning team, max 4 rounds).
+
+
+## AUDIENCE RULE (owner decision, 2026-11-04 — overrides anything else)
+- We teach ONLY: (1) Bar Mitzvah preparation for BOYS, and (2) Torah learning for adult MEN (adult Bar Mitzvah, learning to read from the Torah, weekly parasha, general Torah study).
+- We do NOT offer Bat Mitzvah, and we do not teach girls or women to read from the Torah. Never write "Bat Mitzvah" / « Bat Mitsva », "B'nai Mitzvah", "your child or daughter", or gender-neutral wording that implies girls are included.
+- Write "your son" / « votre fils » for the child; "men" / « hommes » or "adult learners" for adults. Never market to girls; never say we refuse them either — simply describe what we offer.
