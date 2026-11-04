@@ -1,6 +1,25 @@
 # Zoom Mitzvah International: Terminology Glossary (EN / FR / HE)
 
-Version 2 (round-2 rework, 2026-11-04). This is the single source of truth for terminology across the site, the CRM templates, the guides, ads and social posts. When a term appears here, use exactly this form. When in doubt, ask the copy team before inventing a new spelling. Canonical source for prices and region logic: `marketing/geo-pricing-and-language.md` (§7–§9).
+Version 3 (audience rule, 2026-11-04). This is the single source of truth for terminology across the site, the CRM templates, the guides, ads and social posts. When a term appears here, use exactly this form. When in doubt, ask the copy team before inventing a new spelling. Canonical source for prices and region logic: `marketing/geo-pricing-and-language.md` (§7–§9).
+
+## Audience rule (owner decision, 2026-11-04: overrides everything below)
+
+We offer exactly two things:
+
+1. **Bar Mitzvah preparation for boys.**
+2. **Torah learning for adult men:** adult Bar Mitzvah, learning to read from the Torah, the weekly Torah portion, general Torah study.
+
+| | English | Français |
+|---|---|---|
+| The child | "your son", "he / his / him". "your child" only where it clearly means the son. | « votre fils », « il / son / lui ». « votre enfant » seulement s’il désigne clairement le fils. |
+| Children in general | "boys" ("boys who learn differently") | « garçons » (« les garçons qui apprennent autrement ») |
+| Adults | "men", "adult men", "adult learners". Adults CTA: "Learning for myself". | « hommes », « hommes adultes », « adultes ». CTA adultes : « J’apprends pour moi ». |
+| The offer in one line | "Private Bar Mitzvah & Torah lessons, live from Israel" | « Cours particuliers de Bar Mitsva et de Torah, en direct d’Israël » |
+
+- Never use any term in the audience rows of §3 (they are listed there only so writers and QA can catch them).
+- Never write gender-neutral wording that blurs who the offer is for ("he or she", "they" for the student, "kids" as the target group).
+- Never say that we refuse anyone, and never comment on who we do not teach. Simply describe what we offer.
+- Row numbers 2, 3 and 57 were retired with this rule; all other row numbers are unchanged so existing cross-references stay valid.
 
 Pronunciation basis: Israeli / Sephardi-style transliteration (Shabbat, tallit, Haftarah), matching what our rabbis say aloud. Where a family uses Ashkenazi forms (Shabbos, tallis), the rabbi adapts in the lesson, but written brand copy stays consistent with this list. French transliteration writes ש as "ch" (Paracha, Chabbat, Béréchit, Houmach, dracha).
 
@@ -17,8 +36,6 @@ Use it word for word (em dash in EN, comma in FR) in the hero H1, the "why Jerus
 | # | English (use) | French (use) | Hebrew | Notes |
 |---|---|---|---|---|
 | 1 | Bar Mitzvah | Bar Mitsva (la) | בר מצווה | Capitalized, two words, no hyphen. FR is feminine: « sa Bar Mitsva ». Never a verb in EN ("Bar Mitzvahed"). |
-| 2 | Bat Mitzvah | Bat Mitsva (la) | בת מצווה | Same rules. Do not state that girls read from the Torah or are called up: the Bat Mitzvah scope is an open owner question (research §8 Q1). |
-| 3 | Bar and Bat Mitzvah (combined) | Bar et Bat Mitsva | בר ובת מצווה | EN short form "Bar & Bat Mitzvah" allowed in titles, buttons and meta only. |
 | 4 | Torah | Torah (la) | תורה | Always capitalized. |
 | 5 | Torah scroll | Sefer Torah (le) | ספר תורה | |
 | 6 | Torah portion (parasha) | Paracha (la), pl. Parachot | פרשה | EN: first mention "Torah portion (parasha)", then "portion" or "parasha" (lowercase in running text; "Parasha" capitalized only in the UI label "Find your Parasha"). FR: always capitalized. |
@@ -72,16 +89,15 @@ Use it word for word (em dash in EN, comma in FR) in the hero H1, the "why Jerus
 | 48 | practice (homework) | exercices à réviser (devoirs) | שיעורי בית | Prefer "practice" / « réviser »: lighter than "homework". |
 | 49 | milestone | étape | אבן דרך | |
 | 50 | the big day | le grand jour / le jour J | היום הגדול | |
-| 51 | kids who learn differently; learning difficulties | enfants qui apprennent autrement; difficultés d’apprentissage | ילדים עם קשיי למידה | Lead with the child, not the label. |
+| 51 | boys who learn differently; learning difficulties | garçons qui apprennent autrement; difficultés d’apprentissage | ילדים עם קשיי למידה | Lead with the boy, not the label. |
 | 52 | ADHD | TDAH | הפרעת קשב וריכוז | |
 | 53 | dyslexia | dyslexie | דיסלקציה | |
 | 54 | families living abroad / outside Israel | familles qui vivent hors d’Israël / loin d’Israël | משפחות בחו״ל | |
 | 55 | price | prix, tarif | מחיר | Always via `{{PRICE}}`. EN: €750 · $850 (US visitors) · US$850 (other non-euro countries). FR: « 750 € » · « 850 $ US » (U+00A0 between the parts). Receipts and checkout add the ISO code: "€750 (EUR)", "US$850 (USD)", « 750 € (EUR) », « 850 $ US (USD) ». No decimals on the landing page. Source: `geo-pricing-and-language.md` §7. |
 | 56 | d'var Torah | (not used; say « dracha » / « discours ») | דבר תורה | US Reform/Conservative word for the speech. EN: "the speech (drasha, or d'var Torah)" in FAQ, guides and US-targeted ads. |
-| 57 | B'nai Mitzvah | (not used) | בני מצווה | US plural / gender-inclusive form. Allowed in US SEO, ads and guides; brand copy says "Bar and Bat Mitzvah". |
 | 58 | Kotel / Western Wall | Kotel / le Mur occidental | הכותל | EN: "the Western Wall (Kotel)" on first mention. FR: « le Kotel » (insider) or « le Mur occidental » (SEO). Never "Wailing Wall" / « mur des Lamentations » in brand copy. |
 | 59 | Hebrew school / Sunday school | Talmud Torah | תלמוד תורה | The local after-school framework families compare us with. FR: « Talmud Torah » is neutral and may be used (e.g., comparison guide, FAQ). EN: describe, don't disparage. |
-| 60 | adult Bar Mitzvah / adult Bat Mitzvah | Bar Mitsva adulte / Bat Mitsva adulte; Bar Mitsva à l’âge adulte | בר/בת מצווה למבוגרים | Adults section CTA: "Learning for myself" / « J’apprends pour moi ». |
+| 60 | adult Bar Mitzvah | Bar Mitsva à l’âge adulte; Bar Mitsva adulte | בר מצווה למבוגרים | For men. Adults section eyebrow: "For men" / « Pour les hommes ». CTA: "Learning for myself" / « J’apprends pour moi ». |
 | 61 | rabbi (FR rule) | rabbin / Rav / votre rav | רב | FR decision: « rabbin » in SEO, headings and first mention; « Rav + prénom » as a title; « votre rav » / « son rav » allowed only in emotional lines and ad hooks. Never the Hebrew plural « rabbanim » in public copy. |
 
 ## 3. Words and forms to avoid
@@ -95,14 +111,16 @@ Use it word for word (em dash in EN, comma in FR) in the hero H1, the "why Jerus
 | class, classes | lesson(s) | "No group class" as a contrast. | "Class" implies a group. |
 | shul | synagogue | Allowed in UK/AU/ZA-targeted ads and guides. Never in brand headlines. | Neutral default across markets. |
 | online rabbi, AI rabbi, AI tutor | an Israeli rabbi, live on Zoom; your personal AI assistant | None. | Sounds cheap; AI never teaches in our promise. |
-| Bar Mitzvahed, Bas Mitzvah, Haftorah, parsha, parshah, sidra, tefilin, tfillin, tallis, Mazel tov, Shabbos, Sabbath | Bar Mitzvah (noun only), Bat Mitzvah, Haftarah, parasha, tefillin, tallit, Mazal tov, Shabbat | Search-keyword lists may include misspellings; never visible copy. | One spelling everywhere. |
+| Bat Mitzvah, Bas Mitzvah, B'nai Mitzvah, Bar & Bat Mitzvah, Bar and Bat Mitzvah | Bar Mitzvah (for boys); Torah learning for men | None (audience rule). | We offer Bar Mitzvah preparation for boys and Torah learning for men only. Describe what we offer; never say whom we don't teach. |
+| son or daughter, your child or daughter, he or she, they / their (for the student), kids or children as the target group | your son, he / his; boys; men, adult learners | "your child" only where it clearly means the son; "children" in the FAQ question "Is this only for children?" (age, not gender). | Audience rule: no wording that implies girls are included. |
+| Bar Mitzvahed, Haftorah, parsha, parshah, sidra, tefilin, tfillin, tallis, Mazel tov, Shabbos, Sabbath | Bar Mitzvah (noun only), Haftarah, parasha, tefillin, tallit, Mazal tov, Shabbat | Search-keyword lists may include misspellings; never visible copy. | One spelling everywhere. |
 | aliyah (alone, unexplained) | aliyah (being called up to the Torah) | | Avoid confusion with immigrating to Israel. |
 | Old Testament | Torah, Hebrew Bible | | Christian framing. |
 | Holy Land, Wailing Wall | Israel, Jerusalem, Western Wall (Kotel) | | Tourism / Christian connotation; we speak as Israelis. |
 | Learn Torah in Israel (as the promise) | Learn Torah from Jerusalem — without leaving home. | Hero alternatives for A/B tests only. | Contradicts "without leaving home"; drops Jerusalem. |
 | diaspora Jews (customer-facing) | families living abroad / outside Israel | | Can sound distant or political. |
 | religious / secular, frum | observant / not observant; "wherever you are" | | No judgment, no labels. |
-| learning-disabled kids, struggling students, special needs kids | kids who learn differently, children with ADHD or dyslexia | | Child first, label second. |
+| learning-disabled kids, struggling students, special needs kids | boys who learn differently, boys with ADHD or dyslexia | | The boy first, the label second. |
 | guaranteed, 100% success, best rabbis in the world, #1 | (describe the method, not a promise) | | No unverifiable claims. |
 | popular, most read, families love | featured | Only with real data supplied by the owner. | No usage data exists. |
 | cheap, discount, deal, bargain | one clear price, everything included | | Positioning is warm and premium. |
@@ -115,7 +133,9 @@ Use it word for word (em dash in EN, comma in FR) in the hero H1, the "why Jerus
 | À éviter | À utiliser | Exception admise | Pourquoi |
 |---|---|---|---|
 | rabbi, rabbanim | rabbin (nom commun), Rav (titre), votre rav (lignes émotionnelles) | | Usage français ; voir ligne 61. |
-| Bar Mitzvah, Bar-Mitzva, Bar Mitzva, Bat Mitzvah | Bar Mitsva, Bat Mitsva | Le nom de marque « Zoom Mitzvah ». | Graphie unique. |
+| Bat Mitsva, Bat Mitzvah, Bar et Bat Mitsva, B'nai Mitzvah | Bar Mitsva (pour les garçons) ; étude de la Torah pour les hommes | Aucune (règle d’audience). | Nous proposons uniquement la préparation à la Bar Mitsva pour les garçons et l’étude de la Torah pour les hommes. Décrire l’offre, sans jamais dire qui nous n’accueillons pas. |
+| fils ou fille, votre enfant ou votre fille, il ou elle, « votre enfant » au neutre, les enfants comme public cible | votre fils, il ; les garçons ; les hommes, les adultes | « votre enfant » seulement s’il désigne clairement le fils ; « enfants » dans la question de FAQ « Est-ce réservé aux enfants ? » (l’âge, pas le genre). | Règle d’audience : aucune tournure qui laisse entendre que les filles sont concernées. |
+| Bar Mitzvah, Bar-Mitzva, Bar Mitzva | Bar Mitsva | Le nom de marque « Zoom Mitzvah ». | Graphie unique. |
 | Parasha, Parsha, Sidra | Paracha (pl. Parachot) | | |
 | Haftarah, Haftorah | Haftara | | |
 | drasha, derasha | dracha | | En français, ש s’écrit « ch » (Paracha, Chabbat). |
@@ -133,7 +153,7 @@ Use it word for word (em dash in EN, comma in FR) in the hero H1, the "why Jerus
 | Ancien Testament, Terre sainte, mur des Lamentations | la Torah, Israël, Jérusalem, le Kotel / le Mur occidental | | Connotation chrétienne ou touristique. |
 | Étudier la Torah en Israël (comme promesse) | Apprenez la Torah depuis Jérusalem, sans quitter la maison. | Variantes de test A/B. | Contradictoire ; perd Jérusalem. |
 | religieux / laïc (pour qualifier les familles) | pratiquant / non pratiquant | | Sans jugement. |
-| enfant handicapé, enfant en échec, élève en difficulté | enfants qui apprennent autrement, enfants avec un TDAH ou une dyslexie | | L’enfant d’abord, l’étiquette ensuite. |
+| enfant handicapé, enfant en échec, élève en difficulté | garçons qui apprennent autrement, garçons avec un TDAH ou une dyslexie | | Le garçon d’abord, l’étiquette ensuite. |
 | garanti, 100 % de réussite, les meilleurs rabbins | (décrire la méthode, pas une promesse) | | Aucune promesse invérifiable. |
 | les plus lus, populaires | à la une | Avec des données réelles uniquement. | |
 | « le prix affiché est le prix payé » | « votre prix définitif est confirmé avant le paiement » | | La caisse peut recalculer selon le pays de facturation. |
@@ -149,7 +169,7 @@ Use it word for word (em dash in EN, comma in FR) in the hero H1, the "why Jerus
 | Topic | Do not say | Say instead |
 |---|---|---|
 | Traditions taught (Q2) | "We'll match you with a rabbi who teaches your tradition" / « marocaine, tunisienne : nous avons le rabbin » | "Tell us your family's tradition in the free consultation, and we'll tell you honestly which of our rabbis can teach it." |
-| Bat Mitzvah scope (Q1) | "Every student reads from the Torah / is called up" | "Matched to what your child will do on the day." |
+| What is read on the day | "Every student reads the whole portion" | "Matched to what your son will do on the day." (Q1 was closed by the owner on 2026-11-04: see the Audience rule at the top.) |
 | Course length (Q3) | any number of lessons, minutes or months | "We look at this together in the free consultation." |
 | Refunds, trial lesson (Q4) | money-back guarantee, free trial lesson | free consultation only |
 | Rabbis (Q5) | names, credentials, years of experience | data from the database only |
@@ -163,7 +183,7 @@ Use it word for word (em dash in EN, comma in FR) in the hero H1, the "why Jerus
 - Straight apostrophes are acceptable in EN files; curly quotes for quotations: “ ”.
 - Times: "5:30 p.m." (this glossary is the source of truth; Marketing to align strategy §3.1 and §7.1, brand guide §8 and geo §10). Dates: "Tuesday, March 4".
 - Plurals in UI strings with a number use ICU syntax: `{COUNT, plural, one {# result} other {# results}}`.
-- Tone: warm, confident, short sentences, second person ("your child"). No exclamation marks in headlines.
+- Tone: warm, confident, short sentences, second person ("your son", "he / his"; adults: "men", "adult learners"). No exclamation marks in headlines.
 
 **Français (France)**
 - Espace insécable (U+00A0) avant : ; ? ! et à l’intérieur des guillemets « ». Les fichiers JSON FR les contiennent déjà : ne pas les remplacer.
@@ -171,7 +191,7 @@ Use it word for word (em dash in EN, comma in FR) in the hero H1, the "why Jerus
 - Heures : « 17 h 30 » ; dates : « mardi 4 mars » ; prix : « 750 € », « 850 $ US ».
 - Pas de majuscule aux jours et aux mois. « e-mail » avec trait d’union. « par ex. » (jamais « ex. » seul).
 - Virgule avant le prénom au vocatif : « Merci, Sarah ! »
-- Ton : chaleureux, rassurant, vouvoiement, phrases courtes. On parle « de votre enfant » (genre neutre autant que possible ; accord au masculin générique quand c’est inévitable).
+- Ton : chaleureux, rassurant, vouvoiement, phrases courtes. On parle de « votre fils » (« il », « son »), jamais au neutre ; pour les adultes : « les hommes », « les adultes ».
 - Le titre d’un rabbin dans les gabarits : « Rav David », sans article.
 
 **Messaging templates (all languages)**

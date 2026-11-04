@@ -16,8 +16,8 @@
         "generic_equivalent": "STUDENT_FIRST_NAME"
       },
       "{{ceremony}}": {
-        "meaning": "Ceremony name in the recipient's language.",
-        "example": "Bar Mitzvah / Bat Mitzvah",
+        "meaning": "Ceremony name in the recipient's language. Always 'Bar Mitzvah' (we offer Bar Mitzvah preparation for boys and Torah learning for men).",
+        "example": "Bar Mitzvah",
         "generic_equivalent": "CEREMONY"
       },
       "{{rabbi_name}}": {

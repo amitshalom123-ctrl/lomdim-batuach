@@ -1,12 +1,12 @@
 {
   "_meta": {
     "locale": "en",
-    "version": "2.0.0",
+    "version": "2.1.0",
     "notes": "Bodies are plain text with \\n line breaks; the email template wraps them and renders cta_label/cta_url as a button. WhatsApp texts use WhatsApp formatting (*bold*) and must be submitted as approved WhatsApp Business templates before use; send only to families who opted in. Keep the same keys in both languages. Dates, times and amounts must be pre-formatted in the recipient's locale and time zone by the CRM. Do not add any rescheduling, refund or cancellation policy line unless the business supplies the exact wording.",
     "placeholders": {
       "{{PARENT_FIRST_NAME}}": "Recipient's first name (parent, or the adult learner).",
       "{{STUDENT_FIRST_NAME}}": "Student's first name.",
-      "{{CEREMONY}}": "'Bar Mitzvah' or 'Bat Mitzvah' (FR: 'Bar Mitsva' / 'Bat Mitsva').",
+      "{{CEREMONY}}": "Always 'Bar Mitzvah' (FR: 'Bar Mitsva'). Kept as a variable so the CRM field maps 1:1.",
       "{{RABBI_NAME}}": "Rabbi's name with title, e.g. 'Rabbi David'. (French file: 'Rav David', no article.)",
       "{{RABBI_BIO_SHORT}}": "2-3 sentence bio from the rabbi data (in the email's language).",
       "{{LESSON_LANGUAGE}}": "'English' or 'French' (FR: 'français' / 'anglais').",
@@ -31,7 +31,7 @@
       "{{MILESTONE}}": "Short noun phrase describing the milestone, e.g. 'Both aliyah blessings, by heart' (FR: 'Les deux bénédictions de la montée à la Torah, par cœur').",
       "{{LESSONS_COMPLETED}}": "Number of lessons completed so far.",
       "{{NEXT_GOAL}}": "Next goal set by the rabbi, short phrase.",
-      "{{EVENT_DATE}}": "Date of the Bar/Bat Mitzvah, localized.",
+      "{{EVENT_DATE}}": "Date of the Bar Mitzvah, localized.",
       "{{AMOUNT}}": "Amount with ISO code, as on receipts (geo §7): '€750 (EUR)' / 'US$850 (USD)'.",
       "{{INVOICE_NUMBER}}": "Receipt / invoice number.",
       "{{PAYMENT_DATE}}": "Payment date, localized.",
@@ -61,7 +61,7 @@
       "email": {
         "subject": "Your free consultation is booked: {{CONSULTATION_DATE}} at {{CONSULTATION_TIME}}",
         "preheader": "Your call link, and what we'll talk about.",
-        "body": "Hi {{PARENT_FIRST_NAME}},\n\nThank you for booking a free consultation with Zoom Mitzvah International. We're looking forward to meeting you.\n\nDate: {{CONSULTATION_DATE}}\nTime: {{CONSULTATION_TIME}}, {{TIMEZONE}} (your local time)\nVideo call link: {{CONSULTATION_LINK}}\n\nWhat we'll ask you, so you can think about it beforehand:\n• who will be learning, and their age\n• the Bar or Bat Mitzvah date, if there is one (or \"not sure yet\")\n• your family's tradition and your synagogue's customs\n• how your child learns best, and anything we should know\n• the days and times that usually work for your family\n\nAnd of course, bring all your questions. There's no commitment.\n\nNeed another time? {{CONSULTATION_RESCHEDULE_URL}}\n\nWarmly,\nThe Zoom Mitzvah International team",
+        "body": "Hi {{PARENT_FIRST_NAME}},\n\nThank you for booking a free consultation with Zoom Mitzvah International. We're looking forward to meeting you.\n\nDate: {{CONSULTATION_DATE}}\nTime: {{CONSULTATION_TIME}}, {{TIMEZONE}} (your local time)\nVideo call link: {{CONSULTATION_LINK}}\n\nWhat we'll ask you, so you can think about it beforehand:\n• who will be learning: your son (and his age), or you\n• the Bar Mitzvah date, if there is one (or \"not sure yet\")\n• your family's tradition and your synagogue's customs\n• how he learns best (or how you do), and anything we should know\n• the days and times that usually work for your family\n\nAnd of course, bring all your questions. There's no commitment.\n\nNeed another time? {{CONSULTATION_RESCHEDULE_URL}}\n\nWarmly,\nThe Zoom Mitzvah International team",
         "cta_label": "Add to my calendar",
         "cta_url": "{{CALENDAR_URL}}"
       },
@@ -76,7 +76,7 @@
       "email": {
         "subject": "Tomorrow: your free consultation at {{CONSULTATION_TIME}}",
         "preheader": "A quick reminder and your call link.",
-        "body": "Hi {{PARENT_FIRST_NAME}},\n\nA quick reminder: your free consultation with Zoom Mitzvah International is tomorrow.\n\n{{CONSULTATION_DATE}} at {{CONSULTATION_TIME}} ({{TIMEZONE}}, your local time)\nVideo call link: {{CONSULTATION_LINK}}\n\nA computer is the most comfortable, but a phone works too. If your child would like to join, they're very welcome.\n\nCan't make it? Choose another time here: {{CONSULTATION_RESCHEDULE_URL}}\n\nWarmly,\nThe Zoom Mitzvah International team",
+        "body": "Hi {{PARENT_FIRST_NAME}},\n\nA quick reminder: your free consultation with Zoom Mitzvah International is tomorrow.\n\n{{CONSULTATION_DATE}} at {{CONSULTATION_TIME}} ({{TIMEZONE}}, your local time)\nVideo call link: {{CONSULTATION_LINK}}\n\nA computer is the most comfortable, but a phone works too. If your son would like to join, he's very welcome.\n\nCan't make it? Choose another time here: {{CONSULTATION_RESCHEDULE_URL}}\n\nWarmly,\nThe Zoom Mitzvah International team",
         "cta_label": "Join the call",
         "cta_url": "{{CONSULTATION_LINK}}"
       },
@@ -312,7 +312,7 @@
       }
     },
     "course_completed": {
-      "trigger": "The course is marked complete (usually after the Bar/Bat Mitzvah).",
+      "trigger": "The course is marked complete (usually after the Bar Mitzvah).",
       "email": {
         "subject": "Mazal tov, {{STUDENT_FIRST_NAME}}!",
         "preheader": "From all of us in Israel: we're so proud.",

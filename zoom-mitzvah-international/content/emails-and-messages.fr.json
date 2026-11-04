@@ -1,12 +1,12 @@
 {
   "_meta": {
     "locale": "fr",
-    "version": "2.0.0",
+    "version": "2.1.0",
     "notes": "Corps de texte en texte brut avec sauts de ligne \\n ; le gabarit d’e-mail affiche cta_label/cta_url sous forme de bouton. Les messages WhatsApp utilisent la mise en forme WhatsApp (*gras*) et doivent être validés comme modèles WhatsApp Business avant usage ; à n’envoyer qu’aux familles ayant donné leur accord. Mêmes clés dans les deux langues. Dates, heures et montants doivent être formatés à la française par le CRM (« mardi 4 mars », « 17 h 30 », « 750 € »). Vouvoiement systématique. Ne pas ajouter de conditions d’annulation, de report ou de remboursement sans texte fourni par l’entreprise.",
     "placeholders": {
       "{{PARENT_FIRST_NAME}}": "Recipient's first name (parent, or the adult learner).",
       "{{STUDENT_FIRST_NAME}}": "Student's first name.",
-      "{{CEREMONY}}": "« Bar Mitsva » ou « Bat Mitsva ».",
+      "{{CEREMONY}}": "Toujours « Bar Mitsva ». Conservé comme variable pour correspondre 1:1 au champ du CRM.",
       "{{RABBI_NAME}}": "Nom du rabbin avec titre, SANS article : « Rav David » (et non « le Rav David »), car il apparaît aussi en début de phrase.",
       "{{RABBI_BIO_SHORT}}": "2-3 sentence bio from the rabbi data (in the email's language).",
       "{{LESSON_LANGUAGE}}": "« français » ou « anglais ».",
@@ -31,7 +31,7 @@
       "{{MILESTONE}}": "Étape en quelques mots, par ex. « Les deux bénédictions de la montée à la Torah, par cœur ».",
       "{{LESSONS_COMPLETED}}": "Number of lessons completed so far.",
       "{{NEXT_GOAL}}": "Next goal set by the rabbi, short phrase.",
-      "{{EVENT_DATE}}": "Date of the Bar/Bat Mitzvah, localized.",
+      "{{EVENT_DATE}}": "Date of the Bar Mitzvah, localized.",
       "{{AMOUNT}}": "Montant avec code ISO, comme sur les reçus (geo §7) : « 750 € (EUR) » / « 850 $ US (USD) ».",
       "{{INVOICE_NUMBER}}": "Receipt / invoice number.",
       "{{PAYMENT_DATE}}": "Payment date, localized.",
@@ -61,7 +61,7 @@
       "email": {
         "subject": "Votre appel découverte gratuit est réservé : {{CONSULTATION_DATE}} à {{CONSULTATION_TIME}}",
         "preheader": "Votre lien, et ce dont nous parlerons.",
-        "body": "Bonjour {{PARENT_FIRST_NAME}},\n\nMerci d’avoir réservé un appel découverte gratuit avec Zoom Mitzvah International. Nous avons hâte de faire votre connaissance.\n\nDate : {{CONSULTATION_DATE}}\nHeure : {{CONSULTATION_TIME}}, {{TIMEZONE}} (votre heure locale)\nLien de l’appel vidéo : {{CONSULTATION_LINK}}\n\nLes questions que nous vous poserons, pour que vous puissiez y réfléchir :\n• qui suivra les cours, et son âge\n• la date de la Bar ou Bat Mitsva, si elle est fixée (ou « pas encore »)\n• la tradition de votre famille et les usages de votre synagogue\n• la façon dont votre enfant apprend le mieux, et tout ce que nous devrions savoir\n• les jours et horaires qui conviennent généralement à votre famille\n\nEt bien sûr, venez avec toutes vos questions. Aucun engagement.\n\nBesoin d’un autre créneau ? {{CONSULTATION_RESCHEDULE_URL}}\n\nBien chaleureusement,\nL’équipe Zoom Mitzvah International",
+        "body": "Bonjour {{PARENT_FIRST_NAME}},\n\nMerci d’avoir réservé un appel découverte gratuit avec Zoom Mitzvah International. Nous avons hâte de faire votre connaissance.\n\nDate : {{CONSULTATION_DATE}}\nHeure : {{CONSULTATION_TIME}}, {{TIMEZONE}} (votre heure locale)\nLien de l’appel vidéo : {{CONSULTATION_LINK}}\n\nLes questions que nous vous poserons, pour que vous puissiez y réfléchir :\n• qui suivra les cours : votre fils (et son âge), ou vous-même\n• la date de la Bar Mitsva, si elle est fixée (ou « pas encore »)\n• la tradition de votre famille et les usages de votre synagogue\n• sa façon d’apprendre, ou la vôtre, et tout ce que nous devrions savoir\n• les jours et horaires qui conviennent généralement à votre famille\n\nEt bien sûr, venez avec toutes vos questions. Aucun engagement.\n\nBesoin d’un autre créneau ? {{CONSULTATION_RESCHEDULE_URL}}\n\nBien chaleureusement,\nL’équipe Zoom Mitzvah International",
         "cta_label": "Ajouter à mon agenda",
         "cta_url": "{{CALENDAR_URL}}"
       },
@@ -76,7 +76,7 @@
       "email": {
         "subject": "Demain : votre appel découverte à {{CONSULTATION_TIME}}",
         "preheader": "Petit rappel et lien de l’appel.",
-        "body": "Bonjour {{PARENT_FIRST_NAME}},\n\nPetit rappel : votre appel découverte gratuit avec Zoom Mitzvah International a lieu demain.\n\n{{CONSULTATION_DATE}} à {{CONSULTATION_TIME}} ({{TIMEZONE}}, votre heure locale)\nLien de l’appel vidéo : {{CONSULTATION_LINK}}\n\nUn ordinateur est plus confortable, mais un téléphone convient aussi. Si votre enfant souhaite se joindre à l’appel, il est le bienvenu.\n\nUn empêchement ? Choisissez un autre créneau ici : {{CONSULTATION_RESCHEDULE_URL}}\n\nBien chaleureusement,\nL’équipe Zoom Mitzvah International",
+        "body": "Bonjour {{PARENT_FIRST_NAME}},\n\nPetit rappel : votre appel découverte gratuit avec Zoom Mitzvah International a lieu demain.\n\n{{CONSULTATION_DATE}} à {{CONSULTATION_TIME}} ({{TIMEZONE}}, votre heure locale)\nLien de l’appel vidéo : {{CONSULTATION_LINK}}\n\nUn ordinateur est plus confortable, mais un téléphone convient aussi. Si votre fils souhaite se joindre à l’appel, il est le bienvenu.\n\nUn empêchement ? Choisissez un autre créneau ici : {{CONSULTATION_RESCHEDULE_URL}}\n\nBien chaleureusement,\nL’équipe Zoom Mitzvah International",
         "cta_label": "Rejoindre l’appel",
         "cta_url": "{{CONSULTATION_LINK}}"
       },
@@ -312,7 +312,7 @@
       }
     },
     "course_completed": {
-      "trigger": "Parcours marqué comme terminé (en général après la Bar/Bat Mitsva).",
+      "trigger": "Parcours marqué comme terminé (en général après la Bar Mitsva).",
       "email": {
         "subject": "Mazal tov, {{STUDENT_FIRST_NAME}} !",
         "preheader": "De la part de toute l’équipe en Israël : nous sommes très fiers.",
