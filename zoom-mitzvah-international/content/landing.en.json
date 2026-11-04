@@ -12,7 +12,7 @@
       "{{ASSISTANT_URL}}": "Link that opens the AI assistant.",
       "{{PARENTS_GUIDES_URL}}": "Link to the 'For parents' guide category in the page's language.",
       "{COUNT, plural, ...}": "ICU MessageFormat plural (single braces), render with an ICU library.",
-      "{{ENROL_URL}}": "Checkout / enrolment URL for the full course (geo currency, geo §3.4)."
+      "{{ENROL_URL}}": "Checkout / enrollment URL for the full course (geo currency, geo §3.4)."
     },
     "notes": "Key structure is identical to landing.fr.json. Rabbi names, photos and bios are loaded from data; this file only holds the generic section copy and card labels. Do not add testimonials, statistics or awards that are not supplied by the business. pricing.currency_note: show exactly one of eur / usd_us / usd_other under the price. pricing.israel_card replaces the price card for visitors in Israel (geo §8). banners.hebrew_site is shown to visitors in Israel (Hebrew text, rtl). banners.language_suggestion is shown in the DETECTED language: the EN string is displayed on /fr pages when English is detected (geo §9). Brand promise wording is fixed (glossary §0)."
   },
@@ -147,7 +147,7 @@
       "href": "{{CTA_URL}}"
     },
     "cta_secondary": {
-      "label": "Enrol in the full course",
+      "label": "Enroll in the full course",
       "href": "{{ENROL_URL}}"
     }
   },
@@ -362,7 +362,7 @@
       "href": "{{CTA_URL}}"
     },
     "cta_secondary": {
-      "label": "Enrol in the full course",
+      "label": "Enroll in the full course",
       "href": "{{ENROL_URL}}"
     },
     "consultation_note": "Not sure yet? Talk to us first. The consultation is free, and you can ask every question before you pay anything.",
@@ -459,7 +459,7 @@
       "href": "{{CTA_URL}}"
     },
     "cta_secondary": {
-      "label": "Enrol in the full course",
+      "label": "Enroll in the full course",
       "href": "{{ENROL_URL}}"
     },
     "note": "Free · No commitment · In English"

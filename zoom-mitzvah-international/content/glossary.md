@@ -59,7 +59,7 @@ Use it word for word (em dash in EN, comma in FR) in the hero H1, the "why Jerus
 |---|---|---|---|---|
 | 37 | Zoom Mitzvah International | Zoom Mitzvah International | זום מצווה | Brand name stays in English in FR (never "Mitsva" inside the brand). |
 | 38 | free consultation | appel découverte gratuit | שיחת ייעוץ חינם | Primary CTA and primary KPI (`consultation_booked`). EN button: "Book a free consultation". FR button: « Réserver un appel découverte gratuit », short form « Appel gratuit ». Never "sales call"; never "free trial lesson" (unconfirmed). |
-| 38b | Enrol in the full course (secondary CTA) | S’inscrire au parcours complet (short: « Commencer ») | הרשמה לקורס המלא | Secondary CTA, shown only where the offer has been seen: end of "How it works", pricing, final CTA (strategy §4). Hero second element is the link "See how it works" / « Voir comment ça se passe ». Helper: "Ask our assistant now" / « Posez votre question à l’assistant ». |
+| 38b | Enroll in the full course (secondary CTA) | S’inscrire au parcours complet (short: « Commencer ») | הרשמה לקורס המלא | Secondary CTA, shown only where the offer has been seen: end of "How it works", pricing, final CTA (strategy §4). Hero second element is the link "See how it works" / « Voir comment ça se passe ». Helper: "Ask our assistant now" / « Posez votre question à l’assistant ». |
 | 39 | lesson | cours | שיעור | FR: never « leçon ». EN: never "class" (implies a group), except in the contrast "no group class". |
 | 40 | private, one-on-one lessons | cours particuliers, en tête-à-tête | שיעורים פרטיים | |
 | 41 | the complete course / full course | le parcours complet | הקורס המלא | FR: « parcours », not « formation » or « forfait ». Never state a number of lessons (research §8 Q3). |

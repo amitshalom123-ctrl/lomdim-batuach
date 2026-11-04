@@ -106,13 +106,13 @@
       "email": {
         "subject": "Your personal plan, and the next steps",
         "preheader": "Everything we discussed, in one place. No rush.",
-        "body": "Hi {{PARENT_FIRST_NAME}},\n\nThank you for taking the time to talk with us. Here's a summary of what we discussed:\n\n{{PLAN_SUMMARY}}\n\nThe complete course is {{PRICE}}, everything included: private live lessons with your Israeli rabbi, every lesson recorded, the parent portal, your personal AI assistant 24/7 and our 120+ guides in English and French. Your final price is confirmed before you pay.\n\nWhen you're ready, you can enrol with the button below.\n\nThere's no rush. If you'd like to think it over, talk it through as a family or ask another question, simply reply to this email. We're here.\n\nWarmly,\nThe Zoom Mitzvah International team",
-        "cta_label": "Enrol in the full course",
+        "body": "Hi {{PARENT_FIRST_NAME}},\n\nThank you for taking the time to talk with us. Here's a summary of what we discussed:\n\n{{PLAN_SUMMARY}}\n\nThe complete course is {{PRICE}}, everything included: private live lessons with your Israeli rabbi, every lesson recorded, the parent portal, your personal AI assistant 24/7 and our 120+ guides in English and French. Your final price is confirmed before you pay.\n\nWhen you're ready, you can enroll with the button below.\n\nThere's no rush. If you'd like to think it over, talk it through as a family or ask another question, simply reply to this email. We're here.\n\nWarmly,\nThe Zoom Mitzvah International team",
+        "cta_label": "Enroll in the full course",
         "cta_url": "{{CHECKOUT_URL}}"
       },
-      "whatsapp": "Hi {{PARENT_FIRST_NAME}}, thank you for our conversation. Your plan summary and the next steps are in your email. Whenever you're ready, you can enrol with the button below, and if you have any question, just reply here.",
+      "whatsapp": "Hi {{PARENT_FIRST_NAME}}, thank you for our conversation. Your plan summary and the next steps are in your email. Whenever you're ready, you can enroll with the button below, and if you have any question, just reply here.",
       "whatsapp_button": {
-        "label": "Enrol",
+        "label": "Enroll",
         "url": "{{CHECKOUT_URL}}"
       }
     },
