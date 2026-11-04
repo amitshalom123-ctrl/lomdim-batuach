@@ -1,19 +1,20 @@
 # Zoom Mitzvah International: Audience & Market Research
 
 > **סיכום בעברית לבעלים**
-> קהל היעד: משפחות יהודיות בחו"ל (ארה"ב, קנדה, בריטניה, אוסטרליה, דרום אפריקה, צרפת, בלגיה, שווייץ, קוויבק) שרוצות הכנה לבר/בת מצווה או קריאה בתורה עם רב ישראלי מירושלים שמדבר את השפה שלהן.
-> זיהינו 6 פרסונות. המרכזיות: משפחה אמריקאית רפורמית/קונסרבטיבית רחוקה מבית כנסת, ומשפחה ספרדית-צרפתית בפריז/ליון/מרסיי.
-> החשש הגדול: "האם זום באמת עובד לילד שלי?", ובצרפת גם "האם הרב יכיר את הנוסח והטעמים של המשפחה (מרוקאי/תוניסאי)".
-> מתחרים: מורים בבית הכנסת המקומי, מורים פרטיים אונליין (בערך $25–$70 לשיעור לפי מה שבדקנו), וחב"ד (באתר chabad.org: ‏$35 לשיעור של 45 דקות, הערכה ושיעור ראשון בחינם).
-> אף מתחרה שמצאנו לא מציע ביחד: רב מירושלים, בשפת המשפחה, עוזר AI 24/7 וספריית מדריכים מתורגמת. זה הבידול שלנו.
-> המחיר €750/$850 סביר רק אם יודעים כמה שיעורים כוללת התוכנית. **חובה להגדיר את מספר השיעורים ואורכם** (זה לא מופיע בעובדות שקיבלנו).
-> יש 7 שאלות פתוחות לבעלים (סעיף 8), למשל: האם מלמדים בנות לקרוא בתורה, ואילו נוסחים הרבנים מלמדים.
+> קהל היעד: (1) הורים בחו"ל (ארה"ב, קנדה, בריטניה, אוסטרליה, דרום אפריקה, צרפת, בלגיה, שווייץ, קוויבק) שרוצים הכנה לבר מצווה לבן שלהם, ו-(2) גברים בוגרים שרוצים ללמוד תורה: בר מצווה למבוגרים, קריאה בתורה, פרשת השבוע ולימוד תורה. הכול עם רב ישראלי מירושלים שמדבר את השפה שלהם.
+> זיהינו 6 פרסונות. המרכזיות: משפחה מסורתית/אורתודוקסית/ספרדית עם בן לקראת בר מצווה (ארה"ב, בריטניה, צרפת), והגבר הבוגר שלומד לעצמו (P4, שחוזקה מאוד).
+> החשש הגדול: "האם זום באמת עובד לבן שלי?", ובצרפת גם "האם הרב יכיר את הנוסח והטעמים של המשפחה (מרוקאי/תוניסאי)". אצל המבוגרים: "האם לא מאוחר מדי? לא אתבייש?"
+> מתחרים: מורים בבית הכנסת המקומי, מורים פרטיים אונליין (בערך $25–$70 לשיעור לפי מה שבדקנו), וחב"ד (באתר chabad.org: ‏$35 לשיעור של 45 דקות, הערכה ושיעור ראשון בחינם). חב"ד קרוב יותר לקהל שלנו עכשיו, ולכן הבידול הוא ירושלים + שפה + חבילה מלאה.
+> המחיר €750/$850 סביר רק אם יודעים כמה שיעורים כוללת התוכנית. **חובה להגדיר את מספר השיעורים ואורכם**, וגם מה המחיר והמבנה של מסלול המבוגרים.
+> **עדכון 4.11.2026 (החלטת הבעלים):** אין מסלול בת מצווה. שאלה Q1 נסגרה, הפרסונות/מילות המפתח של בנות הוסרו, והפוקוס בארה"ב עבר למשפחות מסורתיות, אורתודוקסיות, ספרדיות וקרובות לחב"ד.
+> נשארו 9 שאלות פתוחות לבעלים (סעיף 8), למשל: אילו נוסחים הרבנים מלמדים, ומה המבנה של מסלול הגברים הבוגרים.
 
 ---
 
 ## 0. Scope, sources and honesty notes
 
-- **Product facts** come only from the owner's brief and the landing brief: a **free consultation** (the landing brief's Objective: "Families abroad book a free consultation or buy the full course"); 1:1 live Zoom lessons with Israeli rabbis living in Israel/Jerusalem who speak English and/or French; Bar/Bat Mitzvah prep, leining (trope, aliyah blessings, Haftarah, maftir), tefillin, drasha writing and general Torah learning; adapted teaching for kids with ADHD or dyslexia; a 24/7 AI assistant; 123 guides translated into EN and FR; recordings; a parent portal; local-time scheduling; and the price, **€750 in the Eurozone and $850 everywhere else**.
+- **Audience decision (owner, 2026-11-04; overrides earlier versions of this file).** Zoom Mitzvah teaches only (1) **Bar Mitzvah preparation for boys** and (2) **Torah learning for adult men**: adult Bar Mitzvah, learning to read from the Torah (leining), the weekly parasha and general Torah study. There is no Bat Mitzvah offering. Earlier drafts of this file carried Bat Mitzvah / B'nai Mitzvah vocabulary, a "will my daughter be taught?" objection and open question Q1 about it; all of that is removed, and **Q1 is answered: no Bat Mitzvah offering** (§8). Public copy describes what we offer ("your son", "men", "adult learners") and never states what we don't offer.
+- **Product facts** come only from the owner's brief and the landing brief: a **free consultation** (the landing brief's Objective: "Families abroad book a free consultation or buy the full course"); 1:1 live Zoom lessons with Israeli rabbis living in Israel/Jerusalem who speak English and/or French; Bar Mitzvah preparation for boys and Torah learning for adult men; leining (trope, aliyah blessings, Haftarah, maftir), tefillin, drasha writing and general Torah learning; adapted teaching for boys with ADHD or dyslexia; a 24/7 AI assistant; 123 guides translated into EN and FR; recordings; a parent portal; local-time scheduling; and the price, **€750 in the Eurozone and $850 everywhere else**.
 - **Market facts** come from web searches run on 2026-11-04. Each one is tagged:
   - `[VERIFIED]`: read directly on the source page that day.
   - `[SEARCH-SUMMARY]`: seen in search-result snippets but not opened. May be out of date.
@@ -27,36 +28,41 @@
 
 | Market | Language | Community character (general, `[UNVERIFIED]`, widely known) | What it means for us |
 |---|---|---|---|
-| USA | EN | The largest diaspora. A large share is Reform/Conservative or unaffiliated. Many live far from a strong synagogue, and families often pay for "B'nai Mitzvah" tutoring as a separate item. | The biggest pool. We have to speak to egalitarian expectations (Bat Mitzvah girls reading Torah) or say clearly what we teach. |
+| USA | EN | The largest diaspora. A large share is Reform/Conservative or unaffiliated. Many live far from a strong synagogue, and families often pay for Bar Mitzvah tutoring as a separate item. | The biggest pool on paper, but only part of it fits our offer (see §1.1). Aim at traditional, Modern Orthodox, Sephardi/Syrian/Persian, Chabad-adjacent and Israeli-expat families with a son, plus adult men in any community. |
 | Canada (EN) | EN | Toronto and Montreal are the hubs, and many families are more traditional than the US average. | Prices must say **US$**, because "$" alone reads as CAD. |
 | Canada (Quebec) | FR/EN | Montreal has a sizeable francophone Sephardi (Moroccan-origin) community. | French page plus a Sephardi-aware message. The price is in USD (Canada is not in the Eurozone). |
-| UK | EN | Mostly mainstream Orthodox-affiliated ("United Synagogue" style) with a strong "shul" culture, plus Masorti, Reform and Liberal. Girls often do a "Bat Chayil"/Bat Mitzvah programme. | Use "lessons" and "shul", not "tutoring" and "temple". Price in USD (per the brief); see the price-perception notes. |
+| UK | EN | Mostly mainstream Orthodox-affiliated ("United Synagogue" style) with a strong "shul" culture, plus Masorti, Reform and Liberal. | A good fit: mainstream Orthodox shul culture matches a boys' Bar Mitzvah and men's leining offer. Use "lessons" and "shul", not "tutoring" and "temple". Price in USD (per the brief); see the price-perception notes. |
 | Australia / South Africa | EN | Smaller and largely traditional/Orthodox-affiliated, with strong Zionist ties. Many families have relatives in Israel. | "Connection to Israel" is a strong lever. Time zones are a real headache; local-time scheduling is a selling point. |
-| France | FR | Europe's largest Jewish community. A majority is Sephardi (North African roots), and the Consistoire is the central religious institution. "Talmud Torah" is the name for after-school/Sunday Jewish classes. | The core FR market. The family's minhag (Moroccan / Tunisian / Algerian chant) matters a lot. |
+| France | FR | Europe's largest Jewish community. A majority is Sephardi (North African roots), and the Consistoire is the central religious institution. "Talmud Torah" is the name for after-school/Sunday Jewish classes. | The core FR market and the best fit for our offer: traditional, Consistoire-style families with a son, and men who want to read the paracha. The family's minhag (Moroccan / Tunisian / Algerian chant) matters a lot. |
 | Belgium | FR (Brussels) / NL-EN-Yiddish (Antwerp) | Brussels is largely francophone. Antwerp's community is largely Haredi and not francophone. | Default to FR, but let the browser language override (see geo doc). Antwerp is not a primary target. |
 | Switzerland | FR (Geneva/Lausanne) / DE (Zurich/Basel) | Two linguistic worlds. | FR for Romandie, EN elsewhere. The price is in USD (CHF is not the euro). |
 | Luxembourg / Monaco | FR | Small, francophone, euro | FR language, €750 price. |
 | Morocco / Tunisia | FR | Small resident communities, but large diaspora ties to France and Montreal. | Low volume. FR language, USD price. |
-| Israeli expats abroad | HE parents / EN or FR kids | Parents speak Hebrew; the child is more comfortable in English or French. | An important niche. Parents may read the Hebrew site while the child learns in English. Cross-link both sites. |
+| Israeli expats abroad | HE parents / EN or FR sons | Parents speak Hebrew; the son is more comfortable in English or French. | An important niche. Parents may read the Hebrew site while their son learns in English. Cross-link both sites. |
+
+### 1.1 Market implication of the audience decision (honest read)
+- **US:** Reform and most Conservative congregations run egalitarian programmes, and many of their families expect one shared track for sons and daughters (often called "B'nai Mitzvah"). Our offer does not match that expectation, so the US pool we can serve well is **smaller than the headline size of US Jewry** `[UNVERIFIED; reasoned from widely known movement practice]`. We do not try to win those families over with messaging.
+- **Who fits:** traditional and Modern Orthodox families, Sephardi and Mizrahi communities (Syrian, Persian, Moroccan), Chabad-adjacent families (who already know the "rabbi teaches your son 1:1" model), Israeli expats, unaffiliated families who want a traditional Bar Mitzvah for their son, and **adult men in any community**. In France, Belgium and Quebec, traditional families affiliated with the Consistoire or Sephardi synagogues are the core. UK, Australia and South Africa skew mainstream Orthodox, which fits.
+- **Consequences for marketing:** (1) the adult-men audience becomes the second full funnel, not a footnote; (2) targeting and wording self-select the families that fit ("your son", "shul", "leining", "rav", "minhag"); (3) we never criticise other movements and never write what we don't offer: we simply describe Bar Mitzvah preparation for boys and Torah learning for men; (4) expect a lower lead volume but a higher fit per lead in the US, and judge US ads on cost per **qualified** consultation.
 
 ---
 
 ## 2. Personas (composite archetypes)
 
-### P1. "The Long-Distance American Family" (US, Reform/Conservative or unaffiliated)
-- **Situation:** Two working parents in a mid-size US city or suburb. The nearest synagogue is 40+ minutes away, or the family isn't a member. The child is 11–12 and juggles sports and school. The parents had a Bar/Bat Mitzvah themselves but don't remember much Hebrew.
-- **Job to be done:** "Get my child ready to stand up and read with confidence, in a way that feels meaningful and not like a box we're ticking."
-- **Motivations:** authenticity ("a real rabbi from Jerusalem, not a recording"), convenience (home, any evening), connection to Israel, a child who *understands* the portion rather than parroting it.
+### P1. "The Long-Distance American Family" (US: traditional, Modern Orthodox, Sephardi, Chabad-adjacent or unaffiliated, with a son)
+- **Situation:** Two working parents in a mid-size US city or suburb. The nearest Orthodox or traditional shul is 40+ minutes away, or the family isn't a member. Their son is 11–12 and juggles sports and school. The father had a Bar Mitzvah himself but doesn't remember much Hebrew. They want a traditional Bar Mitzvah: he reads from the Torah, puts on tefillin and gives a short drasha.
+- **Job to be done:** "Get my son ready to stand up and read with confidence, in a way that feels meaningful and not like a box we're ticking."
+- **Motivations:** authenticity ("a real rabbi from Jerusalem, not a recording"), convenience (home, any evening), connection to Israel, a son who *understands* the portion rather than parroting it.
 - **Fears / objections:**
   - "Will my 12-year-old actually stay focused on Zoom?"
-  - "Will an Israeli Orthodox rabbi accept our Reform/egalitarian family? Will he teach my daughter to read Torah?" (**critical, see §8 Q1**)
+  - "We're not very observant. Will an Israeli rabbi accept us without judging?" (Answer with tone: "your family's tradition", patient 1:1.)
   - "Our synagogue/cantor runs the service. Will what you teach match their melody, their transliteration, their Haftarah?"
   - "$850 up front for something online, from a company abroad. Is it legit? What if it doesn't work?"
   - "Time difference: will lessons only be at 7am?"
-- **Vocabulary:** "Bar Mitzvah tutor", "B'nai Mitzvah", "Torah portion", "Haftarah portion", "chanting", "trope", "leyning/leining" (more traditional families), "aliyah", "d'var Torah" (Reform/Conservative word for the speech; "drasha" is more Orthodox), "mitzvah project", "Hebrew school", "cantor", "temple"/"synagogue".
+- **Vocabulary:** "Bar Mitzvah tutor", "Bar Mitzvah lessons", "Torah portion", "Haftarah portion", "chanting", "trope", "leyning/leining" (more traditional families), "aliyah", "tefillin", "drasha" / "d'var Torah" (both used for the speech), "Hebrew school", "cantor"/"chazzan", "shul"/"synagogue".
 
 ### P2. "La famille séfarade parisienne" (France: Paris & Île-de-France, Lyon, Marseille, Nice, Strasbourg)
-- **Situation:** A traditional ("traditionaliste") family, often of Moroccan, Tunisian or Algerian origin. Shabbat dinner, high holidays, attachment to Israel. The family may have relatives who made aliyah, and the child may attend public school. A Talmud Torah exists locally, but schedules are tight or the family wants 1:1 attention.
+- **Situation:** A traditional ("traditionaliste") family, often of Moroccan, Tunisian or Algerian origin. Shabbat dinner, high holidays, attachment to Israel. The family may have relatives who made aliyah, and their son may attend public school. A Talmud Torah exists locally, but schedules are tight or the family wants 1:1 attention.
 - **Job to be done:** « Que mon fils monte à la Torah et lise sa paracha avec les bons té'amim de notre famille, et qu'il mette ses téfilines tout seul. »
 - **Motivations:** Jerusalem carries a very strong emotional charge. A *rav* (not a "tutor") is a mark of seriousness. Family honour on the day matters, and so does the grandparents' approval.
 - **Fears / objections:**
@@ -65,32 +71,40 @@
   - « Mon fils a du mal à l'école / est TDAH : va-t-il suivre en visio ? »
   - « 750 €, c'est cher pour du Zoom » vs. local Talmud Torah fees (see §5).
   - Security concerns are part of everyday life for French Jews, so some families value discreet, at-home learning. `[UNVERIFIED as a purchase driver]`. Handle it gently and never use fear in marketing.
-- **Vocabulaire:** Bar Mitsva / Bat Mitsva, Paracha, Haftara, Maftir, Téfilines (also "Tefilines", "Tefillin"), Talit, té'amim / ta'amim (cantillation), lecture de la Torah, montée à la Torah / monter au Sefer, alya, Sefer Torah, rav / rabbin, hazan (chantre), discours / dracha de Bar Mitsva, Talmud Torah, Consistoire, choule (familiar), kippa, Kotel / le Mur.
+- **Vocabulaire:** Bar Mitsva, Paracha, Haftara, Maftir, Téfilines (also "Tefilines", "Tefillin"), Talit, té'amim / ta'amim (cantillation), lecture de la Torah, montée à la Torah / monter au Sefer, alya, Sefer Torah, rav / rabbin, hazan (chantre), discours / dracha de Bar Mitsva, Talmud Torah, Consistoire, choule (familiar), kippa, Kotel / le Mur.
 
 ### P3. "The Anglo Shul Family" (UK, Canada, Australia, South Africa)
 - **Situation:** Affiliated with a mainstream Orthodox or Masorti shul. The shul offers a programme, but the family wants extra 1:1 help, or lives in a smaller community (e.g., Perth, Cape Town, a regional UK town) with no available teacher.
 - **Job to be done:** "Make sure he leins his portion properly on the day and doesn't embarrass himself. Ideally he gets excited about it."
 - **Motivations:** Israel connection (strong in SA and Australia), quality of reading, a rabbi with real knowledge.
 - **Fears / objections:** "Will it clash with what the shul's chazzan teaches?" "Is this Orthodox?" Time zones: Australia is 7–9 hours ahead of Israel depending on DST, so after-school in Sydney (16:00) is early morning in Jerusalem (about 07:00–09:00, depending on DST), and rabbis must offer early slots. `[time offsets vary with DST; compute, don't hard-code]`
-- **Vocabulary (UK/AUS/SA):** "shul", "Bar Mitzvah lessons" (not "tutoring"), "leining", "sedra/parasha", "Bat Chayil" (UK Orthodox), "chazzan", "rebbe" (more Haredi), "Mum".
+- **Vocabulary (UK/AUS/SA):** "shul", "Bar Mitzvah lessons" (not "tutoring"), "leining", "sedra/parasha", "chazzan", "rebbe" (more Haredi), "Mum".
 
-### P4. "The Adult Learner" (any country, EN or FR)
-- **Situation:** Aged 30–70. Never had a Bar/Bat Mitzvah (Soviet-born, interfaith upbringing, converted, women who weren't offered it), or did one long ago and wants to really read Torah now. Some are preparing for a family trip to Israel.
-- **Job to be done:** "Finally learn this properly, privately, without being the only adult in a kids' class."
-- **Motivations:** dignity and privacy, depth, flexible hours, "learning Torah from Jerusalem" as a personal milestone.
-- **Fears:** embarrassment at reading level, being judged, "is it too late for me?"
-- **Vocabulary:** "adult Bar Mitzvah / adult Bat Mitzvah", "learn to read Torah as an adult", « Bar Mitsva adulte », « apprendre à lire la Torah à l'âge adulte ».
+### P4. "The Adult Learner": Jewish men 25–80 (any country, EN or FR). **Second primary audience, with its own funnel.**
+- **Sub-segments** (composite, `[UNVERIFIED; size each in validation calls]`):
+  - **P4a. "Never had one."** Men who never had a Bar Mitzvah: born in the former Soviet Union, raised unaffiliated or in an interfaith home, or who joined the Jewish people as adults. Goal: an **adult Bar Mitzvah**, often timed to a birthday, a family simcha or a trip to Israel.
+  - **P4b. "Had one, can't really read."** Memorised a portion at 13 and forgot it. Goal: **learn to read from the Torah properly** (trope, the aliyah blessings), sometimes to read for a yahrzeit or to be called up without anxiety.
+  - **P4c. "The father of a Bar Mitzvah boy."** Wants to read a portion or the Haftarah at his son's Bar Mitzvah, or learn alongside his son. Strong cross-sell from P1–P3 and a natural referral loop.
+  - **P4d. "The shul's next ba'al koreh."** Small communities (regional UK, Perth, Cape Town, French provincial towns, Quebec) often lack a Torah reader. Goal: **become the reader** for his minyan.
+  - **P4e. "Weekly learner."** Wants a steady 1:1 slot for **the weekly parasha and general Torah study** with a rabbi in Jerusalem, in his language. The 54 parasha guides are his natural entry point.
+- **Job to be done:** "Finally learn this properly, privately, with a real rabbi, on my schedule, without being the only adult in a kids' class."
+- **Motivations:** dignity and privacy (1:1, no audience), depth (understanding, not just sounds), flexible hours across time zones, "learning Torah from Jerusalem" as a personal milestone, and for P4c pride on his son's day.
+- **Fears / objections:** "Is it too late for me?" · "I can barely read Hebrew; will I be embarrassed?" (owner to confirm the starting level, §8 Q9) · "Is a course built for 12-year-olds right for a 50-year-old?" · "Is the price and structure the same as for a boy's course?" (§8 Q8) · "Will the rabbi respect that I'm not observant?"
+- **Who decides:** the man himself; sometimes a spouse or adult children give the course as a gift for a milestone birthday `[UNVERIFIED]`.
+- **Where to reach him:** Google Search (high-intent "adult bar mitzvah" / « bar mitsva adulte » queries), YouTube (trope and blessings tutorials), the parasha guides (SEO), the CRM of P1–P3 families (fathers), and community newsletters/WhatsApp groups.
+- **Vocabulary (EN):** "adult Bar Mitzvah", "Bar Mitzvah at 40/50/60", "learn to read Torah as an adult", "learn to leyn", "Torah reading lessons", "become a Torah reader / ba'al koreh", "weekly parasha", "Torah study one-on-one", "chavruta".
+- **Vocabulaire (FR) :** « Bar Mitsva adulte », « faire sa Bar Mitsva à l'âge adulte », « apprendre à lire la Torah à l'âge adulte », « apprendre les té'amim », « monter au Sefer », « devenir baal koré », « paracha de la semaine », « étude de la Torah », « havrouta ».
 
-### P5. "The parent of a child who learns differently" (secondary, cross-cuts P1–P3)
-- **Situation:** Child with ADHD, dyslexia or anxiety. Group Hebrew school failed, or the family dreads the public reading.
-- **Job to be done:** "A patient teacher who adapts, so my child succeeds instead of being humiliated."
+### P5. "The parent of a boy who learns differently" (secondary, cross-cuts P1–P3)
+- **Situation:** Their son has ADHD, dyslexia or anxiety. Group Hebrew school failed, or the family dreads the public reading.
+- **Job to be done:** "A patient teacher who adapts, so my son succeeds instead of being humiliated."
 - **Message rule:** Present it as *one of several reasons 1:1 works*. Never make it the headline and never make clinical claims. Adapted teaching is a fact in the brief; therapeutic outcomes are not.
 
 ### P6. "The Israeli-expat family" (niche, high intent)
-- Hebrew-speaking parents in the US, Canada, UK or France, with a child more fluent in the local language. They already trust "a rav from Israel". The key need is that the *child* learns in English or French. They will likely find the Hebrew site first, so cross-link "השיעורים יכולים להתקיים באנגלית או בצרפתית".
+- Hebrew-speaking parents in the US, Canada, UK or France, with a son more fluent in the local language. They already trust "a rav from Israel". The key need is that the *son* learns in English or French. They will likely find the Hebrew site first, so cross-link "השיעורים יכולים להתקיים באנגלית או בצרפתית". Israeli-expat fathers are also a P4c/P4e prospect.
 
 ### Who is the decision-maker?
-For children, the **mother is very often the researcher/organiser** and the father or grandparents influence the "seriousness" judgement. `[UNVERIFIED, general pattern; confirm in interviews]`. In France, grandparents sometimes pay for or co-fund Bar Mitsva costs. `[UNVERIFIED]`. Copy should give parents reassurance (structure, portal, recordings) and give the family emotion (Jerusalem, the day itself).
+For a boy's Bar Mitzvah, the **mother is very often the researcher/organiser** and the father or grandparents influence the "seriousness" judgement. `[UNVERIFIED, general pattern; confirm in interviews]`. In France, grandparents sometimes pay for or co-fund Bar Mitsva costs. `[UNVERIFIED]`. Copy should give parents reassurance (structure, portal, recordings) and give the family emotion (Jerusalem, the day itself). For the adult offer, the **man decides for himself**: copy speaks to him directly ("you"), with privacy and respect, not to his family.
 
 ---
 
@@ -98,14 +112,15 @@ For children, the **mother is very often the researcher/organiser** and the fath
 
 | Fear / objection | Honest answer from the product facts | Proof we still need from the owner |
 |---|---|---|
-| "Zoom won't hold a child's attention" | 1:1 (not group); patient, adapted teaching; recordings to review; AI assistant for practice between lessons | A real short clip of a lesson (with consent), and the lesson length |
+| "Zoom won't hold a 12-year-old's attention" | 1:1 (not group); patient, adapted teaching; recordings to review; AI assistant for practice between lessons | A real short clip of a lesson (with consent), and the lesson length |
 | "Is the rabbi really in Israel / really speaks our language?" | Rabbis live in Israel/Jerusalem and speak English and/or French | Real names, photos and short bios of the rabbis, each with their consent |
 | "Will it match our synagogue / our tradition?" | Library includes nusach guides; lessons are 1:1, so they can adapt | **Which traditions/nusachim the rabbis can teach** (Ashkenazi, Moroccan, Tunisian, Yemenite...) |
-| "Will my daughter be taught?" | Brief lists Bat Mitzvah prep | **What exactly a Bat Mitzvah track includes** (Torah reading or not; see §8) |
+| "Is it too late for me?" (adult men) | Torah learning for adult men is part of the offer: adult Bar Mitzvah, reading from the Torah, weekly parasha, Torah study; 1:1 and private | Adult course format and price (§8 Q8) |
+| "I can barely read Hebrew" (adult men) | 1:1 lessons adapt to the learner's level | **Whether lessons can start from the Hebrew letters** (§8 Q9) |
 | "Time zones" | Times shown in the family's local time; flexible scheduling | Actual teaching hours in Israel time, to state realistic windows per region |
 | "Is $850 / €750 worth it?" | Free consultation first (brief fact); full course, 1:1, rabbi in Jerusalem, recordings, portal, 24/7 AI assistant, 120+ guides | **Number of lessons and minutes per lesson**; refund/guarantee policy; payment plans? |
 | "Is this a legit company?" | Sister Hebrew site zoomitzvah.co.il exists | Company legal name, contact address, privacy policy, secure payment provider name |
-| "AI with my child?" | 24/7 assistant in their language | Data/privacy policy for minors (COPPA in the US, GDPR in the EU); what the AI does and doesn't do |
+| "AI with my son?" | 24/7 assistant in their language | Data/privacy policy for minors (COPPA in the US, GDPR in the EU); what the AI does and doesn't do |
 
 ---
 
@@ -113,16 +128,16 @@ For children, the **mother is very often the researcher/organiser** and the fath
 
 | Category | Typical offer | Price signals found | Strengths | Weaknesses we can address |
 |---|---|---|---|---|
-| **Local synagogue tutor / cantor / Talmud Torah** | Program bundled with membership; in person; group or 1:1 | One US congregation states its "actual cost of training" is **$1,350** (tutoring + materials) `[SEARCH-SUMMARY]`. Paris liberal community (2014 brochure) listed a **€1,140** Bar/Bat track incl. a €600 donation `[SEARCH-SUMMARY, old]`. A Paris Masorti community lists a liturgy course add-on at **€70 members / €120 non-members** (2022-23) `[SEARCH-SUMMARY]`. | Community belonging; matches local melody; the ceremony happens there | Fixed schedules; quality varies; nothing nearby for many families; no Israel connection |
-| **Chabad (online + local)** | Chabad.org: live 1:1 webcam lessons, **45 min, $35/lesson**, usually weekly; **free assessment + first trial lesson**; recordings emailed after each lesson `[VERIFIED on chabad.org, 2026-11-04]`. Local Chabad houses also offer lessons (one Seattle-area form shows $70/lesson, ~15 lessons `[SEARCH-SUMMARY]`). | $35–$70 per lesson | Huge trust and reach; cheap; free trial; global presence | The page does not say where teachers are located or which languages they teach in `[VERIFIED: not stated]`; Orthodox framing may not suit every family |
+| **Local synagogue tutor / cantor / Talmud Torah** | Program bundled with membership; in person; group or 1:1 | One US congregation states its "actual cost of training" is **$1,350** (tutoring + materials) `[SEARCH-SUMMARY]`. Paris liberal community (2014 brochure) listed a **€1,140** Bar Mitsva-age track incl. a €600 donation `[SEARCH-SUMMARY, old]`. A Paris Masorti community lists a liturgy course add-on at **€70 members / €120 non-members** (2022-23) `[SEARCH-SUMMARY]`. | Community belonging; matches local melody; the ceremony happens there | Fixed schedules; quality varies; nothing nearby for many families; no Israel connection |
+| **Chabad (online + local)** | Chabad.org: live 1:1 webcam lessons, **45 min, $35/lesson**, usually weekly; **free assessment + first trial lesson**; recordings emailed after each lesson `[VERIFIED on chabad.org, 2026-11-04]`. Local Chabad houses also offer lessons (one Seattle-area form shows $70/lesson, ~15 lessons `[SEARCH-SUMMARY]`). | $35–$70 per lesson | Huge trust and reach; cheap; free trial; global presence | The page does not say where teachers are located or which languages they teach in `[VERIFIED: not stated]`. After the audience decision our target families overlap with Chabad's, so we differentiate on Jerusalem, language and the complete package, never on denomination |
 | **Independent online tutors / marketplaces** (Wyzant-type listings, personal sites, Hebrew-school-style online schools) | Per-hour Zoom lessons | ~$50/h (a Wyzant listing), $65/h (a tutor quoted in Jewish Journal, who said it "might be low"), $70 for 55 min (Adventure Rabbi) `[SEARCH-SUMMARY]`; Haftorah Audio: 4 × 30-min lessons for $100 + $15 trial `[SEARCH-SUMMARY]` | Flexible; personal | Quality is a lottery; usually US-based; rarely French; no ecosystem (library, AI, portal) |
-| **Apps / self-study audio** | Recordings of portions, trope trainers. France: the *MaParasha* app/service advertises Bar/Bat Mitsva prep at home and online `[SEARCH-SUMMARY, price not found]` | Low | Cheap, on demand | No human relationship, no accountability, no drasha/tefillin guidance |
-| **Israel-based programmes for the diaspora** | Group seminars, e.g., a European b'nei mitzvah programme meeting online weekly for four months, ending in a Jerusalem seminar `[SEARCH-SUMMARY, Times of Israel blog]`; pandemic-era Zoom tefillin workshops from Jerusalem `[SEARCH-SUMMARY, 2020–21]` | Not found | Strong Israel story | Group-based, episodic, not full 1:1 prep |
+| **Apps / self-study audio** | Recordings of portions, trope trainers. France: the *MaParasha* app/service advertises Bar Mitsva preparation at home and online `[SEARCH-SUMMARY, price not found]` | Low | Cheap, on demand | No human relationship, no accountability, no drasha/tefillin guidance |
+| **Israel-based programmes for the diaspora** | Group seminars, e.g., a European teen programme meeting online weekly for four months, ending in a Jerusalem seminar `[SEARCH-SUMMARY, Times of Israel blog]`; pandemic-era Zoom tefillin workshops from Jerusalem `[SEARCH-SUMMARY, 2020–21]` | Not found | Strong Israel story | Group-based, episodic, not full 1:1 prep |
 
-**What we did *not* find:** In a limited search (EN and FR, 2026-11-04) we found **no clear direct competitor offering 1:1 Bar/Bat Mitzvah preparation by rabbis based in Jerusalem, in French**, and none bundling an AI assistant plus a translated guide library. **This is not proof that none exist.** Treat it as `[UNVERIFIED]` and run a deeper check (Google FR/BE/CA-FR from a local IP, Facebook groups, Instagram) before claiming "the only" anywhere. **Do not use "the only" or "first" claims in ads.**
+**What we did *not* find:** In a limited search (EN and FR, 2026-11-04) we found **no clear direct competitor offering 1:1 Bar Mitzvah preparation or adult Torah reading by rabbis based in Jerusalem, in French**, and none bundling an AI assistant plus a translated guide library. **This is not proof that none exist.** Treat it as `[UNVERIFIED]` and run a deeper check (Google FR/BE/CA-FR from a local IP, Facebook groups, Instagram) before claiming "the only" anywhere. **Do not use "the only" or "first" claims in ads.**
 
 ### Positioning gap (our conclusion)
-Competitors win on either **price** (Chabad, marketplaces) or **community** (local synagogue). Nobody we found owns **"Jerusalem + your language + a complete, structured package."** That is the space to claim. We should **not** compete on per-lesson price with $35 Chabad lessons.
+Competitors win on either **price** (Chabad, marketplaces) or **community** (local synagogue). Nobody we found owns **"Jerusalem + your language + a complete, structured package."** That is the space to claim, for both audiences: parents of boys and adult men. We should **not** compete on per-lesson price with $35 Chabad lessons. For adult men the gap may be even wider: local adult programmes are usually group classes on fixed evenings `[UNVERIFIED]`, while we offer private 1:1 learning from Jerusalem at his hours.
 
 ---
 
@@ -140,10 +155,11 @@ The brief says "full course", but **not how many lessons or minutes it includes.
 | 30 lessons | ~$28 | €25 | Very strong value; communicate it loudly |
 
 ### 5.2 Perception by segment `[UNVERIFIED, reasoned]`
-- **US:** $850 is well within what families spend on the wider Bar/Bat Mitzvah event, and below the one synagogue figure we found ($1,350). The risk is not the amount but **trust in paying a lump sum to an overseas company online.** Mitigate with a clear refund/guarantee policy (owner to define), a secure checkout and a visible contact.
+- **US:** $850 is well within what families spend on the wider Bar Mitzvah event, and below the one synagogue figure we found ($1,350). The risk is not the amount but **trust in paying a lump sum to an overseas company online.** Mitigate with a clear refund/guarantee policy (owner to define), a secure checkout and a visible contact.
 - **France:** €750 reads as a meaningful amount compared with Talmud Torah fees. It will feel fair if it is framed as **"a whole course with a rav from Jerusalem plus everything for the Bar Mitsva"** (paracha, haftara, téfilines, dracha), not "Zoom lessons".
 - **UK / Switzerland:** These visitors see **$850** (per the brief, non-Eurozone → USD), a foreign currency to them. Expect some friction: "why dollars?" Add a short line, "Charged in US dollars; your bank converts at its rate." Long term, consider GBP/CHF pricing (an owner decision, outside this brief).
 - **Canada / Australia:** "$" is ambiguous, so always show **US$850**.
+- **Adult men:** a man buying for himself compares against his own hobbies and courses, not against a family event budget. A defined goal (adult Bar Mitzvah on a date, reading a specific portion) supports a one-off course price; the weekly parasha / Torah study need fits a recurring format better. Which format and price apply to adults is an owner decision (§8 Q8); until then, show the same course price and let the consultation tailor the plan.
 - **EUR vs USD fairness:** €750 and $850 are roughly equivalent at the exchange rates of 2025–2026 (around $1.10–$1.20 per euro; `[UNVERIFIED; check the live rate]`). Don't put the two prices side by side on the page, because a visitor will do the conversion and may feel penalised. Show one price per visitor.
 
 ### 5.3 Framing recommendations
@@ -159,19 +175,19 @@ The brief says "full course", but **not how many lessons or minutes it includes.
 ### 6.1 English, split by region
 | Concept | US | UK / AUS / SA |
 |---|---|---|
-| The service | "Bar Mitzvah tutor", "B'nai Mitzvah tutoring" | "Bar Mitzvah lessons", "Bar Mitzvah teacher" |
+| The service | "Bar Mitzvah tutor", "Bar Mitzvah lessons" | "Bar Mitzvah lessons", "Bar Mitzvah teacher" |
+| Adult offer | "adult Bar Mitzvah", "learn to leyn" | "adult Bar Mitzvah", "learn to lein", "become a ba'al koreh" |
 | Synagogue | synagogue / temple (Reform) | shul |
 | The reading | "chanting my Torah portion", "leyning" | "leining my sedra/parasha" |
 | Cantillation | trope | trop / leining notes / ta'amim |
 | Speech | d'var Torah / Bar Mitzvah speech | drasha / speech / "dvar Torah" |
-| Girls | Bat Mitzvah (reads Torah in Reform/Conservative) | Bat Mitzvah / Bat Chayil (often no public Torah reading in Orthodox shuls) |
 | Spelling | "Mom" | "Mum" |
 
-**Spelling rule for our site:** Bar Mitzvah, Bat Mitzvah, B'nai Mitzvah, Torah, Haftarah, parasha (with "Torah portion" glossed on first use), leining (US SEO also "leyning"), trope, aliyah, maftir, tefillin, tallit, drasha (with "d'var Torah" mentioned), Kotel / Western Wall.
+**Spelling rule for our site:** Bar Mitzvah, Torah, Haftarah, parasha (with "Torah portion" glossed on first use), leining (US SEO also "leyning"), trope, aliyah, maftir, tefillin, tallit, drasha (with "d'var Torah" mentioned), ba'al koreh, chavruta, Kotel / Western Wall.
 
 ### 6.2 French (France / Belgium / Switzerland / Quebec)
-- Use **"Bar Mitsva"** and **"Bat Mitsva"** (not "Bar Mitzvah"). Quebec's official terminology body also lists *bar-mitsva* `[SEARCH-SUMMARY: OQLF Grand dictionnaire terminologique]`.
-- **Paracha** (pl. *parachiot* among insiders; "les parachot" also seen), **Haftara**, **Maftir**, **Téfilines** (also "Tefilines"; pick one and keep it), **Talit**, **té'amim/ta'amim**, **lecture de la Torah**, **montée à la Torah**, **alya** / **monter au Sefer**, **dracha / discours de Bar Mitsva**, **rav** (warmer and more insider than "rabbin" in traditional circles; use "rabbin" in SEO and "rav" in body copy).
+- Use **"Bar Mitsva"** (not "Bar Mitzvah"), and **« Bar Mitsva adulte »** for the adult offer. Quebec's official terminology body also lists *bar-mitsva* `[SEARCH-SUMMARY: OQLF Grand dictionnaire terminologique]`.
+- **Paracha** (pl. *parachiot* among insiders; "les parachot" also seen), **Haftara**, **Maftir**, **Téfilines** (also "Tefilines"; pick one and keep it), **Talit**, **té'amim/ta'amim**, **lecture de la Torah**, **montée à la Torah**, **alya** / **monter au Sefer**, **dracha / discours de Bar Mitsva**, **baal koré**, **havrouta**, **rav** (warmer and more insider than "rabbin" in traditional circles; use "rabbin" in SEO and "rav" in body copy).
 - Register: use **vous** for parents. Warm but respectful. French Jewish readers dislike Americanised hype ("incroyable !!!"). Prefer sobriety and *sérieux*.
 - **Typography:** non-breaking space before « : ; ! ? » and inside « guillemets », plus "750 €" with a non-breaking space (see geo doc).
 - **Quebec:** "courriel" rather than "e-mail", "magasiner" (not relevant here). Mostly the same Jewish vocabulary; prices in "$ US".
@@ -179,7 +195,7 @@ The brief says "full course", but **not how many lessons or minutes it includes.
 
 ### 6.3 Calendar nuance that affects the product and the content
 - **Diaspora vs Israel Torah-reading schedule:** When the 8th day of Pesach (or the 2nd day of Shavuot) falls on Shabbat, the diaspora reads a different portion than Israel for a few weeks. Rabbis living in Israel must teach the **diaspora** schedule for diaspora students, and the "Your Parasha" finder must use the diaspora calendar (e.g., Hebcal with Israel mode off). Getting this wrong would be a serious trust failure.
-- Bar Mitzvah age is 13 by the **Hebrew** calendar. Bat Mitzvah is 12 in Orthodox practice and often 13 in Reform/Conservative practice. The finder should ask, not assume.
+- Bar Mitzvah age is 13 by the **Hebrew** calendar, so the finder converts the boy's Gregorian birth date (with an "after sunset" option) rather than assuming. For adult men the finder works from a chosen date (an adult Bar Mitzvah Shabbat) or simply shows this week's parasha.
 
 ---
 
@@ -187,11 +203,13 @@ The brief says "full course", but **not how many lessons or minutes it includes.
 
 1. **Authenticity / quality of teaching** ("a real rabbi, properly")
 2. **Convenience** (home, local time, no driving)
-3. **Language** (child and parents fully understand)
+3. **Language** (the boy and his parents fully understand)
 4. **Jerusalem / Israel connection** (emotional differentiator, and the reason to choose *us* over a local tutor)
-5. **Child's confidence on the day**
+5. **The son's confidence on the day**
 6. **Support between lessons** (AI assistant, recordings, guides)
-7. **Adapted teaching** for kids who struggle (decisive for P5, background for others)
+7. **Adapted teaching** for boys who struggle (decisive for P5, background for others)
+
+**Adult men (P4), separate hypothesis:** 1) privacy and dignity (1:1, no class) · 2) a real rabbi and real depth · 3) flexible hours in his time zone · 4) Jerusalem as a personal milestone · 5) a concrete goal (his adult Bar Mitzvah, reading at his son's Bar Mitzvah, reading for his minyan) · 6) support between lessons.
 
 `[UNVERIFIED ranking]`: test with ads (see strategy doc angles) and with intake-form questions ("What matters most to you?").
 
@@ -199,19 +217,22 @@ The brief says "full course", but **not how many lessons or minutes it includes.
 
 ## 8. Open questions for the owner (blocking for honest copy)
 
-1. **Bat Mitzvah scope:** Do the rabbis teach girls to read from the Torah (leining), or is the Bat Mitzvah track different (drasha, Haftarah/Megillah, learning project)? US Reform/Conservative families will ask this first. The copy must be precise either way.
+1. ~~Scope of a girls' track~~ **ANSWERED by the owner, 2026-11-04: no Bat Mitzvah offering.** Zoom Mitzvah teaches only Bar Mitzvah preparation for boys and Torah learning for adult men. Copy describes this offer and never mentions what we don't teach. Market implication: §1.1.
 2. **Traditions taught:** Which cantillation/nusach traditions can each rabbi teach (Ashkenazi, Moroccan, Tunisian, Algerian, Yemenite, Syrian, etc.)? Can they teach the melody of a specific community from a recording?
 3. **Course length:** Number of lessons, minutes per lesson, expected course duration (months).
 4. **Trial / guarantee:** The free consultation is confirmed (landing brief). Still open: is there also a free trial *lesson*? What is the refund policy? What happens in the consultation, how long is it, and who runs it?
 5. **Rabbis:** Names, photos, short bios and languages (EN/FR) for each rabbi, with written consent to publish.
 6. **Teaching hours** in Israel time, so we can promise realistic slots for the US West Coast and Australia.
 7. **AI assistant:** What exactly can it do (answer questions, play/assess reading, reschedule)? What are the data policies for minors? Is a parent account required?
+8. **Adult men's offer: format and price.** Is an adult Bar Mitzvah / learning-to-leyn course the same "full course" at €750/$850? Is the weekly parasha / Torah study a separate recurring format (e.g., monthly), and at what price? Until answered, the site shows the one course price and the consultation tailors the plan.
+9. **Starting level for adults:** Can a man start from the Hebrew letters (aleph-bet), or is basic reading a prerequisite?
+10. **Father and son:** Can a father join some of his son's lessons, or learn his own portion in parallel (P4c)? If so, is there a combined price?
 
 ---
 
 ## 9. Validation plan (cheap, before scaling ad spend)
-- 5–10 short calls per language with families from the Hebrew site's network or community WhatsApp/Facebook groups (French: groups of French Jews by city; Anglo: community groups in Toronto/London/Johannesburg/Melbourne). Ask about fears, words they use and price reaction.
-- Run the 10 angles per language (see `marketing/strategy.md`) as small paid tests. Judge on **cost per qualified lead**, not clicks.
+- 5–10 short calls per language with parents of boys from the Hebrew site's network or community WhatsApp/Facebook groups (French: groups of French Jews by city; Anglo: community groups in Toronto/London/Johannesburg/Melbourne), **plus 5 per language with adult men** (P4a–P4e). Ask about fears, words they use and price reaction; for men, also which format they want (goal course vs. weekly learning).
+- Run the ad angles per language (see `marketing/strategy.md` §7: 7 for parents of boys, 5 for adult men) as small paid tests. Judge on **cost per qualified lead**, not clicks, and report the two audiences separately.
 - Keep a living "voice of customer" glossary of exact phrases parents use, and feed it back into the copy.
 
 ---
@@ -227,6 +248,6 @@ The brief says "full course", but **not how many lessons or minutes it includes.
 - Kehilat Gesher (Paris) Talmud Torah brochure, 2014: https://www.kehilatgesher.org/wp-content/uploads/2014/06/brochure-talmud-torah.pdf `[SEARCH-SUMMARY]`
 - Adath Shalom calendar 2022-23: https://www.adathshalom.org/wp-content/uploads/2022/05/Calendrier-du-Talmud-Tora-5773-2022-2023-.pdf `[SEARCH-SUMMARY]`
 - MaParasha app listing: https://apps.appfollow.io/ios/maparasha/871548939?country=us `[SEARCH-SUMMARY]`
-- Times of Israel blog (European b'nei mitzvah programme): https://blogs.timesofisrael.com/teaching-their-chapter-meaningful-european-bnei-mitzvah/ `[SEARCH-SUMMARY]`
+- Times of Israel blog (European online teen programme): https://blogs.timesofisrael.com/teaching-their-chapter-meaningful-european-bnei-mitzvah/ `[SEARCH-SUMMARY]`
 - Fun in Jerusalem, Zoom resources: https://www.funinjerusalem.com/?p=6792 `[SEARCH-SUMMARY]`
 - OQLF, *bar-mitsva*: https://vitrinelinguistique.oqlf.gouv.qc.ca/fiche-gdt/fiche/17036992/bar-mitsva `[SEARCH-SUMMARY]`

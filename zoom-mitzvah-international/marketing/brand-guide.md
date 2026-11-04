@@ -1,24 +1,29 @@
 # Zoom Mitzvah International: Brand Guide
 
 > **סיכום בעברית לבעלים**
-> האווטאר: משפחה יהודית בחו"ל שרוצה שהילד (או ההורה עצמו) ילמד תורה לבר/בת מצווה או קריאה בתורה, עם רב ישראלי מירושלים שמדבר את שפתה.
+> האווטאר: משפחה יהודית בחו"ל שרוצה שהבן שלה יתכונן לבר מצווה, או גבר בוגר שרוצה ללמוד תורה בעצמו (בר מצווה למבוגרים, קריאה בתורה, פרשת השבוע), עם רב ישראלי מירושלים שמדבר את שפתם.
 > המראה: מודרני ועריכתי, לא "תבנית". הפלטה לפי הבריף: אבן ירושלמית #F3EBDD, כחול-לילה ירושלמי #0F1E3A וזהב #C9A24A. לטקסט בצבע זהב על רקע בהיר נוסף זהב כהה (#7D5A1E). כל צבע נבדק לניגודיות נגישות.
 > טיפוגרפיה: Fraunces לכותרות, Inter לטקסט, Frank Ruhl Libre לעברית. לטעמי המקרא צריך לבדוק פונט שתומך בהם.
-> צילום: רק תמונות אמיתיות של ירושלים, של הרבנים ושל ילדים בבית (בהסכמה בכתב). בלי סטוק גנרי ובלי תמונות מהכותל בשבת.
+> צילום: רק תמונות אמיתיות של ירושלים ושל הרבנים, ובאנשים רק בנים וגברים: רב עם נער, רב עם גבר בוגר, אב ובן (בהסכמה בכתב). בלי סטוק גנרי ובלי תמונות מהכותל בשבת.
 > תנועה: עדינה ואיכותית (הופעה הדרגתית, פרלקסה קלה בגיבור), עם כיבוי מלא כשהמשתמש ביקש "הפחתת תנועה".
 > שימו לב: יש להתייעץ משפטית לגבי השימוש במילה Zoom בשם המותג בשווקים בינלאומיים (סימן מסחרי).
+> **עדכון 4.11.2026 (החלטת הבעלים):** אין מסלול בת מצווה. האווטאר, הצילום והניסוחים עודכנו לבנים ולגברים בלבד.
 
 ---
+
+> **Audience decision (owner, 2026-11-04; overrides earlier versions of this file).** We offer only Bar Mitzvah preparation for boys and Torah learning for adult men; research open question Q1 is answered: no Bat Mitzvah offering. This guide therefore shows and addresses **boys and men only**, and never states what we don't offer. Details: `../research/audience-and-market.md` §0 and §1.1.
 
 ## 1. Brand essence
 
 ### 1.1 The avatar (ideal customer)
-> **A Jewish family living outside Israel (in New Jersey, Toronto, London, Melbourne, Johannesburg, Paris, Lyon, Brussels, Geneva or Montreal) who wants their child, or themselves, to learn Torah for a Bar/Bat Mitzvah or to read from the Torah, taught by an Israeli rabbi who lives in Israel/Jerusalem and speaks their language.**
+> **A Jewish family living outside Israel (in New Jersey, Toronto, London, Melbourne, Johannesburg, Paris, Lyon, Brussels, Geneva or Montreal) who wants their son to prepare for his Bar Mitzvah and read from the Torah, or a Jewish man who wants to learn Torah himself (an adult Bar Mitzvah, reading from the Torah, the weekly parasha), taught by an Israeli rabbi who lives in Israel/Jerusalem and speaks their language.**
 
 What they feel before finding us: *"We want this to be real and meaningful, but we're far from Israel, far from a good teacher, and short on time."*
-What they should feel after the first lesson: *"Our child has a rabbi in Jerusalem who gets him, and we can see the progress."*
+What they should feel after the first lesson:
+- Parents: *"Our son has a rabbi in Jerusalem who gets him, and we can see the progress."*
+- Adult men: *"I'm finally learning this properly, with a real rabbi, and nobody is watching me struggle."*
 
-(Composite profile only. It does not describe any real customer. See `../research/audience-and-market.md` for the six personas.)
+(Composite profile only. It does not describe any real customer. See `../research/audience-and-market.md` for the six personas; P4, adult men, is the second primary audience.)
 
 ### 1.2 Brand idea
 **"Jerusalem, at home."** / **« Jérusalem, à la maison. »**
@@ -98,19 +103,24 @@ Alternatives if the owner prefers: **Cormorant Garamond** (display, more classic
 ## 4. Photography & imagery
 
 ### 4.1 The three subjects
+**People rule:** every person in our imagery is the rabbi, a boy, an adult man, or a father with his son. That matches what we offer (Bar Mitzvah preparation for boys, Torah learning for men). Jerusalem imagery without people is always welcome.
+
 1. **Jerusalem, real and specific.** Old City limestone walls at golden hour; the Western Wall (Kotel) plaza at a respectful distance; Jerusalem rooftops with water tanks and domes at dusk; narrow stone alleys in the Jewish Quarter; the stone texture itself as a background.
    - Prefer **commissioned or properly licensed** photos by a Jerusalem photographer. Keep the licence on file.
    - Times: golden hour and blue hour. Warm highlights should echo `--gold`, blue shadows `--night`.
-2. **The rabbis teaching, warm and human.** Each rabbi at their own desk in Jerusalem (a window with stone or a bookshelf of sefarim behind them), mid-explanation, smiling, a sefer or a tikkun open. Shoot both a "screen view" (as the child sees it) and a "behind the laptop" view.
+2. **The rabbis teaching, warm and human.** Each rabbi at their own desk in Jerusalem (a window with stone or a bookshelf of sefarim behind them), mid-explanation, smiling, a sefer or a tikkun open. Shoot both a "screen view" (as the student sees it) and a "behind the laptop" view.
    - Real rabbis only, with signed release. **No stock "rabbi" models** and no AI-generated rabbis.
-3. **The child (or adult) at home abroad.** At the kitchen table or in a bedroom, laptop open, the rabbi on screen; a parent in the background; local cues (a window with snow, a suburban street, a Paris balcony) that say "far from Israel".
-   - Minors: **written parental consent**, and a stated use scope (web/ads/duration). Prefer over-the-shoulder or profile shots. No full names of children.
+3. **Students at home abroad: boys and men.** Local cues (a window with snow, a suburban street, a Paris balcony) say "far from Israel". Three set-ups, each needed for its own funnel:
+   - **Rabbi with a boy** (parents' funnel, ads 1–7): a boy of 12–13 at the kitchen table or desk, laptop open, the rabbi on screen, a tikkun or siddur beside him.
+   - **Rabbi with an adult man** (adult men's funnel, ads 8–12): a man in his 30s–70s at a home desk, early morning or late evening light, a chumash or tikkun open, the rabbi on screen. Dignified, focused, never staged as "a beginner struggling".
+   - **Father and son** (fathers, P4c; also the parents' funnel): father helping his son put on tefillin, the two of them reading from one tikkun, or both on a lesson call together.
+   - Minors: **written parental consent**, and a stated use scope (web/ads/duration). Prefer over-the-shoulder or profile shots. No full names of minors. Adults: signed release with the same scope.
 
 ### 4.2 Accuracy checks (a rabbi reviews every image before use)
 - Tefillin worn correctly: arm tefillin on the upper arm (left arm for a right-handed person), head tefillin above the hairline and centred, straps black side out. Stock photos often get this wrong.
 - **No photos of people at the Kotel taken on Shabbat or Yom Tov** (photography is not done then). Avoid any image showing Shabbat desecration.
-- Tallit, kippah and modest dress consistent with a broad range of families. Show diversity of observance where possible (with and without kippah for the child at home).
-- Don't put mixed-gender scenes at the Kotel prayer area in ways that could offend; wide plaza shots are safer.
+- Tallit, kippah and modest dress consistent with a broad range of families. Show diversity of observance where possible (with and without kippah for the boy or man at home), and a range of backgrounds (Ashkenazi, Sephardi).
+- At the Kotel, use wide plaza shots or the men's section at a respectful distance; never close-ups of people praying without consent.
 - No Zoom UI chrome or Zoom logo in the imagery. Use a neutral generic video-call frame.
 
 ### 4.3 Treatment
@@ -121,6 +131,7 @@ Alternatives if the owner prefers: **Cormorant Garamond** (display, more classic
 
 ### 4.4 Never
 - Generic stock "happy family on laptop" with no Jewish or Jerusalem context.
+- Student imagery other than boys and men (see the people rule in §4.1), or group-class scenes that misrepresent our 1:1 lessons.
 - Clip-art Stars of David, menorahs as decoration, or Hebrew "fake" lettering.
 - AI-generated images of real places presented as photographs, or of people presented as our rabbis or students.
 - Israeli flags or political imagery as decoration. The connection is to Jerusalem and Torah, not politics.
@@ -178,8 +189,8 @@ Alternatives if the owner prefers: **Cormorant Garamond** (display, more classic
 ---
 
 ## 7. Voice snapshot (full detail in `strategy.md` §3)
-- EN: warm, calm, competent; "your rabbi", "your portion", "step by step".
-- FR : sobre, chaleureux, vouvoiement ; « votre rav », « sa paracha », « pas à pas ».
+- EN: warm, calm, competent; "your rabbi", "your portion", "step by step". Parents read "your son"; men are addressed directly as "you" ("men", "adult learners"). Never "your child".
+- FR : sobre, chaleureux, vouvoiement ; « votre rav », « sa paracha », « pas à pas ». Parents lisent « votre fils » ; les hommes sont vouvoyés directement (« les hommes »). Jamais « votre enfant ».
 - Hebrew appears as an accent (parasha names, a single line like «ירושלים»), never as untranslated body text.
 
 ---
@@ -192,7 +203,8 @@ Alternatives if the owner prefers: **Cormorant Garamond** (display, more classic
 | Show local time for lessons ("Tue 5:30 p.m. your time") | Show Israel time to diaspora families without conversion |
 | Say "120+ guides in English" / « plus de 120 guides en français » | Say "hundreds of articles" without "in English and French" |
 | Use the family's vocabulary (Bar Mitsva/paracha in FR; Torah portion/trope in US; shul/leining in UK) | Mix FR and US spellings on the same page |
-| Present ADHD/dyslexia support as patient, adapted 1:1 teaching | Make therapeutic or outcome promises, or label children |
+| Present ADHD/dyslexia support as patient, adapted 1:1 teaching | Make therapeutic or outcome promises, or label a boy by a diagnosis |
+| Show and address boys and men: rabbi with a boy, rabbi with a man, father and son | Use "your child" or imagery and wording that suggest a broader audience; or write about what we don't teach |
 | Keep gold to ≤ 10% of the surface; text in gold only on dark backgrounds (or deep gold ≥ 16px on light) | Put `#C9A24A` text on limestone (2.03:1 fails) |
 | Respect every denomination; "your family's tradition" | Imply one "correct" way, or judge observance |
 | Ask a rabbi to check every religious image and term | Publish tefillin/Kotel/Shabbat imagery unchecked |
